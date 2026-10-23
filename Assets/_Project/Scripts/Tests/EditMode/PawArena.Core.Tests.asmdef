@@ -1,0 +1,21 @@
+{
+  "name": "PawArena.Core.Tests",
+  "rootNamespace": "PawArena.Tests.EditMode",
+  "references": [
+    "PawArena.Core"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": false,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": true,
+  "optionalUnityReferences": [
+    "TestAssemblies"
+  ]
+}

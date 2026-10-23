@@ -1,0 +1,17 @@
+{
+  "name": "PawArena.Gameplay",
+  "rootNamespace": "PawArena.Gameplay",
+  "references": [
+    "PawArena.Core",
+    "Unity.InputSystem"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}
