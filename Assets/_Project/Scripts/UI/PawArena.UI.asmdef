@@ -1,0 +1,16 @@
+{
+  "name": "PawArena.UI",
+  "rootNamespace": "PawArena.UI",
+  "references": [
+    "PawArena.Core"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

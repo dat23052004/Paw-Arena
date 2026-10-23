@@ -7,20 +7,16 @@ namespace PawArena.Gameplay.Flow
     /// <summary>
     /// Connects the pure game-flow state machine to Unity scenes and presentation systems.
     /// </summary>
-    public sealed class GameFlowController : MonoBehaviour
+    public sealed class GameFlowController : MonoBehaviour, IGameFlowService
     {
         [SerializeField] private GameFlowState _initialState = GameFlowState.Boot;
 
         private GameFlowStateMachine _stateMachine;
 
-        /// <summary>
-        /// Raised after a valid transition with the previous and current states.
-        /// </summary>
+        /// <inheritdoc />
         public event Action<GameFlowState, GameFlowState> StateChanged;
 
-        /// <summary>
-        /// Gets the current state, including before Unity invokes Awake.
-        /// </summary>
+        /// <inheritdoc />
         public GameFlowState CurrentState => _stateMachine?.CurrentState ?? _initialState;
 
         private void Awake()
@@ -37,9 +33,13 @@ namespace PawArena.Gameplay.Flow
             }
         }
 
-        /// <summary>
-        /// Attempts to enter the requested state.
-        /// </summary>
+        /// <inheritdoc />
+        public bool CanChangeState(GameFlowState nextState)
+        {
+            return _stateMachine != null && _stateMachine.CanTransitionTo(nextState);
+        }
+
+        /// <inheritdoc />
         public bool TryChangeState(GameFlowState nextState)
         {
             if (_stateMachine == null)
