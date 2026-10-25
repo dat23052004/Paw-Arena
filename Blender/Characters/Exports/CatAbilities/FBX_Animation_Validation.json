@@ -1,0 +1,244 @@
+{
+  "status": "PASS",
+  "fps": 30,
+  "clips": [
+    {
+      "name": "Ability_Dash",
+      "bone_count": 30,
+      "frames": [
+        1.0,
+        19.0
+      ],
+      "max_sampled_bone_position_error_m": 4.145396185035193e-06,
+      "sampled_frames": [
+        1,
+        8,
+        10,
+        19
+      ]
+    },
+    {
+      "name": "Ability_NineLives_FaceUp",
+      "bone_count": 30,
+      "frames": [
+        1.0,
+        37.0
+      ],
+      "max_sampled_bone_position_error_m": 1.1329783144754386e-06,
+      "sampled_frames": [
+        1,
+        19,
+        22,
+        37
+      ]
+    },
+    {
+      "name": "Ability_NineLives_FaceDown",
+      "bone_count": 30,
+      "frames": [
+        1.0,
+        37.0
+      ],
+      "max_sampled_bone_position_error_m": 1.2417236957549846e-06,
+      "sampled_frames": [
+        1,
+        19,
+        22,
+        37
+      ]
+    },
+    {
+      "name": "Ability_Hiss",
+      "bone_count": 30,
+      "frames": [
+        1.0,
+        19.0
+      ],
+      "max_sampled_bone_position_error_m": 3.988566569033294e-06,
+      "sampled_frames": [
+        1,
+        8,
+        10,
+        19
+      ]
+    },
+    {
+      "name": "Ability_Pounce_Start",
+      "bone_count": 30,
+      "frames": [
+        1.0,
+        13.0
+      ],
+      "max_sampled_bone_position_error_m": 3.988566569033294e-06,
+      "sampled_frames": [
+        1,
+        7,
+        8,
+        13
+      ]
+    },
+    {
+      "name": "Ability_Pounce_Air",
+      "bone_count": 30,
+      "frames": [
+        1.0,
+        19.0
+      ],
+      "max_sampled_bone_position_error_m": 7.657805179077147e-07,
+      "sampled_frames": [
+        1,
+        7,
+        10,
+        19
+      ]
+    },
+    {
+      "name": "Ability_Pounce_Land",
+      "bone_count": 30,
+      "frames": [
+        1.0,
+        16.0
+      ],
+      "max_sampled_bone_position_error_m": 4.78230360535846e-06,
+      "sampled_frames": [
+        1,
+        4,
+        8,
+        16
+      ]
+    },
+    {
+      "name": "Ability_Anchor_Start",
+      "bone_count": 30,
+      "frames": [
+        1.0,
+        19.0
+      ],
+      "max_sampled_bone_position_error_m": 3.988566569033294e-06,
+      "sampled_frames": [
+        1,
+        10,
+        14,
+        19
+      ]
+    },
+    {
+      "name": "Ability_Anchor_Hold",
+      "bone_count": 30,
+      "frames": [
+        1.0,
+        49.0
+      ],
+      "max_sampled_bone_position_error_m": 3.050373611442283e-06,
+      "sampled_frames": [
+        1,
+        14,
+        25,
+        49
+      ]
+    },
+    {
+      "name": "Ability_Anchor_End",
+      "bone_count": 30,
+      "frames": [
+        1.0,
+        19.0
+      ],
+      "max_sampled_bone_position_error_m": 4.947634326155799e-06,
+      "sampled_frames": [
+        1,
+        10,
+        19
+      ]
+    },
+    {
+      "name": "Ability_Stomp",
+      "bone_count": 30,
+      "frames": [
+        1.0,
+        25.0
+      ],
+      "max_sampled_bone_position_error_m": 3.988566569033294e-06,
+      "sampled_frames": [
+        1,
+        10,
+        13,
+        25
+      ]
+    },
+    {
+      "name": "Ability_Catnip",
+      "bone_count": 30,
+      "frames": [
+        1.0,
+        25.0
+      ],
+      "max_sampled_bone_position_error_m": 3.988566569033294e-06,
+      "sampled_frames": [
+        1,
+        12,
+        13,
+        25
+      ]
+    },
+    {
+      "name": "Ability_FluffUp",
+      "bone_count": 30,
+      "frames": [
+        1.0,
+        28.0
+      ],
+      "max_sampled_bone_position_error_m": 3.988566569033294e-06,
+      "sampled_frames": [
+        1,
+        13,
+        14,
+        28
+      ]
+    },
+    {
+      "name": "Ability_Hairball",
+      "bone_count": 30,
+      "frames": [
+        1.0,
+        25.0
+      ],
+      "max_sampled_bone_position_error_m": 3.988566569033294e-06,
+      "sampled_frames": [
+        1,
+        11,
+        13,
+        25
+      ]
+    },
+    {
+      "name": "Ability_SharkAttack",
+      "bone_count": 30,
+      "frames": [
+        1.0,
+        34.0
+      ],
+      "max_sampled_bone_position_error_m": 3.988566569033294e-06,
+      "sampled_frames": [
+        1,
+        17,
+        34
+      ]
+    },
+    {
+      "name": "Ability_WindShurikens",
+      "bone_count": 30,
+      "frames": [
+        1.0,
+        34.0
+      ],
+      "max_sampled_bone_position_error_m": 3.988566569033294e-06,
+      "sampled_frames": [
+        1,
+        10,
+        17,
+        34
+      ]
+    }
+  ]
+}

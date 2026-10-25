@@ -1,0 +1,11 @@
+{
+  "round_trip": "PASS",
+  "export_bones": 30,
+  "control_bones_exported": 0,
+  "maximum_bind_error_m": 4.2654573917388916e-07,
+  "max_weights_per_vertex": 4,
+  "materials": 2,
+  "texture_size": "4096 x 4096",
+  "source_base_unchanged": true,
+  "unity_avatar": "Requires Unity Configure Avatar verification; not exercised by Blender round-trip."
+}

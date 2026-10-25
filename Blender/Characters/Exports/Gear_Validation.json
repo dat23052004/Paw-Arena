@@ -1,0 +1,276 @@
+{
+  "source_integrity": "identical geometry, topology, UV, weights, rest rig and all action curves",
+  "gear_count": 8,
+  "actions": [
+    {
+      "name": "Cat_Ability_Anchor_End",
+      "sampled_frames": [
+        1,
+        5,
+        10,
+        14,
+        19
+      ]
+    },
+    {
+      "name": "Cat_Ability_Anchor_Hold",
+      "sampled_frames": [
+        1,
+        13,
+        25,
+        37,
+        49
+      ]
+    },
+    {
+      "name": "Cat_Ability_Anchor_Start",
+      "sampled_frames": [
+        1,
+        5,
+        10,
+        14,
+        19
+      ]
+    },
+    {
+      "name": "Cat_Ability_Catnip",
+      "sampled_frames": [
+        1,
+        7,
+        13,
+        19,
+        25
+      ]
+    },
+    {
+      "name": "Cat_Ability_Dash",
+      "sampled_frames": [
+        1,
+        5,
+        10,
+        14,
+        19
+      ]
+    },
+    {
+      "name": "Cat_Ability_FluffUp",
+      "sampled_frames": [
+        1,
+        7,
+        14,
+        21,
+        28
+      ]
+    },
+    {
+      "name": "Cat_Ability_Hairball",
+      "sampled_frames": [
+        1,
+        7,
+        13,
+        19,
+        25
+      ]
+    },
+    {
+      "name": "Cat_Ability_Hiss",
+      "sampled_frames": [
+        1,
+        5,
+        10,
+        14,
+        19
+      ]
+    },
+    {
+      "name": "Cat_Ability_NineLives_FaceDown",
+      "sampled_frames": [
+        1,
+        10,
+        19,
+        28,
+        37
+      ]
+    },
+    {
+      "name": "Cat_Ability_NineLives_FaceUp",
+      "sampled_frames": [
+        1,
+        10,
+        19,
+        28,
+        37
+      ]
+    },
+    {
+      "name": "Cat_Ability_Pounce_Air",
+      "sampled_frames": [
+        1,
+        5,
+        10,
+        14,
+        19
+      ]
+    },
+    {
+      "name": "Cat_Ability_Pounce_Land",
+      "sampled_frames": [
+        1,
+        4,
+        8,
+        12,
+        16
+      ]
+    },
+    {
+      "name": "Cat_Ability_Pounce_Start",
+      "sampled_frames": [
+        1,
+        4,
+        7,
+        10,
+        13
+      ]
+    },
+    {
+      "name": "Cat_Ability_SharkAttack",
+      "sampled_frames": [
+        1,
+        9,
+        17,
+        25,
+        34
+      ]
+    },
+    {
+      "name": "Cat_Ability_Stomp",
+      "sampled_frames": [
+        1,
+        7,
+        13,
+        19,
+        25
+      ]
+    },
+    {
+      "name": "Cat_Ability_WindShurikens",
+      "sampled_frames": [
+        1,
+        9,
+        17,
+        25,
+        34
+      ]
+    },
+    {
+      "name": "Cat_Fall",
+      "sampled_frames": [
+        1,
+        7,
+        13,
+        19,
+        25
+      ]
+    },
+    {
+      "name": "Cat_Hit_React",
+      "sampled_frames": [
+        1,
+        5,
+        9,
+        13,
+        17
+      ]
+    },
+    {
+      "name": "Cat_Idle",
+      "sampled_frames": [
+        1,
+        19,
+        37,
+        55,
+        73
+      ]
+    },
+    {
+      "name": "Cat_Jump_Air",
+      "sampled_frames": [
+        1,
+        7,
+        13,
+        19,
+        25
+      ]
+    },
+    {
+      "name": "Cat_Jump_Start",
+      "sampled_frames": [
+        1,
+        4,
+        7,
+        10,
+        13
+      ]
+    },
+    {
+      "name": "Cat_Land",
+      "sampled_frames": [
+        1,
+        4,
+        8,
+        11,
+        15
+      ]
+    },
+    {
+      "name": "Cat_Punch_Left",
+      "sampled_frames": [
+        1,
+        5,
+        10,
+        14,
+        19
+      ]
+    },
+    {
+      "name": "Cat_Punch_Right",
+      "sampled_frames": [
+        1,
+        5,
+        10,
+        14,
+        19
+      ]
+    },
+    {
+      "name": "Cat_Run",
+      "sampled_frames": [
+        1,
+        6,
+        11,
+        16,
+        21
+      ]
+    },
+    {
+      "name": "Cat_Walk",
+      "sampled_frames": [
+        1,
+        8,
+        16,
+        23,
+        31
+      ]
+    }
+  ],
+  "max_edge_stretch": {
+    "GEAR_Black_Mawashi": 1.597057054968485,
+    "GEAR_Crimson_Mawashi": 1.597057054968485,
+    "GEAR_Gyoji_Fan": 1.0000490400642585,
+    "GEAR_Hachimaki": 1.0000984655490688,
+    "GEAR_Indigo_Mawashi": 1.597057054968485,
+    "GEAR_Kesho_Mawashi": 1.615545969386606,
+    "GEAR_Topknot": 1.0000880834510673,
+    "GEAR_Yokozuna_Rope": 1.6400755476782674
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "passed": true,
+  "total_actions": 26,
+  "new_ability_actions": 16,
+  "original_ten_unchanged": true,
+  "mesh_weights_topology_and_rest_rig_unchanged": true,
+  "fingerprints": {
+    "mesh": "e630d1086129da09340e91621909f625586328fbb3dd5285616dfa325470c497",
+    "topology": "76618fe1ae62e9378170304d9da2064a59447db88469a373daa4ce31edc2800e",
+    "rig_rest": "13e42938a45764913e10f55626831957169580f52b08eab3d7e119fde161d386",
+    "first_ten": {
+      "Idle": "06813fde63d2cd98a6f348f124fc7a1288d3b1059be19746b2549be5fd7a43ce",
+      "Walk": "2269ca99ec4117fbc1bda56232269dc50883403ae1ad7d33c6ba360618c6d886",
+      "Run": "14640712eabfc2d9593899da3ab599f880b295e5fcccd9a5e9088724fed03e60",
+      "Jump_Start": "7646181baace6dc73c9a6da218c80b219b912ca508fbaf68133aa6414ee18123",
+      "Jump_Air": "ecddd21cd35da373e56d7624d42d08dde0aaf3afcf1bb6b4275eaff0cf4b1dc3",
+      "Fall": "e795bc5916a5835246e5da4d9c3bd996ffd38424a3c7c1131bd6ce2984a30674",
+      "Land": "04089d8c5f64b951c4bc23ba22963946b24a0b4852be18f5a45d66cc39a0267c",
+      "Punch_Left": "83666766bb76997d8e53ce68ef15148c743462979a1ec9fba9f675df4e9d632c",
+      "Punch_Right": "02fdf54886eba846fb3814ceb7e6c09fa40ad789b26a5732bd11f11db049c98e",
+      "Hit_React": "08eb9063262075adf90a69883a3bc6da137b469ceb5a2e2d533afb35cc399efa"
+    }
+  },
+  "clips": [
+    {
+      "name": "Ability_Dash",
+      "checked_frames": 19,
+      "min_vertex_z_m": 0.0016013681888580322,
+      "max_vertex_z_m": 2.3135547637939453
+    },
+    {
+      "name": "Ability_NineLives_FaceUp",
+      "checked_frames": 37,
+      "min_vertex_z_m": 0.014999866485595703,
+      "max_vertex_z_m": 2.3130555152893066
+    },
+    {
+      "name": "Ability_NineLives_FaceDown",
+      "checked_frames": 37,
+      "min_vertex_z_m": 0.014999747276306152,
+      "max_vertex_z_m": 2.3130555152893066
+    },
+    {
+      "name": "Ability_Hiss",
+      "checked_frames": 19,
+      "min_vertex_z_m": 0.005465630441904068,
+      "max_vertex_z_m": 2.3175575733184814
+    },
+    {
+      "name": "Ability_Pounce_Start",
+      "checked_frames": 13,
+      "min_vertex_z_m": 0.0065879784524440765,
+      "max_vertex_z_m": 2.3135547637939453
+    },
+    {
+      "name": "Ability_Pounce_Air",
+      "checked_frames": 19,
+      "min_vertex_z_m": 0.08291581273078918,
+      "max_vertex_z_m": 2.1920108795166016
+    },
+    {
+      "name": "Ability_Pounce_Land",
+      "checked_frames": 16,
+      "min_vertex_z_m": 0.006377303972840309,
+      "max_vertex_z_m": 2.3135547637939453
+    },
+    {
+      "name": "Ability_Anchor_Start",
+      "checked_frames": 19,
+      "min_vertex_z_m": 0.0016940869390964508,
+      "max_vertex_z_m": 2.3135547637939453
+    },
+    {
+      "name": "Ability_Anchor_Hold",
+      "checked_frames": 49,
+      "min_vertex_z_m": 0.0016940869390964508,
+      "max_vertex_z_m": 2.243978500366211
+    },
+    {
+      "name": "Ability_Anchor_End",
+      "checked_frames": 19,
+      "min_vertex_z_m": 0.0016940869390964508,
+      "max_vertex_z_m": 2.3135547637939453
+    },
+    {
+      "name": "Ability_Stomp",
+      "checked_frames": 25,
+      "min_vertex_z_m": 0.00916084460914135,
+      "max_vertex_z_m": 2.3135547637939453
+    },
+    {
+      "name": "Ability_Catnip",
+      "checked_frames": 25,
+      "min_vertex_z_m": 0.002787342295050621,
+      "max_vertex_z_m": 2.3135547637939453
+    },
+    {
+      "name": "Ability_FluffUp",
+      "checked_frames": 28,
+      "min_vertex_z_m": 0.006527068093419075,
+      "max_vertex_z_m": 2.3135547637939453
+    },
+    {
+      "name": "Ability_Hairball",
+      "checked_frames": 25,
+      "min_vertex_z_m": 0.008888449519872665,
+      "max_vertex_z_m": 2.3135547637939453
+    },
+    {
+      "name": "Ability_SharkAttack",
+      "checked_frames": 34,
+      "min_vertex_z_m": 0.008888411335647106,
+      "max_vertex_z_m": 2.3135547637939453
+    },
+    {
+      "name": "Ability_WindShurikens",
+      "checked_frames": 34,
+      "min_vertex_z_m": 0.00888845231384039,
+      "max_vertex_z_m": 2.3135547637939453
+    }
+  ]
+}

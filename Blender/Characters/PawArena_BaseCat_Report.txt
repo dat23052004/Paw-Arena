@@ -1,0 +1,15 @@
+Paw Arena Base Cat validation
+================================
+Status: PASS
+Rig type: Humanoid-compatible biped with cat extension bones
+Rig object: RIG_PawArena_Cat_Humanoid
+Bone count: 29
+Mesh object count: 2
+Vertex count: 6146
+Polygon count: 6920
+Bind pose: T-Pose
+Body topology: continuous organic torso, arms, hands, legs, feet and head
+Joint weighting: blended at shoulders, elbows, hips, knees, ankles and wrists
+Extra bones: LeftEar, RightEar, Tail_01..Tail_04, HeadGearSocket
+Skin scope: material/color variants plus rigid head gear
+Validation: all required bones present; all mesh vertices weighted

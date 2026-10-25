@@ -1,0 +1,237 @@
+{
+  "source_sha256": "8ec62edfcea2d3ba1289d322e7da2243abe89baaf81ce9973feb9f52757b9156",
+  "base_vertices": 36988,
+  "gear": [
+    {
+      "name": "Hachimaki",
+      "slot": 0,
+      "rarity": 0,
+      "object": "GEAR_Hachimaki",
+      "vertices": 3361,
+      "triangles": 6644,
+      "materials": [
+        {
+          "name": "Gear_Ivory",
+          "color": [
+            0.9568627450980393,
+            0.9411764705882353,
+            0.9137254901960784
+          ],
+          "metallic": 0,
+          "roughness": 0.48
+        },
+        {
+          "name": "Gear_Crimson",
+          "color": [
+            0.792156862745098,
+            0.09411764705882353,
+            0.2235294117647059
+          ],
+          "metallic": 0,
+          "roughness": 0.48
+        }
+      ]
+    },
+    {
+      "name": "Black_Mawashi",
+      "slot": 1,
+      "rarity": 0,
+      "object": "GEAR_Black_Mawashi",
+      "vertices": 5360,
+      "triangles": 10692,
+      "materials": [
+        {
+          "name": "Gear_Charcoal",
+          "color": [
+            0.09411764705882353,
+            0.10196078431372549,
+            0.1411764705882353
+          ],
+          "metallic": 0.05,
+          "roughness": 0.34
+        }
+      ]
+    },
+    {
+      "name": "Indigo_Mawashi",
+      "slot": 1,
+      "rarity": 0,
+      "object": "GEAR_Indigo_Mawashi",
+      "vertices": 5360,
+      "triangles": 10692,
+      "materials": [
+        {
+          "name": "Gear_Indigo",
+          "color": [
+            0.14901960784313725,
+            0.24313725490196078,
+            0.6666666666666666
+          ],
+          "metallic": 0.08,
+          "roughness": 0.39
+        }
+      ]
+    },
+    {
+      "name": "Crimson_Mawashi",
+      "slot": 1,
+      "rarity": 1,
+      "object": "GEAR_Crimson_Mawashi",
+      "vertices": 5720,
+      "triangles": 11364,
+      "materials": [
+        {
+          "name": "Gear_Crimson",
+          "color": [
+            0.792156862745098,
+            0.09411764705882353,
+            0.2235294117647059
+          ],
+          "metallic": 0,
+          "roughness": 0.48
+        },
+        {
+          "name": "Gear_Gold",
+          "color": [
+            0.9098039215686274,
+            0.6784313725490196,
+            0.23529411764705882
+          ],
+          "metallic": 0.72,
+          "roughness": 0.29
+        }
+      ]
+    },
+    {
+      "name": "Gyoji_Fan",
+      "slot": 2,
+      "rarity": 1,
+      "object": "GEAR_Gyoji_Fan",
+      "vertices": 4416,
+      "triangles": 8596,
+      "materials": [
+        {
+          "name": "Gear_Charcoal",
+          "color": [
+            0.09411764705882353,
+            0.10196078431372549,
+            0.1411764705882353
+          ],
+          "metallic": 0.05,
+          "roughness": 0.34
+        },
+        {
+          "name": "Gear_Gold",
+          "color": [
+            0.9098039215686274,
+            0.6784313725490196,
+            0.23529411764705882
+          ],
+          "metallic": 0.72,
+          "roughness": 0.29
+        },
+        {
+          "name": "Gear_Crimson",
+          "color": [
+            0.792156862745098,
+            0.09411764705882353,
+            0.2235294117647059
+          ],
+          "metallic": 0,
+          "roughness": 0.48
+        }
+      ]
+    },
+    {
+      "name": "Topknot",
+      "slot": 0,
+      "rarity": 1,
+      "object": "GEAR_Topknot",
+      "vertices": 9916,
+      "triangles": 19632,
+      "materials": [
+        {
+          "name": "Gear_Hair",
+          "color": [
+            0.06666666666666667,
+            0.07450980392156863,
+            0.11372549019607843
+          ],
+          "metallic": 0.12,
+          "roughness": 0.26
+        },
+        {
+          "name": "Gear_HairSheen",
+          "color": [
+            0.20392156862745098,
+            0.2196078431372549,
+            0.28627450980392155
+          ],
+          "metallic": 0.1,
+          "roughness": 0.35
+        },
+        {
+          "name": "Gear_Gold",
+          "color": [
+            0.9098039215686274,
+            0.6784313725490196,
+            0.23529411764705882
+          ],
+          "metallic": 0.72,
+          "roughness": 0.29
+        }
+      ]
+    },
+    {
+      "name": "Kesho_Mawashi",
+      "slot": 1,
+      "rarity": 2,
+      "object": "GEAR_Kesho_Mawashi",
+      "vertices": 9853,
+      "triangles": 19494,
+      "materials": [
+        {
+          "name": "Gear_Crimson",
+          "color": [
+            0.792156862745098,
+            0.09411764705882353,
+            0.2235294117647059
+          ],
+          "metallic": 0,
+          "roughness": 0.48
+        },
+        {
+          "name": "Gear_Gold",
+          "color": [
+            0.9098039215686274,
+            0.6784313725490196,
+            0.23529411764705882
+          ],
+          "metallic": 0.72,
+          "roughness": 0.29
+        }
+      ]
+    },
+    {
+      "name": "Yokozuna_Rope",
+      "slot": 1,
+      "rarity": 3,
+      "object": "GEAR_Yokozuna_Rope",
+      "vertices": 13568,
+      "triangles": 27076,
+      "materials": [
+        {
+          "name": "Gear_Ivory",
+          "color": [
+            0.9568627450980393,
+            0.9411764705882353,
+            0.9137254901960784
+          ],
+          "metallic": 0,
+          "roughness": 0.48
+        }
+      ]
+    }
+  ],
+  "notes": "Three independent cosmetic slots. No cloth simulation, combat or new bones."
+}

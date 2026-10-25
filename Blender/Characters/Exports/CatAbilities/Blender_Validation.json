@@ -1,0 +1,214 @@
+{
+  "fps": 30,
+  "root_motion": false,
+  "clips": [
+    {
+      "name": "Cat_Ability_Dash",
+      "frames": [
+        1,
+        19
+      ],
+      "duration_seconds": 0.6,
+      "loop": false,
+      "maximum_edge_stretch": 4.9954381083903066,
+      "lowest_vertex_z_m": 0.0016013681888580322,
+      "root_drift_m": 0,
+      "endpoint_matrix_difference": 0.0
+    },
+    {
+      "name": "Cat_Ability_NineLives_FaceUp",
+      "frames": [
+        1,
+        37
+      ],
+      "duration_seconds": 1.2,
+      "loop": false,
+      "maximum_edge_stretch": 4.71126666040671,
+      "lowest_vertex_z_m": 0.014999866485595703,
+      "root_drift_m": 0,
+      "endpoint_matrix_difference": 1.7262902855873108
+    },
+    {
+      "name": "Cat_Ability_NineLives_FaceDown",
+      "frames": [
+        1,
+        37
+      ],
+      "duration_seconds": 1.2,
+      "loop": false,
+      "maximum_edge_stretch": 4.71126778274689,
+      "lowest_vertex_z_m": 0.014999747276306152,
+      "root_drift_m": 0,
+      "endpoint_matrix_difference": 1.6720123291015625
+    },
+    {
+      "name": "Cat_Ability_Hiss",
+      "frames": [
+        1,
+        19
+      ],
+      "duration_seconds": 0.6,
+      "loop": false,
+      "maximum_edge_stretch": 3.264361027085793,
+      "lowest_vertex_z_m": 0.006083182990550995,
+      "root_drift_m": 0,
+      "endpoint_matrix_difference": 0.0
+    },
+    {
+      "name": "Cat_Ability_Pounce_Start",
+      "frames": [
+        1,
+        13
+      ],
+      "duration_seconds": 0.4,
+      "loop": false,
+      "maximum_edge_stretch": 4.7461768385951775,
+      "lowest_vertex_z_m": 0.010930114425718784,
+      "root_drift_m": 0,
+      "endpoint_matrix_difference": 1.190149188041687
+    },
+    {
+      "name": "Cat_Ability_Pounce_Air",
+      "frames": [
+        1,
+        19
+      ],
+      "duration_seconds": 0.6,
+      "loop": true,
+      "maximum_edge_stretch": 4.741263750613718,
+      "lowest_vertex_z_m": 0.08291581273078918,
+      "root_drift_m": 0,
+      "endpoint_matrix_difference": 2.775279132568706e-17
+    },
+    {
+      "name": "Cat_Ability_Pounce_Land",
+      "frames": [
+        1,
+        16
+      ],
+      "duration_seconds": 0.5,
+      "loop": false,
+      "maximum_edge_stretch": 4.741263750613718,
+      "lowest_vertex_z_m": 0.006377303972840309,
+      "root_drift_m": 0,
+      "endpoint_matrix_difference": 1.190149188041687
+    },
+    {
+      "name": "Cat_Ability_Anchor_Start",
+      "frames": [
+        1,
+        19
+      ],
+      "duration_seconds": 0.6,
+      "loop": false,
+      "maximum_edge_stretch": 3.9332155821034362,
+      "lowest_vertex_z_m": 0.0016940869390964508,
+      "root_drift_m": 0,
+      "endpoint_matrix_difference": 0.8792715296149254
+    },
+    {
+      "name": "Cat_Ability_Anchor_Hold",
+      "frames": [
+        1,
+        49
+      ],
+      "duration_seconds": 1.6,
+      "loop": true,
+      "maximum_edge_stretch": 3.9332155821034362,
+      "lowest_vertex_z_m": 0.0016940869390964508,
+      "root_drift_m": 0,
+      "endpoint_matrix_difference": 2.2602022023741837e-17
+    },
+    {
+      "name": "Cat_Ability_Anchor_End",
+      "frames": [
+        1,
+        19
+      ],
+      "duration_seconds": 0.6,
+      "loop": false,
+      "maximum_edge_stretch": 3.9332155821034362,
+      "lowest_vertex_z_m": 0.0016940869390964508,
+      "root_drift_m": 0,
+      "endpoint_matrix_difference": 0.8792715296149254
+    },
+    {
+      "name": "Cat_Ability_Stomp",
+      "frames": [
+        1,
+        25
+      ],
+      "duration_seconds": 0.8,
+      "loop": false,
+      "maximum_edge_stretch": 4.272288965948072,
+      "lowest_vertex_z_m": 0.00916084460914135,
+      "root_drift_m": 0,
+      "endpoint_matrix_difference": 0.0
+    },
+    {
+      "name": "Cat_Ability_Catnip",
+      "frames": [
+        1,
+        25
+      ],
+      "duration_seconds": 0.8,
+      "loop": false,
+      "maximum_edge_stretch": 3.484411449365878,
+      "lowest_vertex_z_m": 0.004566449671983719,
+      "root_drift_m": 0,
+      "endpoint_matrix_difference": 0.0
+    },
+    {
+      "name": "Cat_Ability_FluffUp",
+      "frames": [
+        1,
+        28
+      ],
+      "duration_seconds": 0.9,
+      "loop": false,
+      "maximum_edge_stretch": 3.3296712365071346,
+      "lowest_vertex_z_m": 0.006527068093419075,
+      "root_drift_m": 0,
+      "endpoint_matrix_difference": 0.0
+    },
+    {
+      "name": "Cat_Ability_Hairball",
+      "frames": [
+        1,
+        25
+      ],
+      "duration_seconds": 0.8,
+      "loop": false,
+      "maximum_edge_stretch": 3.2315384801137474,
+      "lowest_vertex_z_m": 0.008888449519872665,
+      "root_drift_m": 0,
+      "endpoint_matrix_difference": 0.0
+    },
+    {
+      "name": "Cat_Ability_SharkAttack",
+      "frames": [
+        1,
+        34
+      ],
+      "duration_seconds": 1.1,
+      "loop": false,
+      "maximum_edge_stretch": 3.2315384801137474,
+      "lowest_vertex_z_m": 0.008888411335647106,
+      "root_drift_m": 0,
+      "endpoint_matrix_difference": 0.0
+    },
+    {
+      "name": "Cat_Ability_WindShurikens",
+      "frames": [
+        1,
+        34
+      ],
+      "duration_seconds": 1.1,
+      "loop": false,
+      "maximum_edge_stretch": 3.2908213659970267,
+      "lowest_vertex_z_m": 0.00888845231384039,
+      "root_drift_m": 0,
+      "endpoint_matrix_difference": 0.0
+    }
+  ]
+}

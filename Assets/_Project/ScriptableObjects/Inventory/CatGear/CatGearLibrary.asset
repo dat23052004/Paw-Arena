@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d13c0210aeaef1a499a05fdb2ad8c149, type: 3}
+  m_Name: CatGearLibrary
+  m_EditorClassIdentifier: PawArena.Gameplay::PawArena.Gameplay.Inventory.CatGearLibrary
+  _gear:
+  - {fileID: 11400000, guid: d95285671552bf140b8a886b3b21185d, type: 2}
+  - {fileID: 11400000, guid: 1e76acbec66bf1b4bb99d8cb02cd1900, type: 2}
+  - {fileID: 11400000, guid: f47739245ce3de74e8b0bbdafa0d9fe2, type: 2}
+  - {fileID: 11400000, guid: 598cbf213ded7e44887fe4e5c4dd107f, type: 2}
+  - {fileID: 11400000, guid: bc3ef382758ee894abf6fe94001a0955, type: 2}
+  - {fileID: 11400000, guid: 184ebb661b04e5f4f935f0440f4e6d10, type: 2}
+  - {fileID: 11400000, guid: 9620f41b45b2e3642b4a24a6b1ed215b, type: 2}
+  - {fileID: 11400000, guid: 47d25b74e1bf3b04e88c3ed69c676f78, type: 2}

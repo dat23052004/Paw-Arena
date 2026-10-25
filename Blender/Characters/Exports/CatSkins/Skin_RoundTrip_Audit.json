@@ -1,0 +1,378 @@
+{
+  "passed": true,
+  "reopened_file": "E:\\Unity_\\Paw Arena\\Blender\\Characters\\PawArena_Cat_Skins.blend",
+  "protected_data_exact_match": true,
+  "scene_count": 19,
+  "skin_checks": [
+    {
+      "skin": "Ginger",
+      "shared_mesh": true,
+      "shared_rig": true,
+      "independent_materials": true,
+      "packed_texture": true
+    },
+    {
+      "skin": "Grey",
+      "shared_mesh": true,
+      "shared_rig": true,
+      "independent_materials": true,
+      "packed_texture": true
+    },
+    {
+      "skin": "Black",
+      "shared_mesh": true,
+      "shared_rig": true,
+      "independent_materials": true,
+      "packed_texture": true
+    },
+    {
+      "skin": "Tuxedo",
+      "shared_mesh": true,
+      "shared_rig": true,
+      "independent_materials": true,
+      "packed_texture": true
+    },
+    {
+      "skin": "White",
+      "shared_mesh": true,
+      "shared_rig": true,
+      "independent_materials": true,
+      "packed_texture": true
+    },
+    {
+      "skin": "Calico",
+      "shared_mesh": true,
+      "shared_rig": true,
+      "independent_materials": true,
+      "packed_texture": true
+    },
+    {
+      "skin": "Pumpkin",
+      "shared_mesh": true,
+      "shared_rig": true,
+      "independent_materials": true,
+      "packed_texture": true
+    },
+    {
+      "skin": "Mummy",
+      "shared_mesh": true,
+      "shared_rig": true,
+      "independent_materials": true,
+      "packed_texture": true
+    },
+    {
+      "skin": "Russian Blue",
+      "shared_mesh": true,
+      "shared_rig": true,
+      "independent_materials": true,
+      "packed_texture": true
+    },
+    {
+      "skin": "Siamese",
+      "shared_mesh": true,
+      "shared_rig": true,
+      "independent_materials": true,
+      "packed_texture": true
+    },
+    {
+      "skin": "Tiger",
+      "shared_mesh": true,
+      "shared_rig": true,
+      "independent_materials": true,
+      "packed_texture": true
+    },
+    {
+      "skin": "Ninja",
+      "shared_mesh": true,
+      "shared_rig": true,
+      "independent_materials": true,
+      "packed_texture": true
+    },
+    {
+      "skin": "Black Widow",
+      "shared_mesh": true,
+      "shared_rig": true,
+      "independent_materials": true,
+      "packed_texture": true
+    },
+    {
+      "skin": "Crystal",
+      "shared_mesh": true,
+      "shared_rig": true,
+      "independent_materials": true,
+      "packed_texture": true
+    },
+    {
+      "skin": "Gold",
+      "shared_mesh": true,
+      "shared_rig": true,
+      "independent_materials": true,
+      "packed_texture": true
+    },
+    {
+      "skin": "Hologram",
+      "shared_mesh": true,
+      "shared_rig": true,
+      "independent_materials": true,
+      "packed_texture": true
+    },
+    {
+      "skin": "Skeleton",
+      "shared_mesh": true,
+      "shared_rig": true,
+      "independent_materials": true,
+      "packed_texture": true
+    },
+    {
+      "skin": "Snow Leopard",
+      "shared_mesh": true,
+      "shared_rig": true,
+      "independent_materials": true,
+      "packed_texture": true
+    },
+    {
+      "skin": "Frankencat",
+      "shared_mesh": true,
+      "shared_rig": true,
+      "independent_materials": true,
+      "packed_texture": true
+    }
+  ],
+  "animation_checks": [
+    {
+      "clip": "Cat_Ability_Anchor_End",
+      "sampled_frames": [
+        1,
+        10,
+        19
+      ],
+      "finite_deformation": true
+    },
+    {
+      "clip": "Cat_Ability_Anchor_Hold",
+      "sampled_frames": [
+        1,
+        25,
+        49
+      ],
+      "finite_deformation": true
+    },
+    {
+      "clip": "Cat_Ability_Anchor_Start",
+      "sampled_frames": [
+        1,
+        10,
+        19
+      ],
+      "finite_deformation": true
+    },
+    {
+      "clip": "Cat_Ability_Catnip",
+      "sampled_frames": [
+        1,
+        13,
+        25
+      ],
+      "finite_deformation": true
+    },
+    {
+      "clip": "Cat_Ability_Dash",
+      "sampled_frames": [
+        1,
+        10,
+        19
+      ],
+      "finite_deformation": true
+    },
+    {
+      "clip": "Cat_Ability_FluffUp",
+      "sampled_frames": [
+        1,
+        14,
+        28
+      ],
+      "finite_deformation": true
+    },
+    {
+      "clip": "Cat_Ability_Hairball",
+      "sampled_frames": [
+        1,
+        13,
+        25
+      ],
+      "finite_deformation": true
+    },
+    {
+      "clip": "Cat_Ability_Hiss",
+      "sampled_frames": [
+        1,
+        10,
+        19
+      ],
+      "finite_deformation": true
+    },
+    {
+      "clip": "Cat_Ability_NineLives_FaceDown",
+      "sampled_frames": [
+        1,
+        19,
+        37
+      ],
+      "finite_deformation": true
+    },
+    {
+      "clip": "Cat_Ability_NineLives_FaceUp",
+      "sampled_frames": [
+        1,
+        19,
+        37
+      ],
+      "finite_deformation": true
+    },
+    {
+      "clip": "Cat_Ability_Pounce_Air",
+      "sampled_frames": [
+        1,
+        10,
+        19
+      ],
+      "finite_deformation": true
+    },
+    {
+      "clip": "Cat_Ability_Pounce_Land",
+      "sampled_frames": [
+        1,
+        8,
+        16
+      ],
+      "finite_deformation": true
+    },
+    {
+      "clip": "Cat_Ability_Pounce_Start",
+      "sampled_frames": [
+        1,
+        7,
+        13
+      ],
+      "finite_deformation": true
+    },
+    {
+      "clip": "Cat_Ability_SharkAttack",
+      "sampled_frames": [
+        1,
+        17,
+        34
+      ],
+      "finite_deformation": true
+    },
+    {
+      "clip": "Cat_Ability_Stomp",
+      "sampled_frames": [
+        1,
+        13,
+        25
+      ],
+      "finite_deformation": true
+    },
+    {
+      "clip": "Cat_Ability_WindShurikens",
+      "sampled_frames": [
+        1,
+        17,
+        34
+      ],
+      "finite_deformation": true
+    },
+    {
+      "clip": "Cat_Fall",
+      "sampled_frames": [
+        1,
+        13,
+        25
+      ],
+      "finite_deformation": true
+    },
+    {
+      "clip": "Cat_Hit_React",
+      "sampled_frames": [
+        1,
+        9,
+        17
+      ],
+      "finite_deformation": true
+    },
+    {
+      "clip": "Cat_Idle",
+      "sampled_frames": [
+        1,
+        37,
+        73
+      ],
+      "finite_deformation": true
+    },
+    {
+      "clip": "Cat_Jump_Air",
+      "sampled_frames": [
+        1,
+        13,
+        25
+      ],
+      "finite_deformation": true
+    },
+    {
+      "clip": "Cat_Jump_Start",
+      "sampled_frames": [
+        1,
+        7,
+        13
+      ],
+      "finite_deformation": true
+    },
+    {
+      "clip": "Cat_Land",
+      "sampled_frames": [
+        1,
+        8,
+        15
+      ],
+      "finite_deformation": true
+    },
+    {
+      "clip": "Cat_Punch_Left",
+      "sampled_frames": [
+        1,
+        10,
+        19
+      ],
+      "finite_deformation": true
+    },
+    {
+      "clip": "Cat_Punch_Right",
+      "sampled_frames": [
+        1,
+        10,
+        19
+      ],
+      "finite_deformation": true
+    },
+    {
+      "clip": "Cat_Run",
+      "sampled_frames": [
+        1,
+        11,
+        21
+      ],
+      "finite_deformation": true
+    },
+    {
+      "clip": "Cat_Walk",
+      "sampled_frames": [
+        1,
+        16,
+        31
+      ],
+      "finite_deformation": true
+    }
+  ],
+  "source_sha256": "8ec62edfcea2d3ba1289d322e7da2243abe89baaf81ce9973feb9f52757b9156"
+}

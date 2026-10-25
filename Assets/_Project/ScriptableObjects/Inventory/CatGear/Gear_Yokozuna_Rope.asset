@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4c93f30ebeb00646881944e38ce920e, type: 3}
+  m_Name: Gear_Yokozuna_Rope
+  m_EditorClassIdentifier: PawArena.Gameplay::PawArena.Gameplay.Inventory.CatGearDefinition
+  _itemId: gear_yokozuna_rope
+  _displayName: Yokozuna Rope
+  _description: Cosmetic sumo gear. Shared cat rig; no combat stats or cloth simulation.
+  _category: 2
+  _rarity: 3
+  _unlockType: 5
+  _price: 0
+  _icon: {fileID: 0}
+  _previewPrefab: {fileID: 0}
+  _allowedSlots:
+  - _type: 2
+    _index: 1
+  _mesh: {fileID: 4300000, guid: 42c7d2f95a952554b914e3504b98904d, type: 2}
+  _material: {fileID: 2100000, guid: de7f24c8ea52d3b4da4ebb103f023c7b, type: 2}
+  _boneNames:
+  - Root
+  - Hips
+  - Spine
+  - Chest
+  - Neck
+  - Head
+  - LeftEar
+  - RightEar
+  - HeadGearSocket
+  - LeftShoulder
+  - LeftUpperArm
+  - LeftLowerArm
+  - LeftHand
+  - RightShoulder
+  - RightUpperArm
+  - RightLowerArm
+  - RightHand
+  - LeftUpperLeg
+  - LeftLowerLeg
+  - LeftFoot
+  - LeftToes
+  - RightUpperLeg
+  - RightLowerLeg
+  - RightFoot
+  - RightToes
+  - Tail_01
+  - Tail_02
+  - Tail_03
+  - Tail_04
+  - Tail_05
+  _rootBoneName: Root
+  _localPosition: {x: 0, y: 0, z: 0}
+  _localRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071067}
+  _localScale: {x: 100, y: 99.99999, z: 99.99999}
+  _thumbnail: {fileID: 2800000, guid: e5d72a3df7b2bc444b9f36fdb842b820, type: 3}

@@ -1,0 +1,16 @@
+{
+  "stage": "Unrigged base for visual approval; not a finished game asset",
+  "body_control_vertices": 1322,
+  "body_control_faces": 1392,
+  "body_connected_components": 1,
+  "body_nonmanifold_edges": 0,
+  "body_subdivision_faces": 21696,
+  "armatures": 0,
+  "unity_files_modified": false,
+  "notes": [
+    "Body, head, arms, legs and paws form one manifold quad-dominant surface.",
+    "Ears share the head topology; eyes, mouth, pads and tail are separate details.",
+    "Procedural markings are for approval; production UV bake follows approved form.",
+    "No rigging, skin weights, deformation checks, animation, or FBX export in this revision."
+  ]
+}

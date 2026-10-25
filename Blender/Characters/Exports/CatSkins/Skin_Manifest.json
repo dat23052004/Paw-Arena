@@ -1,0 +1,328 @@
+{
+  "passed": true,
+  "count": 19,
+  "source": "E:\\Unity_\\Paw Arena\\Blender\\Characters\\PawArena_Cat_Abilities.blend",
+  "source_sha256": "8ec62edfcea2d3ba1289d322e7da2243abe89baaf81ce9973feb9f52757b9156",
+  "mesh_uv_weights_rig_all_26_actions_unchanged": true,
+  "fingerprints": {
+    "geometry_weights": "e630d1086129da09340e91621909f625586328fbb3dd5285616dfa325470c497",
+    "topology": "76618fe1ae62e9378170304d9da2064a59447db88469a373daa4ce31edc2800e",
+    "uv": "459c928cbd23c3916fc6ca48409610c6daf8267e24af8d687b64537e08cc5ffb",
+    "rest_rig": "13e42938a45764913e10f55626831957169580f52b08eab3d7e119fde161d386",
+    "actions": {
+      "Cat_Ability_Anchor_End": "8ae92612c3a900b34a17c27ffa8110a1e5594b9060ddab112f68d85c6d413024",
+      "Cat_Ability_Anchor_Hold": "a302ef12528fa0e4e8b5fcca9f375da2e33a7646fb9b5c302f050d05511a0aee",
+      "Cat_Ability_Anchor_Start": "3cb08e92a4b45ecfe29258b9d5638b4678e6fc960f9b0a9d096b03ca588b43da",
+      "Cat_Ability_Catnip": "4ac497d4a2b2967c12c1d0b98d23ca444ba04392fb1086283efea82735b65a96",
+      "Cat_Ability_Dash": "072d2f9784c83f47c0b4c37573aa18bb651e82382d328aeb58aa5cf3e8ebdf33",
+      "Cat_Ability_FluffUp": "8625f9a32024fe999df43328604376ab58546dffc60ac2bd889bbe7d13913af2",
+      "Cat_Ability_Hairball": "8b7a609d0df36b6e675a2e0d82b068a718442834e5b6c764a794471258d5a105",
+      "Cat_Ability_Hiss": "2d481f981f25a02e062df146872d9b67a55322d35ac3796f0d0156981c392415",
+      "Cat_Ability_NineLives_FaceDown": "53c63b2a7acba965b3fef72a261cd6cff3923484c106e84bfeabc32cdd83d185",
+      "Cat_Ability_NineLives_FaceUp": "9368fc675739cbf298d71e5d18bf1bb21496e29942ec3aa0e7cefc85d1f761bd",
+      "Cat_Ability_Pounce_Air": "01e9eb1c1af90ced7197b6ad701ec4d911577807de1062187ebe0f17755ba91e",
+      "Cat_Ability_Pounce_Land": "649677ba0bc13d641bce0f2e2468b9be59dc7b1a773a40a669c08ae8658dca85",
+      "Cat_Ability_Pounce_Start": "fdc67424ccaf7c4d174a097b24b5ae1f978a58c9faa51cb59443b7eec84e0699",
+      "Cat_Ability_SharkAttack": "2080ad8af8033aa0839397734da3b01cd54f2931b320c2d4baf690146030bab5",
+      "Cat_Ability_Stomp": "e41cc7c6fa192fba5f8e3cbe1fcc9b94d5d6201c6804a48b753839b1b082f790",
+      "Cat_Ability_WindShurikens": "624e10b168508d3f2dcd15643691673724d3064528943617a8e5a1256d543c5e",
+      "Cat_Fall": "fd0c7720af971e6480a4f9a334a426613c4fe9235f245858a497b82a95572c3e",
+      "Cat_Hit_React": "29a77ae36cbcaa55c5b7ccb1e5116adfef90344e6bd77d5da01e66c968596930",
+      "Cat_Idle": "1b3e69bd0f95aadbad082cd77140a827e9943e0a27f87d07c974089f50974fd7",
+      "Cat_Jump_Air": "82fc3d72a674ab7fff17f332bec7e3ade2860ff11b6461261ce2d58408c2e31d",
+      "Cat_Jump_Start": "81d3e15cf7f36717a8fcead53a433933a11e017561fd90bcd8857c69f78dea59",
+      "Cat_Land": "ecf1e09c03a26264eb6f9041977f7d7cf4f727d06a59c38942ba5ac608788c12",
+      "Cat_Punch_Left": "df7d73c53a513a94bdf65ddf7c8bdc366f6c00ed490a78dd19ddf196d968930a",
+      "Cat_Punch_Right": "62f25fa7a58266c11f3e08a2f0e4142b78e62fdb0e9fa531025ad8ed9f3017c9",
+      "Cat_Run": "089f67e751120f9bbe301b00c90bedf27246c5119395ec0626af94d9a1b7bb30",
+      "Cat_Walk": "741e80e8cb13726fb2cabbff49c587b351fa524e0be7aa8ff473199c1c1c0d87"
+    }
+  },
+  "skins": [
+    {
+      "name": "Ginger",
+      "scene": "01 | Ginger",
+      "texture": "Cat_Ginger_BaseColor.png",
+      "size": [
+        4096,
+        4096
+      ],
+      "settings": {
+        "roughness": 0.55,
+        "metallic": 0.0,
+        "emission": 0.0,
+        "coat": 0.08
+      }
+    },
+    {
+      "name": "Grey",
+      "scene": "02 | Grey",
+      "texture": "Cat_Grey_BaseColor.png",
+      "size": [
+        2048,
+        2048
+      ],
+      "settings": {
+        "roughness": 0.55,
+        "metallic": 0.0,
+        "emission": 0.0,
+        "coat": 0.08
+      }
+    },
+    {
+      "name": "Black",
+      "scene": "03 | Black",
+      "texture": "Cat_Black_BaseColor.png",
+      "size": [
+        2048,
+        2048
+      ],
+      "settings": {
+        "roughness": 0.55,
+        "metallic": 0.0,
+        "emission": 0.0,
+        "coat": 0.08
+      }
+    },
+    {
+      "name": "Tuxedo",
+      "scene": "04 | Tuxedo",
+      "texture": "Cat_Tuxedo_BaseColor.png",
+      "size": [
+        2048,
+        2048
+      ],
+      "settings": {
+        "roughness": 0.55,
+        "metallic": 0.0,
+        "emission": 0.0,
+        "coat": 0.08
+      }
+    },
+    {
+      "name": "White",
+      "scene": "05 | White",
+      "texture": "Cat_White_BaseColor.png",
+      "size": [
+        2048,
+        2048
+      ],
+      "settings": {
+        "roughness": 0.55,
+        "metallic": 0.0,
+        "emission": 0.0,
+        "coat": 0.08
+      }
+    },
+    {
+      "name": "Calico",
+      "scene": "06 | Calico",
+      "texture": "Cat_Calico_BaseColor.png",
+      "size": [
+        2048,
+        2048
+      ],
+      "settings": {
+        "roughness": 0.55,
+        "metallic": 0.0,
+        "emission": 0.0,
+        "coat": 0.08
+      }
+    },
+    {
+      "name": "Pumpkin",
+      "scene": "07 | Pumpkin",
+      "texture": "Cat_Pumpkin_BaseColor.png",
+      "size": [
+        2048,
+        2048
+      ],
+      "settings": {
+        "roughness": 0.55,
+        "metallic": 0.0,
+        "emission": 0.0,
+        "coat": 0.08
+      }
+    },
+    {
+      "name": "Mummy",
+      "scene": "08 | Mummy",
+      "texture": "Cat_Mummy_BaseColor.png",
+      "size": [
+        2048,
+        2048
+      ],
+      "settings": {
+        "roughness": 0.55,
+        "metallic": 0.0,
+        "emission": 0.0,
+        "coat": 0.08
+      }
+    },
+    {
+      "name": "Russian Blue",
+      "scene": "09 | Russian Blue",
+      "texture": "Cat_Russian_Blue_BaseColor.png",
+      "size": [
+        2048,
+        2048
+      ],
+      "settings": {
+        "roughness": 0.55,
+        "metallic": 0.0,
+        "emission": 0.0,
+        "coat": 0.08
+      }
+    },
+    {
+      "name": "Siamese",
+      "scene": "10 | Siamese",
+      "texture": "Cat_Siamese_BaseColor.png",
+      "size": [
+        2048,
+        2048
+      ],
+      "settings": {
+        "roughness": 0.55,
+        "metallic": 0.0,
+        "emission": 0.0,
+        "coat": 0.08
+      }
+    },
+    {
+      "name": "Tiger",
+      "scene": "11 | Tiger",
+      "texture": "Cat_Tiger_BaseColor.png",
+      "size": [
+        2048,
+        2048
+      ],
+      "settings": {
+        "roughness": 0.55,
+        "metallic": 0.0,
+        "emission": 0.0,
+        "coat": 0.08
+      }
+    },
+    {
+      "name": "Ninja",
+      "scene": "12 | Ninja",
+      "texture": "Cat_Ninja_BaseColor.png",
+      "size": [
+        2048,
+        2048
+      ],
+      "settings": {
+        "roughness": 0.55,
+        "metallic": 0.0,
+        "emission": 0.0,
+        "coat": 0.08
+      }
+    },
+    {
+      "name": "Black Widow",
+      "scene": "13 | Black Widow",
+      "texture": "Cat_Black_Widow_BaseColor.png",
+      "size": [
+        2048,
+        2048
+      ],
+      "settings": {
+        "roughness": 0.55,
+        "metallic": 0.0,
+        "emission": 0.12,
+        "coat": 0.08
+      }
+    },
+    {
+      "name": "Crystal",
+      "scene": "14 | Crystal",
+      "texture": "Cat_Crystal_BaseColor.png",
+      "size": [
+        2048,
+        2048
+      ],
+      "settings": {
+        "roughness": 0.23,
+        "metallic": 0.25,
+        "emission": 0.13,
+        "coat": 0.65
+      }
+    },
+    {
+      "name": "Gold",
+      "scene": "15 | Gold",
+      "texture": "Cat_Gold_BaseColor.png",
+      "size": [
+        2048,
+        2048
+      ],
+      "settings": {
+        "roughness": 0.23,
+        "metallic": 0.92,
+        "emission": 0.0,
+        "coat": 0.2
+      }
+    },
+    {
+      "name": "Hologram",
+      "scene": "16 | Hologram",
+      "texture": "Cat_Hologram_BaseColor.png",
+      "size": [
+        2048,
+        2048
+      ],
+      "settings": {
+        "roughness": 0.24,
+        "metallic": 0.25,
+        "emission": 0.32,
+        "coat": 0.55
+      }
+    },
+    {
+      "name": "Skeleton",
+      "scene": "17 | Skeleton",
+      "texture": "Cat_Skeleton_BaseColor.png",
+      "size": [
+        2048,
+        2048
+      ],
+      "settings": {
+        "roughness": 0.55,
+        "metallic": 0.0,
+        "emission": 0.0,
+        "coat": 0.08
+      }
+    },
+    {
+      "name": "Snow Leopard",
+      "scene": "18 | Snow Leopard",
+      "texture": "Cat_Snow_Leopard_BaseColor.png",
+      "size": [
+        2048,
+        2048
+      ],
+      "settings": {
+        "roughness": 0.55,
+        "metallic": 0.0,
+        "emission": 0.0,
+        "coat": 0.08
+      }
+    },
+    {
+      "name": "Frankencat",
+      "scene": "19 | Frankencat",
+      "texture": "Cat_Frankencat_BaseColor.png",
+      "size": [
+        2048,
+        2048
+      ],
+      "settings": {
+        "roughness": 0.55,
+        "metallic": 0.0,
+        "emission": 0.0,
+        "coat": 0.08
+      }
+    }
+  ]
+}

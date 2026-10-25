@@ -1,0 +1,102 @@
+{
+  "fps": 30,
+  "source": "Paw Arena GDD v1.1 / section 5",
+  "clips": [
+    {
+      "name": "Ability_Dash",
+      "frames": 18,
+      "loop": false,
+      "representative": 8
+    },
+    {
+      "name": "Ability_NineLives_FaceUp",
+      "frames": 36,
+      "loop": false,
+      "representative": 22
+    },
+    {
+      "name": "Ability_NineLives_FaceDown",
+      "frames": 36,
+      "loop": false,
+      "representative": 22
+    },
+    {
+      "name": "Ability_Hiss",
+      "frames": 18,
+      "loop": false,
+      "representative": 8
+    },
+    {
+      "name": "Ability_Pounce_Start",
+      "frames": 12,
+      "loop": false,
+      "representative": 8
+    },
+    {
+      "name": "Ability_Pounce_Air",
+      "frames": 18,
+      "loop": true,
+      "representative": 7
+    },
+    {
+      "name": "Ability_Pounce_Land",
+      "frames": 15,
+      "loop": false,
+      "representative": 4
+    },
+    {
+      "name": "Ability_Anchor_Start",
+      "frames": 18,
+      "loop": false,
+      "representative": 14
+    },
+    {
+      "name": "Ability_Anchor_Hold",
+      "frames": 48,
+      "loop": true,
+      "representative": 14
+    },
+    {
+      "name": "Ability_Anchor_End",
+      "frames": 18,
+      "loop": false,
+      "representative": 10
+    },
+    {
+      "name": "Ability_Stomp",
+      "frames": 24,
+      "loop": false,
+      "representative": 10
+    },
+    {
+      "name": "Ability_Catnip",
+      "frames": 24,
+      "loop": false,
+      "representative": 12
+    },
+    {
+      "name": "Ability_FluffUp",
+      "frames": 27,
+      "loop": false,
+      "representative": 13
+    },
+    {
+      "name": "Ability_Hairball",
+      "frames": 24,
+      "loop": false,
+      "representative": 11
+    },
+    {
+      "name": "Ability_SharkAttack",
+      "frames": 33,
+      "loop": false,
+      "representative": 17
+    },
+    {
+      "name": "Ability_WindShurikens",
+      "frames": 33,
+      "loop": false,
+      "representative": 10
+    }
+  ]
+}

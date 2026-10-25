@@ -1,0 +1,58 @@
+{
+  "weights": "Normalized; maximum four deform influences per vertex",
+  "bind_pose": "Matches approved evaluated shape within 0.00001 m",
+  "skinning": "Linear blend, matching the usual Unity skinning model",
+  "vertices": 36988,
+  "triangles": 73564,
+  "control_bones": 37,
+  "export_bones": 30,
+  "ik_calibration": {
+    "Arm_IK_Left": 1.5245776147848585e-06,
+    "Leg_IK_Left": 3.634640719377058e-07,
+    "Arm_IK_Right": 1.5245776147848585e-06,
+    "Leg_IK_Right": 3.634640719377058e-07
+  },
+  "poses": {
+    "01 - Bind T-pose": {
+      "max_displacement": 5.443004814633394e-07,
+      "maximum_edge_stretch": 1.0001768219091722
+    },
+    "02 - Relaxed FK": {
+      "max_displacement": 0.9623345554889318,
+      "maximum_edge_stretch": 2.7338314886962194,
+      "Leg_IK_Left_error": 9.111743277784444e-08,
+      "Leg_IK_Right_error": 9.111743277784444e-08
+    },
+    "03 - Guard / elbow bend": {
+      "max_displacement": 0.8367730359045655,
+      "maximum_edge_stretch": 2.117882010694756,
+      "Leg_IK_Left_error": 9.111743277784444e-08,
+      "Leg_IK_Right_error": 9.111743277784444e-08
+    },
+    "04 - Crouch / leg IK": {
+      "max_displacement": 0.9018288501555689,
+      "maximum_edge_stretch": 3.9539167211376602,
+      "Leg_IK_Left_error": 6.628873296484775e-06,
+      "Leg_IK_Right_error": 6.628873296484775e-06
+    },
+    "05 - Step / foot IK": {
+      "max_displacement": 1.1812665110650207,
+      "maximum_edge_stretch": 3.735478055847013,
+      "Leg_IK_Left_error": 6.596032287187166e-06,
+      "Leg_IK_Right_error": 6.881566136623444e-06
+    },
+    "06 - Head ears tail": {
+      "max_displacement": 0.9623345554889318,
+      "maximum_edge_stretch": 4.297275862327831
+    },
+    "07 - Hand IK reach": {
+      "max_displacement": 0.522018511729973,
+      "maximum_edge_stretch": 2.5855981309509377,
+      "Arm_IK_Left_error": 3.501925059319302e-05,
+      "Leg_IK_Left_error": 9.111743277784444e-08,
+      "Arm_IK_Right_error": 3.496955540777297e-05,
+      "Leg_IK_Right_error": 9.111743277784444e-08
+    }
+  },
+  "unity_avatar_validation": "PASS in isolated Unity 6000.4.2f1 project with supplied explicit mapping preset: valid Humanoid Avatar, 21 mapped human bones, HumanPoseHandler and BakeMesh. See Exports/CatRig/Unity_Validation.json."
+}

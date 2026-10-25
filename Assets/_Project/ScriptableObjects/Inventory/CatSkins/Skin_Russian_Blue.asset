@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b268866e8ea89c9478b9668c9f92bc37, type: 3}
+  m_Name: Skin_Russian_Blue
+  m_EditorClassIdentifier: PawArena.Gameplay::PawArena.Gameplay.Inventory.CatSkinDefinition
+  _itemId: fur_russian_blue
+  _displayName: Russian Blue
+  _description: Material-only cat skin. Shared mesh, UV, rig and animations.
+  _category: 1
+  _rarity: 1
+  _unlockType: 5
+  _price: 0
+  _icon: {fileID: 0}
+  _previewPrefab: {fileID: 0}
+  _allowedSlots:
+  - _type: 1
+    _index: 0
+  _compatibleMesh: {fileID: 1924362587922941630, guid: a2662c9044d8f224eab022f79790c32c, type: 3}
+  _coat: {fileID: 2100000, guid: 050411edd313a3749a5afd5af0b48a39, type: 2}
+  _eyes: {fileID: 2100000, guid: 4ca44aced8f7d3f45af3f0e9092f5cd1, type: 2}
+  _thumbnail: {fileID: 2800000, guid: 25c4588f25e64cd48a27860507f2e160, type: 3}

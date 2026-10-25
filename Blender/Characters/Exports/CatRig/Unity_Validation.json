@@ -1,0 +1,32 @@
+{
+    "unityVersion": "6000.4.2f1",
+    "avatarIsValid": true,
+    "avatarIsHuman": true,
+    "verifiedHumanBones": 21,
+    "vertices": 42868,
+    "triangles": 73564,
+    "humanoidPoseAndSkinningPassed": true,
+    "humanBoneMapping": [
+        "Hips:Hips",
+        "Spine:Spine",
+        "Chest:Chest",
+        "Neck:Neck",
+        "Head:Head",
+        "LeftShoulder:LeftShoulder",
+        "RightShoulder:RightShoulder",
+        "LeftUpperArm:LeftUpperArm",
+        "LeftLowerArm:LeftLowerArm",
+        "LeftHand:LeftHand",
+        "RightUpperArm:RightUpperArm",
+        "RightLowerArm:RightLowerArm",
+        "RightHand:RightHand",
+        "LeftUpperLeg:LeftUpperLeg",
+        "LeftLowerLeg:LeftLowerLeg",
+        "LeftFoot:LeftFoot",
+        "RightUpperLeg:RightUpperLeg",
+        "RightLowerLeg:RightLowerLeg",
+        "RightFoot:RightFoot",
+        "LeftToes:LeftToes",
+        "RightToes:RightToes"
+    ]
+}

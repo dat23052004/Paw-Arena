@@ -1,0 +1,116 @@
+{
+    "unityVersion": "6000.4.2f1",
+    "passed": true,
+    "clips": [
+        {
+            "name": "Cat_Idle",
+            "seconds": 2.4000000953674318,
+            "looping": true,
+            "curves": 210,
+            "sampledPoses": 21,
+            "skinningPassed": true,
+            "maxHandMovementMetres": 0.008949357084929943,
+            "maxTailRotationDegrees": 2.5343542098999025,
+            "endpointDifferenceMetres": 0.0000011849740531033604
+        },
+        {
+            "name": "Cat_Walk",
+            "seconds": 1.0000001192092896,
+            "looping": true,
+            "curves": 210,
+            "sampledPoses": 21,
+            "skinningPassed": true,
+            "maxHandMovementMetres": 0.24187307059764863,
+            "maxTailRotationDegrees": 3.4358832836151125,
+            "endpointDifferenceMetres": 0.0000024640592073410518
+        },
+        {
+            "name": "Cat_Run",
+            "seconds": 0.6666666865348816,
+            "looping": true,
+            "curves": 210,
+            "sampledPoses": 21,
+            "skinningPassed": true,
+            "maxHandMovementMetres": 0.36676061153411868,
+            "maxTailRotationDegrees": 4.078640937805176,
+            "endpointDifferenceMetres": 0.000010833062333404087
+        },
+        {
+            "name": "Cat_Jump_Start",
+            "seconds": 0.40000003576278689,
+            "looping": false,
+            "curves": 210,
+            "sampledPoses": 21,
+            "skinningPassed": true,
+            "maxHandMovementMetres": 0.6273337602615356,
+            "maxTailRotationDegrees": 1.4016263484954835,
+            "endpointDifferenceMetres": 0.6273337602615356
+        },
+        {
+            "name": "Cat_Jump_Air",
+            "seconds": 0.8000000715255737,
+            "looping": true,
+            "curves": 210,
+            "sampledPoses": 21,
+            "skinningPassed": true,
+            "maxHandMovementMetres": 0.008000373840332032,
+            "maxTailRotationDegrees": 2.5340452194213869,
+            "endpointDifferenceMetres": 0.0000036897038171446185
+        },
+        {
+            "name": "Cat_Fall",
+            "seconds": 0.8000000715255737,
+            "looping": true,
+            "curves": 210,
+            "sampledPoses": 21,
+            "skinningPassed": true,
+            "maxHandMovementMetres": 0.008000373840332032,
+            "maxTailRotationDegrees": 2.5343542098999025,
+            "endpointDifferenceMetres": 0.0000042927781578327999
+        },
+        {
+            "name": "Cat_Land",
+            "seconds": 0.46666672825813296,
+            "looping": false,
+            "curves": 210,
+            "sampledPoses": 21,
+            "skinningPassed": true,
+            "maxHandMovementMetres": 0.7845352292060852,
+            "maxTailRotationDegrees": 2.4335148334503176,
+            "endpointDifferenceMetres": 0.7843927145004273
+        },
+        {
+            "name": "Cat_Punch_Left",
+            "seconds": 0.6000000238418579,
+            "looping": false,
+            "curves": 210,
+            "sampledPoses": 21,
+            "skinningPassed": true,
+            "maxHandMovementMetres": 0.904831051826477,
+            "maxTailRotationDegrees": 1.2455084323883057,
+            "endpointDifferenceMetres": 0.0
+        },
+        {
+            "name": "Cat_Punch_Right",
+            "seconds": 0.6000000238418579,
+            "looping": false,
+            "curves": 210,
+            "sampledPoses": 21,
+            "skinningPassed": true,
+            "maxHandMovementMetres": 0.9048361778259277,
+            "maxTailRotationDegrees": 1.2455084323883057,
+            "endpointDifferenceMetres": 0.0
+        },
+        {
+            "name": "Cat_Hit_React",
+            "seconds": 0.5333333611488342,
+            "looping": false,
+            "curves": 210,
+            "sampledPoses": 21,
+            "skinningPassed": true,
+            "maxHandMovementMetres": 0.5061073303222656,
+            "maxTailRotationDegrees": 2.426750898361206,
+            "endpointDifferenceMetres": 0.0
+        }
+    ]
+}

@@ -1,0 +1,147 @@
+{
+  "fps": 30,
+  "root_motion": false,
+  "clips": [
+    {
+      "name": "Cat_Idle",
+      "frames": [
+        1,
+        73
+      ],
+      "duration_seconds": 2.4,
+      "loop": true,
+      "max_root_drift_m": 0,
+      "max_IK_error_m": 2.8498910023227676e-05,
+      "max_edge_stretch": 2.6911576656220566,
+      "lowest_sampled_vertex_z_m": 0.014745213091373444,
+      "start_end_matrix_difference": 3.7090193023004073e-17
+    },
+    {
+      "name": "Cat_Walk",
+      "frames": [
+        1,
+        31
+      ],
+      "duration_seconds": 1.0,
+      "loop": true,
+      "max_root_drift_m": 0,
+      "max_IK_error_m": 3.6178264859408336e-05,
+      "max_edge_stretch": 4.637957615943179,
+      "lowest_sampled_vertex_z_m": 0.008496642112731934,
+      "start_end_matrix_difference": 1.282447173222107e-17
+    },
+    {
+      "name": "Cat_Run",
+      "frames": [
+        1,
+        21
+      ],
+      "duration_seconds": 0.6666666666666666,
+      "loop": true,
+      "max_root_drift_m": 0,
+      "max_IK_error_m": 6.570877684112772e-05,
+      "max_edge_stretch": 5.542273089339681,
+      "lowest_sampled_vertex_z_m": 0.001143030822277069,
+      "start_end_matrix_difference": 1.282447173222107e-17
+    },
+    {
+      "name": "Cat_Jump_Start",
+      "frames": [
+        1,
+        13
+      ],
+      "duration_seconds": 0.4,
+      "loop": false,
+      "max_root_drift_m": 0,
+      "max_IK_error_m": 4.561917185583669e-05,
+      "max_edge_stretch": 4.640246154498427,
+      "lowest_sampled_vertex_z_m": 0.00044466182589530945,
+      "start_end_matrix_difference": 1.2519850730895996
+    },
+    {
+      "name": "Cat_Jump_Air",
+      "frames": [
+        1,
+        25
+      ],
+      "duration_seconds": 0.8,
+      "loop": true,
+      "max_root_drift_m": 0,
+      "max_IK_error_m": 2.8797684340469582e-05,
+      "max_edge_stretch": 4.715758533443254,
+      "lowest_sampled_vertex_z_m": 0.09535390138626099,
+      "start_end_matrix_difference": 3.698175295342082e-17
+    },
+    {
+      "name": "Cat_Fall",
+      "frames": [
+        1,
+        25
+      ],
+      "duration_seconds": 0.8,
+      "loop": true,
+      "max_root_drift_m": 0,
+      "max_IK_error_m": 3.286147642086798e-05,
+      "max_edge_stretch": 3.793404458710756,
+      "lowest_sampled_vertex_z_m": 0.06315715610980988,
+      "start_end_matrix_difference": 3.7248545170748775e-17
+    },
+    {
+      "name": "Cat_Land",
+      "frames": [
+        1,
+        15
+      ],
+      "duration_seconds": 0.4666666666666667,
+      "loop": false,
+      "max_root_drift_m": 0,
+      "max_IK_error_m": 6.594136094236818e-05,
+      "max_edge_stretch": 4.327845976167277,
+      "lowest_sampled_vertex_z_m": -9.607523679733276e-06,
+      "start_end_matrix_difference": 1.5484830737113953
+    },
+    {
+      "name": "Cat_Punch_Left",
+      "frames": [
+        1,
+        19
+      ],
+      "duration_seconds": 0.6,
+      "loop": false,
+      "max_root_drift_m": 0,
+      "max_IK_error_m": 7.391322636356646e-05,
+      "max_edge_stretch": 3.0504139243771737,
+      "lowest_sampled_vertex_z_m": 0.011695342138409615,
+      "start_end_matrix_difference": 0.0
+    },
+    {
+      "name": "Cat_Punch_Right",
+      "frames": [
+        1,
+        19
+      ],
+      "duration_seconds": 0.6,
+      "loop": false,
+      "max_root_drift_m": 0,
+      "max_IK_error_m": 7.392187773857064e-05,
+      "max_edge_stretch": 3.0504093566931547,
+      "lowest_sampled_vertex_z_m": 0.011695342138409615,
+      "start_end_matrix_difference": 0.0
+    },
+    {
+      "name": "Cat_Hit_React",
+      "frames": [
+        1,
+        17
+      ],
+      "duration_seconds": 0.5333333333333333,
+      "loop": false,
+      "max_root_drift_m": 0,
+      "max_IK_error_m": 5.892573804842773e-05,
+      "max_edge_stretch": 3.244320515859769,
+      "lowest_sampled_vertex_z_m": 0.005232095718383789,
+      "start_end_matrix_difference": 0.0
+    }
+  ],
+  "source_rig_preserved": true
+}

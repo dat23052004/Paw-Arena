@@ -109,3 +109,13 @@ InitTestScene*.unity*
 
 # Auto-generated cache in Assets folder
 /[Aa]ssets/[Ss]ceneDependencyCache*
+
+# Blender pipeline caches, local backups, and generated delivery archives.
+__pycache__/
+*.pyc
+/Blender/Backups/
+/Blender/Validation/
+/Blender/Characters/*_Package.zip
+/Blender/Characters/_Cat_Rig_Prepared.blend
+/Blender/Characters/Exports/CatSkins/SurfaceCoordinates.npz
+/Blender/Previews/**/Frames/

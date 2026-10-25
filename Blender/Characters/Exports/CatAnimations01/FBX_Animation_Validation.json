@@ -1,0 +1,155 @@
+{
+  "status": "PASS",
+  "fps": 30,
+  "clips": [
+    {
+      "name": "Idle",
+      "bone_count": 30,
+      "frames": [
+        1.0,
+        73.0
+      ],
+      "max_sampled_bone_position_error_m": 4.021830031406109e-06,
+      "sampled_frames": [
+        1,
+        19,
+        37,
+        73
+      ]
+    },
+    {
+      "name": "Walk",
+      "bone_count": 30,
+      "frames": [
+        1.0,
+        31.0
+      ],
+      "max_sampled_bone_position_error_m": 4.890419445392204e-06,
+      "sampled_frames": [
+        1,
+        8,
+        16,
+        31
+      ]
+    },
+    {
+      "name": "Run",
+      "bone_count": 30,
+      "frames": [
+        1.0,
+        21.0
+      ],
+      "max_sampled_bone_position_error_m": 4.072803848532606e-06,
+      "sampled_frames": [
+        1,
+        6,
+        11,
+        21
+      ]
+    },
+    {
+      "name": "Jump_Start",
+      "bone_count": 30,
+      "frames": [
+        1.0,
+        13.0
+      ],
+      "max_sampled_bone_position_error_m": 3.988566569033294e-06,
+      "sampled_frames": [
+        1,
+        7,
+        13
+      ]
+    },
+    {
+      "name": "Jump_Air",
+      "bone_count": 30,
+      "frames": [
+        1.0,
+        25.0
+      ],
+      "max_sampled_bone_position_error_m": 3.948392992463856e-06,
+      "sampled_frames": [
+        1,
+        7,
+        13,
+        25
+      ]
+    },
+    {
+      "name": "Fall",
+      "bone_count": 30,
+      "frames": [
+        1.0,
+        25.0
+      ],
+      "max_sampled_bone_position_error_m": 4.048353714865809e-06,
+      "sampled_frames": [
+        1,
+        7,
+        13,
+        25
+      ]
+    },
+    {
+      "name": "Land",
+      "bone_count": 30,
+      "frames": [
+        1.0,
+        15.0
+      ],
+      "max_sampled_bone_position_error_m": 4.153396305167244e-06,
+      "sampled_frames": [
+        1,
+        5,
+        8,
+        15
+      ]
+    },
+    {
+      "name": "Punch_Left",
+      "bone_count": 30,
+      "frames": [
+        1.0,
+        19.0
+      ],
+      "max_sampled_bone_position_error_m": 4.04964244064822e-06,
+      "sampled_frames": [
+        1,
+        7,
+        10,
+        19
+      ]
+    },
+    {
+      "name": "Punch_Right",
+      "bone_count": 30,
+      "frames": [
+        1.0,
+        19.0
+      ],
+      "max_sampled_bone_position_error_m": 4.139634034651548e-06,
+      "sampled_frames": [
+        1,
+        7,
+        10,
+        19
+      ]
+    },
+    {
+      "name": "Hit_React",
+      "bone_count": 30,
+      "frames": [
+        1.0,
+        17.0
+      ],
+      "max_sampled_bone_position_error_m": 3.988566569033294e-06,
+      "sampled_frames": [
+        1,
+        4,
+        9,
+        17
+      ]
+    }
+  ]
+}

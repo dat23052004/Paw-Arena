@@ -1,0 +1,8 @@
+{
+  "name": "PawArena.Inventory.Tests",
+  "rootNamespace": "PawArena.Tests.Inventory",
+  "references": ["PawArena.Core", "PawArena.Gameplay", "PawArena.Infrastructure", "PawArena.UI"],
+  "includePlatforms": ["Editor"],
+  "autoReferenced": false,
+  "optionalUnityReferences": ["TestAssemblies"]
+}
