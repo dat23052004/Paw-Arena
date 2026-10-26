@@ -1,0 +1,343 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7125282969273199178
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1541467144735658876}
+  - component: {fileID: 634737018753960861}
+  - component: {fileID: 1616060272002689923}
+  - component: {fileID: 2352929407677738366}
+  - component: {fileID: 797579790032956165}
+  - component: {fileID: 8794120666148889669}
+  - component: {fileID: 1394658456846104327}
+  - component: {fileID: 4213447620426830470}
+  - component: {fileID: 2316646668630143353}
+  - component: {fileID: 730376357574125325}
+  - component: {fileID: 7077143426866230325}
+  - component: {fileID: 5940016161844321461}
+  m_Layer: 0
+  m_Name: PF_Player
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1541467144735658876
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7125282969273199178}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1101566297008933509}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &634737018753960861
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7125282969273199178}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 1
+  m_Constraints: 112
+  m_CollisionDetection: 2
+--- !u!136 &1616060272002689923
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7125282969273199178}
+  m_Material: {fileID: 13400000, guid: 29bfd18bf7da6bb4bb3267b20c82d88f, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.4
+  m_Height: 1.8
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.9, z: 0}
+--- !u!114 &2352929407677738366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7125282969273199178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ade9ebce406036544b15a7bfe45b1bd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: PawArena.Gameplay::PawArena.Gameplay.Characters.CatLocomotion
+  _settings: {fileID: 11400000, guid: e04983c6f43139b44a54c3d1cc29cbd6, type: 2}
+  _groundMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &797579790032956165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7125282969273199178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0f77b4253bee894fab0b875c0928dbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: PawArena.Gameplay::PawArena.Gameplay.Characters.CatAnimationController
+  _motor: {fileID: 2352929407677738366}
+  _animator: {fileID: 6460871480803545343}
+--- !u!114 &8794120666148889669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7125282969273199178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78c58b736a4032b4d8fd15a1086fea36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: PawArena.Gameplay::PawArena.Gameplay.Player.CatPlayerController
+  _motor: {fileID: 2352929407677738366}
+  _animation: {fileID: 797579790032956165}
+  _combat: {fileID: 730376357574125325}
+  _neutralCameraPitch: 16
+--- !u!114 &1394658456846104327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7125282969273199178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d73670f45f4f7d4e83daa5dac07881c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: PawArena.Gameplay::PawArena.Gameplay.Characters.CatSecondaryMotion
+  _motor: {fileID: 2352929407677738366}
+  _animator: {fileID: 6460871480803545343}
+  _strength: 1
+  _armHang: 0.92
+  _runLean: 12
+--- !u!114 &4213447620426830470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7125282969273199178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5cb3323da1744e4f888444c21db1ad3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: PawArena.Gameplay::PawArena.Gameplay.Combat.CatCombatant
+  _settings: {fileID: 11400000, guid: 026ddaef6ec95514e8fbdbbd322fe08a, type: 2}
+  _motor: {fileID: 2352929407677738366}
+  _isPlayer: 1
+--- !u!114 &2316646668630143353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7125282969273199178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47da0e0fbb993e842ba2005fa33ae3e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: PawArena.Gameplay::PawArena.Gameplay.Combat.CatCombatEffects
+  _settings: {fileID: 11400000, guid: 026ddaef6ec95514e8fbdbbd322fe08a, type: 2}
+--- !u!114 &730376357574125325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7125282969273199178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5758345eb4854c468a3ae9fb66f00a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: PawArena.Gameplay::PawArena.Gameplay.Combat.CatPlayerCombat
+  _settings: {fileID: 11400000, guid: 026ddaef6ec95514e8fbdbbd322fe08a, type: 2}
+  _actor: {fileID: 4213447620426830470}
+  _animation: {fileID: 797579790032956165}
+  _effects: {fileID: 2316646668630143353}
+  _selectedAbility: 0
+--- !u!114 &7077143426866230325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7125282969273199178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5706f7e1d14bfed40b09a2ba057379c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: PawArena.Gameplay::PawArena.Gameplay.Combat.CatCombatHud
+  _actor: {fileID: 4213447620426830470}
+  _combat: {fileID: 730376357574125325}
+  _visible: 1
+--- !u!114 &5940016161844321461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7125282969273199178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fac23d00d45fcca45b332a25d849f434, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: PawArena.Gameplay::PawArena.Gameplay.Combat.CatCombatPose
+  _actor: {fileID: 4213447620426830470}
+  _playerCombat: {fileID: 730376357574125325}
+  _animator: {fileID: 6460871480803545343}
+  _strength: 0.9
+--- !u!1001 &5723309645448540641
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1541467144735658876}
+    m_Modifications:
+    - target: {fileID: 1640690898314043678, guid: 7920ce50ad975a1468ee3984100d1af8, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: b5f6909d196c66641a6a488cd05b7420, type: 2}
+    - target: {fileID: 1640690898314043678, guid: 7920ce50ad975a1468ee3984100d1af8, type: 3}
+      propertyPath: m_CullingMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3967806602170984525, guid: 7920ce50ad975a1468ee3984100d1af8, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 463c752fabb0c44499bfb912e0c694f7, type: 2}
+    - target: {fileID: 3967806602170984525, guid: 7920ce50ad975a1468ee3984100d1af8, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: b557df280ed1da6448761e616662057b, type: 2}
+    - target: {fileID: 4622042839772330852, guid: 7920ce50ad975a1468ee3984100d1af8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4622042839772330852, guid: 7920ce50ad975a1468ee3984100d1af8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4622042839772330852, guid: 7920ce50ad975a1468ee3984100d1af8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4622042839772330852, guid: 7920ce50ad975a1468ee3984100d1af8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4622042839772330852, guid: 7920ce50ad975a1468ee3984100d1af8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4622042839772330852, guid: 7920ce50ad975a1468ee3984100d1af8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4622042839772330852, guid: 7920ce50ad975a1468ee3984100d1af8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4622042839772330852, guid: 7920ce50ad975a1468ee3984100d1af8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4622042839772330852, guid: 7920ce50ad975a1468ee3984100d1af8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4622042839772330852, guid: 7920ce50ad975a1468ee3984100d1af8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5435593881128542686, guid: 7920ce50ad975a1468ee3984100d1af8, type: 3}
+      propertyPath: m_Name
+      value: Visual
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5435593881128542686, guid: 7920ce50ad975a1468ee3984100d1af8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6524461519733596364}
+  m_SourcePrefab: {fileID: 100100000, guid: 7920ce50ad975a1468ee3984100d1af8, type: 3}
+--- !u!1 &288894590418866239 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5435593881128542686, guid: 7920ce50ad975a1468ee3984100d1af8, type: 3}
+  m_PrefabInstance: {fileID: 5723309645448540641}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6524461519733596364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 288894590418866239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ab7a5cb396b2854f992ca3a0ae7cf83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: PawArena.Gameplay::PawArena.Gameplay.Inventory.CatSkinController
+  _bodyRenderer: {fileID: 8682162561616910764}
+--- !u!4 &1101566297008933509 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4622042839772330852, guid: 7920ce50ad975a1468ee3984100d1af8, type: 3}
+  m_PrefabInstance: {fileID: 5723309645448540641}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &6460871480803545343 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1640690898314043678, guid: 7920ce50ad975a1468ee3984100d1af8, type: 3}
+  m_PrefabInstance: {fileID: 5723309645448540641}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &8682162561616910764 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 3967806602170984525, guid: 7920ce50ad975a1468ee3984100d1af8, type: 3}
+  m_PrefabInstance: {fileID: 5723309645448540641}
+  m_PrefabAsset: {fileID: 0}

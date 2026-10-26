@@ -8,7 +8,9 @@ from mathutils import Vector
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 from BuildCatAnimations import FPS, choose
-if '--abilities' in sys.argv:
+if '--completion' in sys.argv:
+    from CompleteCatAnimations import CLIPS, EXPORT, OUTPUT
+elif '--abilities' in sys.argv:
     from BuildCatAbilities import CLIPS, EXPORT, OUTPUT
 else:
     from BuildCatAnimations import CLIPS, EXPORT, OUTPUT

@@ -1,0 +1,240 @@
+{
+  "fps": 30,
+  "root_motion": false,
+  "clips": [
+    {
+      "name": "Cat_Grab_Start",
+      "frames": [
+        1,
+        19
+      ],
+      "duration_seconds": 0.6,
+      "loop": false,
+      "maximum_edge_stretch": 3.1249992240948794,
+      "lowest_vertex_z_m": 0.007788578048348427,
+      "root_drift_m": 0,
+      "endpoint_matrix_difference": 1.4953768849372864
+    },
+    {
+      "name": "Cat_Grab_Hold",
+      "frames": [
+        1,
+        37
+      ],
+      "duration_seconds": 1.2,
+      "loop": true,
+      "maximum_edge_stretch": 3.0057012548334305,
+      "lowest_vertex_z_m": 0.011695140041410923,
+      "root_drift_m": 0,
+      "endpoint_matrix_difference": 2.7481270943977754e-17
+    },
+    {
+      "name": "Cat_Grab_Release",
+      "frames": [
+        1,
+        16
+      ],
+      "duration_seconds": 0.5,
+      "loop": false,
+      "maximum_edge_stretch": 2.9971047973466964,
+      "lowest_vertex_z_m": 0.012268840335309505,
+      "root_drift_m": 0,
+      "endpoint_matrix_difference": 1.4953768849372864
+    },
+    {
+      "name": "Cat_Lift",
+      "frames": [
+        1,
+        31
+      ],
+      "duration_seconds": 1.0,
+      "loop": false,
+      "maximum_edge_stretch": 4.110695978499418,
+      "lowest_vertex_z_m": 0.002320569008588791,
+      "root_drift_m": 0,
+      "endpoint_matrix_difference": 0.7631909847259521
+    },
+    {
+      "name": "Cat_Carry_Idle",
+      "frames": [
+        1,
+        41
+      ],
+      "duration_seconds": 1.3333333333333333,
+      "loop": true,
+      "maximum_edge_stretch": 3.2641538424025938,
+      "lowest_vertex_z_m": 0.011702223680913448,
+      "root_drift_m": 0,
+      "endpoint_matrix_difference": 2.7481270943977754e-17
+    },
+    {
+      "name": "Cat_Carry_Move",
+      "frames": [
+        1,
+        33
+      ],
+      "duration_seconds": 1.0666666666666667,
+      "loop": true,
+      "maximum_edge_stretch": 4.816308187127523,
+      "lowest_vertex_z_m": 0.008889111690223217,
+      "root_drift_m": 0,
+      "endpoint_matrix_difference": 3.7090193023004073e-17
+    },
+    {
+      "name": "Cat_Throw",
+      "frames": [
+        1,
+        28
+      ],
+      "duration_seconds": 0.9,
+      "loop": false,
+      "maximum_edge_stretch": 3.3179906119554254,
+      "lowest_vertex_z_m": 0.005231749266386032,
+      "root_drift_m": 0,
+      "endpoint_matrix_difference": 1.2865964770317078
+    },
+    {
+      "name": "Cat_Struggle_Grab",
+      "frames": [
+        1,
+        31
+      ],
+      "duration_seconds": 1.0,
+      "loop": true,
+      "maximum_edge_stretch": 2.5952050514434855,
+      "lowest_vertex_z_m": 0.015499505214393139,
+      "root_drift_m": 0,
+      "endpoint_matrix_difference": 1.709929729732265e-17
+    },
+    {
+      "name": "Cat_Struggle_Carried",
+      "frames": [
+        1,
+        25
+      ],
+      "duration_seconds": 0.8,
+      "loop": true,
+      "maximum_edge_stretch": 5.061833717148467,
+      "lowest_vertex_z_m": 0.027642276138067245,
+      "root_drift_m": 0,
+      "endpoint_matrix_difference": 1.709929729732265e-17
+    },
+    {
+      "name": "Cat_GetUp_FaceUp",
+      "frames": [
+        1,
+        55
+      ],
+      "duration_seconds": 1.8,
+      "loop": false,
+      "maximum_edge_stretch": 4.714698920429166,
+      "lowest_vertex_z_m": 0.014999866485595703,
+      "root_drift_m": 0,
+      "endpoint_matrix_difference": 1.7262902855873108
+    },
+    {
+      "name": "Cat_GetUp_FaceDown",
+      "frames": [
+        1,
+        49
+      ],
+      "duration_seconds": 1.6,
+      "loop": false,
+      "maximum_edge_stretch": 4.708590761098509,
+      "lowest_vertex_z_m": 0.014999866485595703,
+      "root_drift_m": 0,
+      "endpoint_matrix_difference": 1.6720123291015625
+    },
+    {
+      "name": "Cat_RingOut_Fall",
+      "frames": [
+        1,
+        31
+      ],
+      "duration_seconds": 1.0,
+      "loop": true,
+      "maximum_edge_stretch": 4.7788384428438615,
+      "lowest_vertex_z_m": 0.05760420486330986,
+      "root_drift_m": 0,
+      "endpoint_matrix_difference": 8.150046462851451e-17
+    },
+    {
+      "name": "Cat_Spawn",
+      "frames": [
+        1,
+        31
+      ],
+      "duration_seconds": 1.0,
+      "loop": false,
+      "maximum_edge_stretch": 4.2951093136731835,
+      "lowest_vertex_z_m": 0.0027696937322616577,
+      "root_drift_m": 0,
+      "endpoint_matrix_difference": 1.4704888463020325
+    },
+    {
+      "name": "Cat_Ready",
+      "frames": [
+        1,
+        37
+      ],
+      "duration_seconds": 1.2,
+      "loop": true,
+      "maximum_edge_stretch": 3.129103188570529,
+      "lowest_vertex_z_m": 0.008888565003871918,
+      "root_drift_m": 0,
+      "endpoint_matrix_difference": 3.7090193023004073e-17
+    },
+    {
+      "name": "Cat_Victory",
+      "frames": [
+        1,
+        61
+      ],
+      "duration_seconds": 2.0,
+      "loop": false,
+      "maximum_edge_stretch": 3.5744993208492817,
+      "lowest_vertex_z_m": 0.0033853575587272644,
+      "root_drift_m": 0,
+      "endpoint_matrix_difference": 0.0
+    },
+    {
+      "name": "Cat_Defeat",
+      "frames": [
+        1,
+        49
+      ],
+      "duration_seconds": 1.6,
+      "loop": false,
+      "maximum_edge_stretch": 3.5980412819006133,
+      "lowest_vertex_z_m": 0.012268840335309505,
+      "root_drift_m": 0,
+      "endpoint_matrix_difference": 0.4383712708950043
+    },
+    {
+      "name": "Cat_Hit_Back",
+      "frames": [
+        1,
+        19
+      ],
+      "duration_seconds": 0.6,
+      "loop": false,
+      "maximum_edge_stretch": 3.2506879097425165,
+      "lowest_vertex_z_m": 0.00888849701732397,
+      "root_drift_m": 0,
+      "endpoint_matrix_difference": 0.0
+    },
+    {
+      "name": "Cat_Stunned",
+      "frames": [
+        1,
+        49
+      ],
+      "duration_seconds": 1.6,
+      "loop": true,
+      "maximum_edge_stretch": 3.1823311024277072,
+      "lowest_vertex_z_m": 0.0076782479882240295,
+      "root_drift_m": 0,
+      "endpoint_matrix_difference": 3.0403066427778385e-17
+    }
+  ]
+}

@@ -1,6 +1,6 @@
-# Cat — base và 26 animation
+# Cat — thư viện nguồn và locomotion tối giản
 
-Bộ asset này gồm base mèo đã duyệt, 10 clip cơ bản và 16 clip kỹ năng cho 11 chiêu trong GDD v1.1. Không gồm 18 clip đối kháng đang để sau.
+Bộ asset nguồn gồm base mèo đã duyệt, 10 clip cơ bản, 16 clip kỹ năng cho 11 chiêu trong GDD v1.1 và 18 clip đối kháng/đầu–cuối trận trong `Completion`. Runtime dùng ba clip locomotion `Cat_Idle`, `Cat_Run`, `Cat_Jump_Air` và hai stance combat tối thiểu `Cat_Grab_Hold`, `Cat_Carry_Move`; các clip Completion còn lại không tự phát. Nhóm kỹ năng vẫn được giữ nguyên.
 
 ## Vị trí
 
@@ -8,6 +8,7 @@ Bộ asset này gồm base mèo đã duyệt, 10 clip cơ bản và 16 clip kỹ
 - Model và Avatar Humanoid chung: `Assets/_Project/Models/Characters/Cat/SK_PawArena_Cat.fbx`.
 - 10 animation cơ bản: thư mục `Base` bên cạnh tài liệu này.
 - 16 animation kỹ năng: thư mục `Abilities` bên cạnh tài liệu này.
+- 18 animation bổ sung: thư mục `Completion`; chi tiết trong `Documentation/CatAnimationCompletion.md`.
 - Material URP: `Assets/_Project/Materials/Characters/Cat`.
 - Atlas màu 4K: `Assets/_Project/Textures/Characters/Cat/Cat_BaseColor.png`.
 - `Cat_AllBones.mask`: giữ các kênh tai, đuôi và điểm gắn đồ đầu khi nhập Humanoid.
@@ -19,6 +20,8 @@ Kéo `PF_Cat_Base` vào scene khi cần sử dụng. Prefab có Animator và Ava
 Mở từng FBX animation trong Project để lấy clip con `Cat_...`. Có thể xem ở Inspector → Animation Preview; nếu Unity yêu cầu model xem trước, kéo prefab mèo vào vùng Preview.
 
 Tất cả clip dùng chung Avatar từ model tham chiếu, chạy 30 fps và giữ Root tại chỗ. Chuyển động trong thế giới, tốc độ chạy/lướt, độ cao nhảy và hiệu ứng được nối khi làm gameplay.
+
+Scene gameplay duy nhất hiện tại là `Scenes/Main.unity`, với player độc lập để duyệt ba clip locomotion tối thiểu. Xem `Documentation/CharacterFoundation.md`. Bản combat thử nghiệm cũ đã chuyển ra `Archive/CombatPrototype_20261026` ngoài Assets theo yêu cầu làm lại từng phần. Các FBX còn lại chỉ là thư viện nguồn, không làm tăng số state runtime. Prefab base vẫn chỉ chứa hình ảnh.
 
 Loop: Idle, Walk, Run, Jump Air, Fall, Ability Pounce Air và Ability Anchor Hold. Các clip còn lại phát một lần. Chỉ bật loop cho các pha cần giữ, không lặp toàn bộ động tác thi triển.
 

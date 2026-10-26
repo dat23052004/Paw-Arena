@@ -1,0 +1,111 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8061bd07e6ed4d438baf7efc3b2afff, type: 3}
+  m_Name: CatCombat
+  m_EditorClassIdentifier: PawArena.Gameplay::PawArena.Gameplay.Combat.CatCombatSettings
+  _maxHealth: 100
+  _hitStunSeconds: 0.32
+  _knockoutSeconds: 2.5
+  _hitImmunitySeconds: 0.15
+  _ringOutY: -3
+  _punchSeconds: 0.48
+  _punchContactStart: 0.14
+  _punchContactEnd: 0.24
+  _punchRange: 1.55
+  _punchAngle: 105
+  _punchDamage: 24
+  _punchImpulse: 7.5
+  _comboBufferSeconds: 0.14
+  _grabRange: 1.7
+  _grabWindupSeconds: 0.32
+  _holdSeconds: 4
+  _liftSeconds: 0.65
+  _gripDistance: 1
+  _carryHeight: 0.75
+  _throwImpulse: 12
+  _dash:
+    _ability: 0
+    _cooldown: 8
+    _castSeconds: 0.35
+    _duration: 0.35
+    _power: 17
+    _range: 2.2
+  _nineLives:
+    _ability: 1
+    _cooldown: 25
+    _castSeconds: 1.2
+    _duration: 0
+    _power: 0
+    _range: 1
+  _hiss:
+    _ability: 2
+    _cooldown: 14
+    _castSeconds: 0.6
+    _duration: 0
+    _power: 7
+    _range: 2.4
+  _pounce:
+    _ability: 3
+    _cooldown: 14
+    _castSeconds: 1.1
+    _duration: 0
+    _power: 10
+    _range: 10
+  _anchor:
+    _ability: 4
+    _cooldown: 15
+    _castSeconds: 0.6
+    _duration: 3
+    _power: 0
+    _range: 1
+  _stomp:
+    _ability: 5
+    _cooldown: 16
+    _castSeconds: 0.8
+    _duration: 0
+    _power: 10
+    _range: 4
+  _catnip:
+    _ability: 6
+    _cooldown: 16
+    _castSeconds: 0.8
+    _duration: 3
+    _power: 0
+    _range: 1
+  _fluffUp:
+    _ability: 7
+    _cooldown: 16
+    _castSeconds: 0.9
+    _duration: 4
+    _power: 0
+    _range: 1
+  _hairball:
+    _ability: 8
+    _cooldown: 20
+    _castSeconds: 0.8
+    _duration: 6
+    _power: 0
+    _range: 4
+  _sharkAttack:
+    _ability: 9
+    _cooldown: 20
+    _castSeconds: 1.1
+    _duration: 0
+    _power: 13
+    _range: 14
+  _windShurikens:
+    _ability: 10
+    _cooldown: 25
+    _castSeconds: 1.1
+    _duration: 0
+    _power: 7
+    _range: 16

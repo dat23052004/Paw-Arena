@@ -1,0 +1,273 @@
+{
+  "status": "PASS",
+  "fps": 30,
+  "clips": [
+    {
+      "name": "Grab_Start",
+      "bone_count": 30,
+      "frames": [
+        1.0,
+        19.0
+      ],
+      "max_sampled_bone_position_error_m": 3.988566569033294e-06,
+      "sampled_frames": [
+        1,
+        10,
+        15,
+        19
+      ]
+    },
+    {
+      "name": "Grab_Hold",
+      "bone_count": 30,
+      "frames": [
+        1.0,
+        37.0
+      ],
+      "max_sampled_bone_position_error_m": 3.90765728232268e-06,
+      "sampled_frames": [
+        1,
+        10,
+        19,
+        37
+      ]
+    },
+    {
+      "name": "Grab_Release",
+      "bone_count": 30,
+      "frames": [
+        1.0,
+        16.0
+      ],
+      "max_sampled_bone_position_error_m": 3.952461028207689e-06,
+      "sampled_frames": [
+        1,
+        8,
+        16
+      ]
+    },
+    {
+      "name": "Lift",
+      "bone_count": 30,
+      "frames": [
+        1.0,
+        31.0
+      ],
+      "max_sampled_bone_position_error_m": 3.845019360824915e-06,
+      "sampled_frames": [
+        1,
+        16,
+        24,
+        31
+      ]
+    },
+    {
+      "name": "Carry_Idle",
+      "bone_count": 30,
+      "frames": [
+        1.0,
+        41.0
+      ],
+      "max_sampled_bone_position_error_m": 3.90765728232268e-06,
+      "sampled_frames": [
+        1,
+        11,
+        21,
+        41
+      ]
+    },
+    {
+      "name": "Carry_Move",
+      "bone_count": 30,
+      "frames": [
+        1.0,
+        33.0
+      ],
+      "max_sampled_bone_position_error_m": 4.890419445392204e-06,
+      "sampled_frames": [
+        1,
+        9,
+        17,
+        33
+      ]
+    },
+    {
+      "name": "Throw",
+      "bone_count": 30,
+      "frames": [
+        1.0,
+        28.0
+      ],
+      "max_sampled_bone_position_error_m": 3.952461028207689e-06,
+      "sampled_frames": [
+        1,
+        13,
+        14,
+        28
+      ]
+    },
+    {
+      "name": "Struggle_Grab",
+      "bone_count": 30,
+      "frames": [
+        1.0,
+        31.0
+      ],
+      "max_sampled_bone_position_error_m": 3.988566569033294e-06,
+      "sampled_frames": [
+        1,
+        8,
+        16,
+        31
+      ]
+    },
+    {
+      "name": "Struggle_Carried",
+      "bone_count": 30,
+      "frames": [
+        1.0,
+        25.0
+      ],
+      "max_sampled_bone_position_error_m": 4.084121231442522e-06,
+      "sampled_frames": [
+        1,
+        7,
+        13,
+        25
+      ]
+    },
+    {
+      "name": "GetUp_FaceUp",
+      "bone_count": 30,
+      "frames": [
+        1.0,
+        55.0
+      ],
+      "max_sampled_bone_position_error_m": 8.86848213739451e-06,
+      "sampled_frames": [
+        1,
+        20,
+        28,
+        55
+      ]
+    },
+    {
+      "name": "GetUp_FaceDown",
+      "bone_count": 30,
+      "frames": [
+        1.0,
+        49.0
+      ],
+      "max_sampled_bone_position_error_m": 1.2122253842591434e-06,
+      "sampled_frames": [
+        1,
+        18,
+        25,
+        49
+      ]
+    },
+    {
+      "name": "RingOut_Fall",
+      "bone_count": 30,
+      "frames": [
+        1.0,
+        31.0
+      ],
+      "max_sampled_bone_position_error_m": 1.3042560018380842e-06,
+      "sampled_frames": [
+        1,
+        8,
+        16,
+        31
+      ]
+    },
+    {
+      "name": "Spawn",
+      "bone_count": 30,
+      "frames": [
+        1.0,
+        31.0
+      ],
+      "max_sampled_bone_position_error_m": 4.935614608305662e-06,
+      "sampled_frames": [
+        1,
+        16,
+        31
+      ]
+    },
+    {
+      "name": "Ready",
+      "bone_count": 30,
+      "frames": [
+        1.0,
+        37.0
+      ],
+      "max_sampled_bone_position_error_m": 3.852007812902451e-06,
+      "sampled_frames": [
+        1,
+        10,
+        19,
+        37
+      ]
+    },
+    {
+      "name": "Victory",
+      "bone_count": 30,
+      "frames": [
+        1.0,
+        61.0
+      ],
+      "max_sampled_bone_position_error_m": 3.988566569033294e-06,
+      "sampled_frames": [
+        1,
+        31,
+        61
+      ]
+    },
+    {
+      "name": "Defeat",
+      "bone_count": 30,
+      "frames": [
+        1.0,
+        49.0
+      ],
+      "max_sampled_bone_position_error_m": 3.988566569033294e-06,
+      "sampled_frames": [
+        1,
+        25,
+        31,
+        49
+      ]
+    },
+    {
+      "name": "Hit_Back",
+      "bone_count": 30,
+      "frames": [
+        1.0,
+        19.0
+      ],
+      "max_sampled_bone_position_error_m": 3.988566569033294e-06,
+      "sampled_frames": [
+        1,
+        5,
+        10,
+        19
+      ]
+    },
+    {
+      "name": "Stunned",
+      "bone_count": 30,
+      "frames": [
+        1.0,
+        49.0
+      ],
+      "max_sampled_bone_position_error_m": 3.786331987159162e-06,
+      "sampled_frames": [
+        1,
+        13,
+        25,
+        49
+      ]
+    }
+  ]
+}
