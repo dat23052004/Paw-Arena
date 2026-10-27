@@ -1,0 +1,643 @@
+{
+  "schema": "Unity Sprite (2D and UI), Full Rect; RGBA; icons 160x160px; Panels and Buttons 9-slice using borders supplied.",
+  "pixelsPerUnit": 100,
+  "borders": {
+    "Sprites/Panels/window_panel.png": [
+      34,
+      34,
+      34,
+      34
+    ],
+    "Sprites/Panels/content_panel.png": [
+      26,
+      26,
+      26,
+      26
+    ],
+    "Sprites/Panels/sidebar_panel.png": [
+      22,
+      22,
+      22,
+      22
+    ],
+    "Sprites/Panels/tabbar_panel.png": [
+      18,
+      18,
+      18,
+      18
+    ],
+    "Sprites/Panels/header_panel.png": [
+      18,
+      18,
+      18,
+      18
+    ],
+    "Sprites/Panels/stat_panel.png": [
+      24,
+      24,
+      24,
+      24
+    ],
+    "Sprites/Panels/search_panel.png": [
+      18,
+      18,
+      18,
+      18
+    ],
+    "Sprites/Panels/quest_row.png": [
+      23,
+      23,
+      23,
+      23
+    ],
+    "Sprites/Panels/toast_panel.png": [
+      22,
+      22,
+      22,
+      22
+    ],
+    "Sprites/Buttons/button_green_normal.png": [
+      22,
+      22,
+      22,
+      22
+    ],
+    "Sprites/Buttons/button_green_hover.png": [
+      22,
+      22,
+      22,
+      22
+    ],
+    "Sprites/Buttons/button_green_pressed.png": [
+      22,
+      22,
+      22,
+      22
+    ],
+    "Sprites/Buttons/button_blue_normal.png": [
+      22,
+      22,
+      22,
+      22
+    ],
+    "Sprites/Buttons/button_blue_hover.png": [
+      22,
+      22,
+      22,
+      22
+    ],
+    "Sprites/Buttons/button_blue_pressed.png": [
+      22,
+      22,
+      22,
+      22
+    ],
+    "Sprites/Buttons/button_red_normal.png": [
+      22,
+      22,
+      22,
+      22
+    ],
+    "Sprites/Buttons/button_red_hover.png": [
+      22,
+      22,
+      22,
+      22
+    ],
+    "Sprites/Buttons/button_red_pressed.png": [
+      22,
+      22,
+      22,
+      22
+    ],
+    "Sprites/Buttons/button_gold_normal.png": [
+      22,
+      22,
+      22,
+      22
+    ],
+    "Sprites/Buttons/button_gold_hover.png": [
+      22,
+      22,
+      22,
+      22
+    ],
+    "Sprites/Buttons/button_gold_pressed.png": [
+      22,
+      22,
+      22,
+      22
+    ],
+    "Sprites/Buttons/button_purple_normal.png": [
+      22,
+      22,
+      22,
+      22
+    ],
+    "Sprites/Buttons/button_purple_hover.png": [
+      22,
+      22,
+      22,
+      22
+    ],
+    "Sprites/Buttons/button_purple_pressed.png": [
+      22,
+      22,
+      22,
+      22
+    ],
+    "Sprites/Buttons/button_gray_normal.png": [
+      22,
+      22,
+      22,
+      22
+    ],
+    "Sprites/Buttons/button_gray_hover.png": [
+      22,
+      22,
+      22,
+      22
+    ],
+    "Sprites/Buttons/button_gray_pressed.png": [
+      22,
+      22,
+      22,
+      22
+    ],
+    "Sprites/Buttons/button_disabled.png": [
+      22,
+      22,
+      22,
+      22
+    ],
+    "Sprites/Buttons/close_red.png": [
+      23,
+      23,
+      23,
+      23
+    ],
+    "Sprites/Buttons/arrow_blue.png": [
+      20,
+      20,
+      20,
+      20
+    ],
+    "Sprites/Buttons/tab_active.png": [
+      18,
+      18,
+      18,
+      18
+    ],
+    "Sprites/Buttons/tab_inactive.png": [
+      18,
+      18,
+      18,
+      18
+    ],
+    "Sprites/Buttons/tab_hover.png": [
+      18,
+      18,
+      18,
+      18
+    ],
+    "Sprites/Cards/item_owned.png": [
+      22,
+      22,
+      22,
+      22
+    ],
+    "Sprites/Cards/item_selected.png": [
+      22,
+      22,
+      22,
+      22
+    ],
+    "Sprites/Cards/item_locked.png": [
+      22,
+      22,
+      22,
+      22
+    ],
+    "Sprites/Cards/item_equipped.png": [
+      22,
+      22,
+      22,
+      22
+    ],
+    "Sprites/Cards/rarity_common.png": [
+      22,
+      22,
+      22,
+      22
+    ],
+    "Sprites/Badges/badge_common.png": [
+      15,
+      15,
+      15,
+      15
+    ],
+    "Sprites/Cards/rarity_uncommon.png": [
+      22,
+      22,
+      22,
+      22
+    ],
+    "Sprites/Badges/badge_uncommon.png": [
+      15,
+      15,
+      15,
+      15
+    ],
+    "Sprites/Cards/rarity_rare.png": [
+      22,
+      22,
+      22,
+      22
+    ],
+    "Sprites/Badges/badge_rare.png": [
+      15,
+      15,
+      15,
+      15
+    ],
+    "Sprites/Cards/rarity_epic.png": [
+      22,
+      22,
+      22,
+      22
+    ],
+    "Sprites/Badges/badge_epic.png": [
+      15,
+      15,
+      15,
+      15
+    ],
+    "Sprites/Cards/rarity_legendary.png": [
+      22,
+      22,
+      22,
+      22
+    ],
+    "Sprites/Badges/badge_legendary.png": [
+      15,
+      15,
+      15,
+      15
+    ],
+    "Sprites/Cards/rarity_mythic.png": [
+      22,
+      22,
+      22,
+      22
+    ],
+    "Sprites/Badges/badge_mythic.png": [
+      15,
+      15,
+      15,
+      15
+    ],
+    "Sprites/Badges/coin_counter.png": [
+      21,
+      21,
+      21,
+      21
+    ],
+    "Sprites/Badges/toggle_on.png": [
+      32,
+      32,
+      32,
+      32
+    ],
+    "Sprites/Badges/toggle_off.png": [
+      32,
+      32,
+      32,
+      32
+    ],
+    "Sprites/Badges/slider_track.png": [
+      20,
+      20,
+      20,
+      20
+    ],
+    "Sprites/Badges/slider_fill.png": [
+      20,
+      20,
+      20,
+      20
+    ],
+    "Sprites/Cards/reward_soon.png": [
+      25,
+      25,
+      25,
+      25
+    ],
+    "Sprites/Cards/reward_claimed.png": [
+      25,
+      25,
+      25,
+      25
+    ],
+    "Sprites/Cards/reward_current.png": [
+      25,
+      25,
+      25,
+      25
+    ],
+    "Sprites/Icons/fur_ginger.png": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Sprites/Icons/fur_pumpkin.png": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Sprites/Icons/fur_black_widow.png": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Sprites/Icons/fur_grey.png": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Sprites/Icons/fur_white.png": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Sprites/Icons/fur_calico.png": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Sprites/Icons/icon_coin.png": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Sprites/Icons/icon_candy.png": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Sprites/Icons/icon_paw.png": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Sprites/Icons/icon_flame.png": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Sprites/Icons/icon_lock.png": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Sprites/Icons/icon_check.png": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Sprites/Icons/icon_close.png": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Sprites/Icons/icon_chevron.png": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Sprites/Icons/icon_bag.png": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Sprites/Icons/icon_shop.png": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Sprites/Icons/icon_settings.png": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Sprites/Icons/icon_gift.png": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Sprites/Icons/icon_trophy.png": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Sprites/Icons/icon_heart.png": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Sprites/Icons/icon_dash.png": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Sprites/Icons/icon_shield.png": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Sprites/Icons/icon_bolt.png": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Sprites/Icons/icon_star.png": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Sprites/Icons/icon_egg.png": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Sprites/Icons/icon_wave.png": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Sprites/Icons/icon_stretch.png": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Sprites/Icons/icon_beam.png": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Sprites/Icons/icon_confetti.png": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Sprites/Icons/icon_poof.png": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Sprites/Icons/icon_sparks.png": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Sprites/Icons/icon_headband.png": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Sprites/Icons/icon_music.png": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Sprites/Icons/icon_sound.png": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Sprites/Icons/icon_avatar.png": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Sprites/Icons/icon_skull.png": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Sprites/Icons/icon_arrow_forward.png": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Sprites/Icons/icon_clock.png": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Sprites/Icons/icon_crown.png": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Sprites/Icons/icon_star_wand.png": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Sprites/Icons/icon_present.png": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Sprites/Icons/icon_ninelives.png": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Sprites/Icons/icon_pounce.png": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Sprites/Icons/icon_anchor.png": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Sprites/Icons/icon_stomp.png": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Sprites/Icons/icon_fishbone.png": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Sprites/Icons/icon_firework.png": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "Sprites/Panels/emote_wheel_base.png": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "colorPalette": {
+    "primary": "#2464D8",
+    "navy": "#112856",
+    "success": "#4BC748",
+    "danger": "#E94B53",
+    "gold": "#FFCA42"
+  }
+}
