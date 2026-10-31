@@ -25,6 +25,18 @@ MonoBehaviour:
   - _type: 1
     _index: 0
   _compatibleMesh: {fileID: 1924362587922941630, guid: a2662c9044d8f224eab022f79790c32c, type: 3}
-  _coat: {fileID: 2100000, guid: 7c624b8c7ba984c4dbba55ec3eccb20a, type: 2}
-  _eyes: {fileID: 2100000, guid: f283c04437cd3df44ae11a883d97f723, type: 2}
+  _coatReference:
+    m_AssetGUID: 7c624b8c7ba984c4dbba55ec3eccb20a
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 0
+  _eyesReference:
+    m_AssetGUID: f283c04437cd3df44ae11a883d97f723
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 0
   _thumbnail: {fileID: 2800000, guid: 89bdfe84774c9e54099ea2b8e50d4abe, type: 3}
+  _legacyCoat: {fileID: 0}
+  _legacyEyes: {fileID: 0}

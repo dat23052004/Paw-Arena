@@ -94,7 +94,7 @@ namespace PawArena.Gameplay.Inventory
             renderer.sharedMaterial = definition.Material;
             renderer.bones = mapped;
             renderer.rootBone = root;
-            renderer.updateWhenOffscreen = true; // Small cosmetic meshes must not freeze when hands leave the view.
+            renderer.updateWhenOffscreen = false;
             Clear(index);
             _renderers[index] = renderer;
             _ids[index] = id;

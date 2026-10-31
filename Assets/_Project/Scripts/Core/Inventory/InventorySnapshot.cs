@@ -9,6 +9,7 @@ namespace PawArena.Core.Inventory
     [Serializable]
     public sealed class InventorySnapshot
     {
+        public int Version = 2;
         public List<string> OwnedItemIds = new();
         public List<EquipmentEntryData> Equipment = new();
     }

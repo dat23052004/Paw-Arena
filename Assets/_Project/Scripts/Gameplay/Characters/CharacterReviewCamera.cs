@@ -14,6 +14,7 @@ namespace PawArena.Gameplay.Characters
         private float _zoomSensitivity = .004f;
         [SerializeField, Range(-80, 80)] private float _minimumPitch = -35;
         [SerializeField, Range(-80, 80)] private float _maximumPitch = 80;
+        [SerializeField] private LayerMask _obstructionMask;
         private readonly RaycastHit[] _obstructions = new RaycastHit[16];
         private float _yaw, _pitch = 16, _planarTurnSpeed;
         private bool _focused = true, _ownsCursor, _partyMatchMode;
@@ -23,7 +24,11 @@ namespace PawArena.Gameplay.Characters
         public float Pitch => _pitch;
         public float Distance => _distance;
         public bool IsPartyMatchMode => _partyMatchMode;
-        private void Awake() => ValidateLimits();
+        private void Awake()
+        {
+            ValidateLimits();
+            _obstructionMask = ResolveEnvironmentMask(_obstructionMask);
+        }
         private void OnValidate() => ValidateLimits();
         private void ValidateLimits()
         {
@@ -35,6 +40,12 @@ namespace PawArena.Gameplay.Characters
             _distance = Mathf.Clamp(float.IsFinite(_distance) ? _distance : 5, _minimumDistance, _maximumDistance);
             _pitch = Mathf.Clamp(_pitch, _minimumPitch, _maximumPitch);
         }
+        private static LayerMask ResolveEnvironmentMask(LayerMask configured)
+        {
+            if (configured.value != 0 && configured.value != ~0) { return configured; }
+            var mask = LayerMask.GetMask("Ground", "Default");
+            return mask != 0 ? mask : 1 << LayerMask.NameToLayer("Default");
+        }
         /// <summary>Requested horizontal heading for the player motor, without feedback from rendered camera yaw.</summary>
         public Vector3 PlanarForward => Quaternion.Euler(0, _yaw, 0) * Vector3.forward;
         /// <summary>Latest requested horizontal turn rate in degrees per second.</summary>
@@ -44,10 +55,31 @@ namespace PawArena.Gameplay.Characters
         /// <summary>Enables continuous mouse-look for Party Match while preserving RMB orbit in Lobby.</summary>
         public void SetPartyMatchMode(bool enabled)
         {
-            if (_partyMatchMode == enabled) { return; }
+            if (_partyMatchMode == enabled)
+            {
+                if (enabled)
+                {
+                    AcquireCursor();
+                }
+                else
+                {
+                    EnsureLobbyCursorVisible();
+                }
+
+                return;
+            }
+
             _partyMatchMode = enabled;
             ReleaseCursor();
             if (_target != null) { _yaw = _target.eulerAngles.y; }
+            if (enabled)
+            {
+                AcquireCursor();
+            }
+            else
+            {
+                EnsureLobbyCursorVisible();
+            }
         }
         private void OnDisable() => ReleaseCursor();
         private void OnApplicationFocus(bool focused) { _focused = focused; if (!focused) { ReleaseCursor(); } }
@@ -60,8 +92,7 @@ namespace PawArena.Gameplay.Characters
             {
                 if (_partyMatchMode || mouse.rightButton.isPressed)
                 {
-                    if (!_ownsCursor)
-                    { _previousLock = Cursor.lockState; _previousVisibility = Cursor.visible; _ownsCursor = true; Cursor.lockState = CursorLockMode.Locked; Cursor.visible = false; }
+                    AcquireCursor();
                     var delta = mouse.delta.ReadValue();
                     var yawDelta = delta.x * .18f;
                     _yaw = Mathf.Repeat(_yaw + yawDelta, 360);
@@ -80,7 +111,7 @@ namespace PawArena.Gameplay.Characters
             // Render behind the interpolated body yaw so the camera turns with the cat without snapping ahead of it.
             var direction = Quaternion.Euler(_pitch, _target.eulerAngles.y, 0) * Vector3.back;
             var distance = _distance;
-            var count = Physics.SphereCastNonAlloc(centre, .12f, direction, _obstructions, distance, ~0, QueryTriggerInteraction.Ignore);
+            var count = Physics.SphereCastNonAlloc(centre, .12f, direction, _obstructions, distance, _obstructionMask, QueryTriggerInteraction.Ignore);
             for (var i = 0; i < count; i++)
             {
                 if (_obstructions[i].transform == _target || _obstructions[i].transform.IsChildOf(_target)) { continue; }
@@ -93,6 +124,26 @@ namespace PawArena.Gameplay.Characters
         {
             if (!_ownsCursor) { return; }
             Cursor.lockState = _previousLock; Cursor.visible = _previousVisibility; _ownsCursor = false;
+        }
+
+        private void AcquireCursor()
+        {
+            if (_ownsCursor || !_focused || _target == null)
+            {
+                return;
+            }
+
+            _previousLock = Cursor.lockState;
+            _previousVisibility = Cursor.visible;
+            _ownsCursor = true;
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+
+        private static void EnsureLobbyCursorVisible()
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
     }
 }

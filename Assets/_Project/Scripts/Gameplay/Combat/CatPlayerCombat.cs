@@ -26,7 +26,6 @@ namespace PawArena.Gameplay.Combat
         private float _anchorVisualRemaining;
         private float _stepDelta;
         private int _hitCount;
-        private int _punchCount;
         private bool _attackRequested;
         private bool _liftRequested;
         private bool _abilityRequested;
@@ -40,9 +39,18 @@ namespace PawArena.Gameplay.Combat
 
         public CatCombatAbility SelectedAbility => _selectedAbility;
         public float SelectedCooldown => _cooldowns[(int)_selectedAbility];
+        /// <summary>Gets the total configured cooldown for the selected ability.</summary>
+        public float SelectedCooldownDuration => _settings == null
+            ? 0f
+            : Mathf.Max(0f, _settings.Ability(_selectedAbility).Cooldown);
+
+        /// <summary>Gets the selected cooldown as a zero-to-one value for presentation.</summary>
+        public float SelectedCooldownNormalized => SelectedCooldownDuration <= 0f
+            ? 0f
+            : Mathf.Clamp01(SelectedCooldown / SelectedCooldownDuration);
+
         public bool CanMove => _actor != null && _actor.CanMove;
         public bool CanTurn => _actor != null && _actor.CanTurn;
-        public bool IsLeftPunch => (_punchCount & 1) != 0;
         public float ActionNormalizedTime
         {
             get
@@ -239,7 +247,6 @@ namespace PawArena.Gameplay.Combat
 
         private void BeginPunch()
         {
-            _punchCount++;
             _queuedPunch = false;
             BeginAction(CatCombatPhase.Punch);
         }

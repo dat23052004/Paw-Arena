@@ -17,8 +17,8 @@ MonoBehaviour:
   _description: Cosmetic sumo gear. Shared cat rig; no combat stats or cloth simulation.
   _category: 2
   _rarity: 1
-  _unlockType: 5
-  _price: 0
+  _unlockType: 1
+  _price: 2000
   _icon: {fileID: 0}
   _previewPrefab: {fileID: 0}
   _allowedSlots:

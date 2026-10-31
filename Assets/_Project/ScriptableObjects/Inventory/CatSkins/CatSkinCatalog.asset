@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa4e7eca52bcb4543841b055d3538362, type: 3}
   m_Name: CatSkinCatalog
   m_EditorClassIdentifier: PawArena.Gameplay::PawArena.Gameplay.Inventory.ItemCatalog
-  _catalogVersion: 1
+  _catalogVersion: 2
   _definitions:
   - {fileID: 11400000, guid: abd7fd1535750db4793c75c911ef85fa, type: 2}
   - {fileID: 11400000, guid: d492d805e63a1d146b55ac4088c0c555, type: 2}
@@ -41,3 +41,24 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 184ebb661b04e5f4f935f0440f4e6d10, type: 2}
   - {fileID: 11400000, guid: 9620f41b45b2e3642b4a24a6b1ed215b, type: 2}
   - {fileID: 11400000, guid: 47d25b74e1bf3b04e88c3ed69c676f78, type: 2}
+  - {fileID: 11400000, guid: 65f190c7b8ac855428fae841b091364e, type: 2}
+  - {fileID: 11400000, guid: cd4ed6c017b8cf549a9866821f26c11e, type: 2}
+  - {fileID: 11400000, guid: 4e2300c7331a36f4ea920ef4ab6c7b8a, type: 2}
+  - {fileID: 11400000, guid: 7a5b34a054be7c74689f2967c8d50108, type: 2}
+  - {fileID: 11400000, guid: a86958743cfdb5c4cabc8e32abda7e79, type: 2}
+  - {fileID: 11400000, guid: 165ea81176cf9d147be58ac2de30f244, type: 2}
+  - {fileID: 11400000, guid: c8fc5cacedb44aa48bfef56b1697a615, type: 2}
+  - {fileID: 11400000, guid: 72e511e5235a17943a0ef4b2d9053abe, type: 2}
+  - {fileID: 11400000, guid: 0c380d7cdad9ab74da8b4e85ee203c3b, type: 2}
+  - {fileID: 11400000, guid: acbf63fc6eed1c44c9370ecd66a9dc58, type: 2}
+  - {fileID: 11400000, guid: d921a1a48d64c0143a76f3bea68fcea9, type: 2}
+  - {fileID: 11400000, guid: a0f40818c27c35040805fbdf43c8de57, type: 2}
+  - {fileID: 11400000, guid: da8d8993e481c3a4c93a5b195b530135, type: 2}
+  - {fileID: 11400000, guid: 209a2ba08ade233429399fd5e652b282, type: 2}
+  - {fileID: 11400000, guid: a4c37472d1dc0a54482ebd6ad72fc827, type: 2}
+  - {fileID: 11400000, guid: 1fbfe05883454984dace73595560ed92, type: 2}
+  - {fileID: 11400000, guid: 905b97c84b1612645ab4b87cd9a7a491, type: 2}
+  - {fileID: 11400000, guid: 6ce2d49aa3434814fafc08837b6892ee, type: 2}
+  - {fileID: 11400000, guid: 652699a907f19254aae077a567975ee1, type: 2}
+  - {fileID: 11400000, guid: 95e1f6f43ce602c488780c5ba7afc399, type: 2}
+  - {fileID: 11400000, guid: e9000000000000000000000000000017, type: 2}

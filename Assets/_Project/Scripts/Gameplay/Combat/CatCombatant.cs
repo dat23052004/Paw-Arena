@@ -26,7 +26,10 @@ namespace PawArena.Gameplay.Combat
         private float _catnipRemaining;
         private float _fluffRemaining;
         private float _slipRemaining;
+        private float _lastAttackedAt = float.NegativeInfinity;
         private bool _initialized;
+        private bool _automaticRingOutRecovery = true;
+        private CatCombatant _lastAttacker;
 
         public static IReadOnlyList<CatCombatant> Active => ActiveCombatants;
         public CatCombatSettings Settings => _settings;
@@ -42,12 +45,17 @@ namespace PawArena.Gameplay.Combat
         public CatCombatant Holder { get; private set; }
         public bool IsKnockedOut => Phase == CatCombatPhase.KnockedOut;
         public bool CanAct => Phase == CatCombatPhase.Free;
-        public bool CanMove => Phase is CatCombatPhase.Free or CatCombatPhase.Grab or CatCombatPhase.Holding or CatCombatPhase.Carrying;
+        public bool CanMove => Phase is CatCombatPhase.Free or CatCombatPhase.Punch or CatCombatPhase.Grab or
+            CatCombatPhase.Holding or CatCombatPhase.Carrying;
         public bool CanTurn => Phase is CatCombatPhase.Free or CatCombatPhase.Punch or CatCombatPhase.Grab or
             CatCombatPhase.Holding or CatCombatPhase.Lifting or CatCombatPhase.Carrying or CatCombatPhase.Throwing;
         public float DamageMultiplier => _fluffRemaining > 0 ? 1.6f : 1;
         public float KnockbackMultiplier => _anchorRemaining > 0 ? .2f : 1;
         public float MovementMultiplier => _anchorRemaining > 0 ? .4f : _catnipRemaining > 0 ? 1.45f : _slipRemaining > 0 ? .55f : 1;
+        /// <summary>Gets the most recent combatant that successfully hit or grabbed this actor.</summary>
+        public CatCombatant LastAttacker => _lastAttacker;
+        /// <summary>Gets the unscaled timestamp of the most recent accepted attack.</summary>
+        public float LastAttackedAt => _lastAttackedAt;
         public event Action<CatCombatant> Changed;
         public event Action<CatCombatant, CatCombatant> HitReceived;
         public event Action<CatCombatant> KnockedOut;
@@ -113,7 +121,15 @@ namespace PawArena.Gameplay.Combat
             _fluffRemaining = Mathf.Max(0, _fluffRemaining - delta);
             _slipRemaining = Mathf.Max(0, _slipRemaining - delta);
             _motor.SetSpeedMultiplier(MovementMultiplier);
-            if (transform.position.y < _settings.RingOutY) { Respawn(); return; }
+            if (transform.position.y < _settings.RingOutY)
+            {
+                if (_automaticRingOutRecovery)
+                {
+                    Respawn();
+                }
+
+                return;
+            }
             if (_phaseRemaining <= 0) { return; }
             _phaseRemaining = Mathf.Max(0, _phaseRemaining - delta);
             if (_phaseRemaining > 0) { return; }
@@ -133,11 +149,21 @@ namespace PawArena.Gameplay.Combat
             _spawnRotation = rotation;
         }
 
+        /// <summary>
+        /// Enables legacy self-respawn outside matches. Authoritative matches disable this so the
+        /// server can confirm elimination before presentation moves the actor.
+        /// </summary>
+        public void SetAutomaticRingOutRecovery(bool enabled)
+        {
+            _automaticRingOutRecovery = enabled;
+        }
+
         /// <summary>Applies a validated hit once, including health, reaction and impulse.</summary>
         public bool ReceiveHit(CatCombatant attacker, float damage, Vector3 impulse)
         {
             Initialize();
             if (!_initialized || _hitImmunity > 0 || IsKnockedOut) { return false; }
+            RecordAttacker(attacker);
             if (Holder != null) { Holder.ReleaseHeld(Vector3.zero); }
             ReleaseHeld(Vector3.zero);
             Health = Mathf.Max(0, Health - Mathf.Max(0, damage));
@@ -164,6 +190,7 @@ namespace PawArena.Gameplay.Combat
                 target.Holder != null || target.Held != null || target.IsKnockedOut) { return false; }
             Held = target;
             target.Holder = this;
+            target.RecordAttacker(this);
             SetPhase(CatCombatPhase.Holding);
             target.SetPhase(CatCombatPhase.Held);
             target._motor.SetMovementControl(true);
@@ -190,6 +217,11 @@ namespace PawArena.Gameplay.Combat
             Held = null;
             target.Holder = null;
             Physics.IgnoreCollision(_capsule, target._capsule, false);
+            if (impulse.sqrMagnitude > .01f)
+            {
+                target.RecordAttacker(this);
+            }
+
             target._motor.SetMovementControl(true);
             target._motor.SetSuspended(false);
             target.SetPhase(impulse.sqrMagnitude > .01f ? CatCombatPhase.HitStun : CatCombatPhase.Free,
@@ -212,8 +244,15 @@ namespace PawArena.Gameplay.Combat
             Changed?.Invoke(this);
         }
 
-        /// <summary>Applies temporary traction loss from Hairball.</summary>
-        public void ApplySlip(float duration) => _slipRemaining = Mathf.Max(_slipRemaining, duration);
+        /// <summary>Applies temporary traction loss without combat attribution.</summary>
+        public void ApplySlip(float duration) => ApplySlip(null, duration);
+
+        /// <summary>Applies temporary traction loss and remembers its source for ring-out credit.</summary>
+        public void ApplySlip(CatCombatant attacker, float duration)
+        {
+            RecordAttacker(attacker);
+            _slipRemaining = Mathf.Max(_slipRemaining, duration);
+        }
 
         /// <summary>Nine Lives immediately restores an incapacitated combatant.</summary>
         public bool ReviveFromNineLives()
@@ -233,12 +272,25 @@ namespace PawArena.Gameplay.Combat
             Health = _settings.MaxHealth;
             _hitImmunity = 1;
             _anchorRemaining = _catnipRemaining = _fluffRemaining = _slipRemaining = 0;
+            _lastAttacker = null;
+            _lastAttackedAt = float.NegativeInfinity;
             _motor.SetSuspended(false);
             _motor.SetSpeedMultiplier(1);
             _motor.SetMovementControl(true);
             _motor.Warp(_spawnPosition, _spawnRotation);
             SetPhase(CatCombatPhase.Free);
             Changed?.Invoke(this);
+        }
+
+        private void RecordAttacker(CatCombatant attacker)
+        {
+            if (attacker == null || attacker == this)
+            {
+                return;
+            }
+
+            _lastAttacker = attacker;
+            _lastAttackedAt = Time.unscaledTime;
         }
     }
 }

@@ -28,7 +28,7 @@ namespace PawArena.Gameplay.Inventory
 
         /// <summary>Reject incomplete data before replacing an existing cosmetic renderer.</summary>
         public bool IsValid => _mesh != null && _material != null && _boneNames.Length > 0 &&
-            _mesh.bindposes.Length == _boneNames.Length && BuildDescriptor().AllowedSlots.Count == 1 &&
+            BuildDescriptor().AllowedSlots.Count == 1 &&
             CatGearSlots.Contains(BuildDescriptor().AllowedSlots[0]);
 
         protected override void OnValidate() { base.OnValidate(); SetCategory(ItemCategory.Gear); }

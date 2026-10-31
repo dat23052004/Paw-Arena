@@ -21,6 +21,7 @@ namespace PawArena.Gameplay.Player
         private Vector3 _home;
         private Quaternion _homeRotation;
         private bool _focused = true;
+        private bool _inputEnabled = true;
         public string CurrentClip => _animation.CurrentClip;
         public bool IsPreviewing => _animation.IsPreviewing;
         public bool IsPaused => _animation.IsPaused;
@@ -28,12 +29,29 @@ namespace PawArena.Gameplay.Player
         public float NormalizedTime => _animation.NormalizedTime;
         public CatPlayerControlMode ControlMode => _controlMode;
         public event Action TestControlModeToggleRequested;
+        private void Awake()
+        {
+            var playerLayer = LayerMask.NameToLayer("Player");
+            var botLayer = LayerMask.NameToLayer("Bot");
+            if (playerLayer >= 0)
+            {
+                SetActorLayerRecursively(transform, playerLayer, playerLayer, botLayer);
+            }
+        }
         private void Start()
         { BindCamera(_camera == null ? Camera.main : _camera); _motion = GetComponent<CatSecondaryMotion>(); _combat ??= GetComponent<CatPlayerCombat>(); SetHome(transform.position, transform.rotation); }
         private void OnDisable() { _motor?.ClearInput(); _combat?.ClearInput(); _motion?.SetLookPitch(0); }
         private void OnApplicationFocus(bool focused) { _focused = focused; if (!focused) { _motor.ClearInput(); _combat?.ClearInput(); _motion?.SetLookPitch(0); } }
         private void Update()
         {
+            if (!_inputEnabled)
+            {
+                _motor.ClearInput();
+                _combat?.ClearInput();
+                _motion?.SetLookPitch(0);
+                return;
+            }
+
             var keys = Keyboard.current;
             if (!_focused || keys == null) { _motor.ClearInput(); _combat?.ClearInput(); _motion?.SetLookPitch(0); return; }
             if (keys.backspaceKey.wasPressedThisFrame) { ResetPlayer(); return; }
@@ -73,7 +91,7 @@ namespace PawArena.Gameplay.Player
         private void LateUpdate()
         {
             if (_motion == null) { return; }
-            if (!_focused || IsPreviewing || _camera == null) { _motion.SetLookPitch(0); return; }
+            if (!_inputEnabled || !_focused || IsPreviewing || _camera == null) { _motion.SetLookPitch(0); return; }
             var forward = _camera.transform.forward;
             var pitch = -Mathf.Asin(Mathf.Clamp(forward.y, -1, 1)) * Mathf.Rad2Deg;
             _motion.SetLookPitch(pitch - _neutralCameraPitch);
@@ -91,6 +109,18 @@ namespace PawArena.Gameplay.Player
             _controlMode = mode;
             _motor.ClearInput();
             _orbit?.SetPartyMatchMode(mode == CatPlayerControlMode.PartyMatch);
+        }
+
+        /// <summary>Enables or disables local device input without disabling presentation components.</summary>
+        public void SetInputEnabled(bool enabled)
+        {
+            _inputEnabled = enabled;
+            if (!enabled)
+            {
+                _motor.ClearInput();
+                _combat?.ClearInput();
+                _motion?.SetLookPitch(0);
+            }
         }
         private void RequestTestControlModeToggle()
         {
@@ -123,6 +153,22 @@ namespace PawArena.Gameplay.Player
         {
             if (_orbit != null) { _motor.SubmitFacing(_orbit.PlanarForward, _orbit.PlanarTurnSpeed); }
             else { _motor.SubmitFacing(fallbackForward); }
+        }
+        private static void SetActorLayerRecursively(
+            Transform node,
+            int targetLayer,
+            int playerLayer,
+            int botLayer)
+        {
+            var currentLayer = node.gameObject.layer;
+            if (currentLayer == 0 || currentLayer == playerLayer || currentLayer == botLayer)
+            {
+                node.gameObject.layer = targetLayer;
+            }
+            for (var i = 0; i < node.childCount; i++)
+            {
+                SetActorLayerRecursively(node.GetChild(i), targetLayer, playerLayer, botLayer);
+            }
         }
     }
 }

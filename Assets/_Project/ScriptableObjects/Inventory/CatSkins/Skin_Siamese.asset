@@ -17,7 +17,7 @@ MonoBehaviour:
   _description: Material-only cat skin. Shared mesh, UV, rig and animations.
   _category: 1
   _rarity: 1
-  _unlockType: 5
+  _unlockType: 2
   _price: 0
   _icon: {fileID: 0}
   _previewPrefab: {fileID: 0}
@@ -25,6 +25,18 @@ MonoBehaviour:
   - _type: 1
     _index: 0
   _compatibleMesh: {fileID: 1924362587922941630, guid: a2662c9044d8f224eab022f79790c32c, type: 3}
-  _coat: {fileID: 2100000, guid: 5d2c7847a271611478229abd62111571, type: 2}
-  _eyes: {fileID: 2100000, guid: 2bb31a1979d4b6c4eadaa5c0c7a38a09, type: 2}
+  _coatReference:
+    m_AssetGUID: 5d2c7847a271611478229abd62111571
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 0
+  _eyesReference:
+    m_AssetGUID: 2bb31a1979d4b6c4eadaa5c0c7a38a09
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 0
   _thumbnail: {fileID: 2800000, guid: a746971a385fa7c43941a1395e8d9b68, type: 3}
+  _legacyCoat: {fileID: 0}
+  _legacyEyes: {fileID: 0}

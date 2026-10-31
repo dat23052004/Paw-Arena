@@ -1,8 +1,0 @@
-{
-  "name": "PawArena.Characters.Tests",
-  "rootNamespace": "PawArena.Tests.Characters",
-  "references": ["PawArena.Core", "PawArena.Gameplay"],
-  "includePlatforms": ["Editor"],
-  "autoReferenced": false,
-  "optionalUnityReferences": ["TestAssemblies"]
-}

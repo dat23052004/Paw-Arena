@@ -3,7 +3,9 @@
   "rootNamespace": "PawArena.Gameplay",
   "references": [
     "PawArena.Core",
-    "Unity.InputSystem"
+    "Unity.InputSystem",
+    "Unity.Addressables",
+    "Unity.ResourceManager"
   ],
   "includePlatforms": [],
   "excludePlatforms": [],

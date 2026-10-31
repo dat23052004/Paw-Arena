@@ -16,15 +16,27 @@ MonoBehaviour:
   _displayName: Snow Leopard
   _description: Material-only cat skin. Shared mesh, UV, rig and animations.
   _category: 1
-  _rarity: 2
-  _unlockType: 5
-  _price: 0
+  _rarity: 3
+  _unlockType: 2
+  _price: 5000
   _icon: {fileID: 0}
   _previewPrefab: {fileID: 0}
   _allowedSlots:
   - _type: 1
     _index: 0
   _compatibleMesh: {fileID: 1924362587922941630, guid: a2662c9044d8f224eab022f79790c32c, type: 3}
-  _coat: {fileID: 2100000, guid: d9a461d3b8ec724459cac3ff0881c55a, type: 2}
-  _eyes: {fileID: 2100000, guid: a79b0afb71203c14fa490898ec696b6a, type: 2}
+  _coatReference:
+    m_AssetGUID: d9a461d3b8ec724459cac3ff0881c55a
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 0
+  _eyesReference:
+    m_AssetGUID: a79b0afb71203c14fa490898ec696b6a
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 0
   _thumbnail: {fileID: 2800000, guid: 8f2fda98625629c4195cf7f737d34bc0, type: 3}
+  _legacyCoat: {fileID: 0}
+  _legacyEyes: {fileID: 0}

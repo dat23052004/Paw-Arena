@@ -10,6 +10,7 @@ namespace PawArena.Gameplay.Characters
     public sealed class CatLocomotion : MonoBehaviour
     {
         private const float FacingCompletionAngle = .1f;
+        private const int EverythingMask = ~0;
         [SerializeField] private CatLocomotionSettings _settings;
         [SerializeField] private LayerMask _groundMask = ~0;
         private readonly RaycastHit[] _hits = new RaycastHit[8];
@@ -44,10 +45,20 @@ namespace PawArena.Gameplay.Characters
             if (_settings == null) { Debug.LogError("Cat locomotion settings are missing.", this); enabled = false; return; }
             _body = GetComponent<Rigidbody>(); _capsule = GetComponent<CapsuleCollider>();
             _physics = gameObject.scene.GetPhysicsScene();
+            _groundMask = ResolveEnvironmentMask(_groundMask);
             _body.constraints = RigidbodyConstraints.FreezeRotation;
             _body.interpolation = RigidbodyInterpolation.Interpolate;
-            _body.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
+            // Characters are not fast enough to justify the most expensive sweep mode every physics step.
+            // Speculative CCD still protects short bursts and remains valid while the body is kinematic.
+            _body.collisionDetectionMode = CollisionDetectionMode.ContinuousSpeculative;
             _initialized = true;
+        }
+
+        private static LayerMask ResolveEnvironmentMask(LayerMask configured)
+        {
+            if (configured.value != 0 && configured.value != EverythingMask) { return configured; }
+            var mask = LayerMask.GetMask("Ground", "Default");
+            return mask != 0 ? mask : 1 << LayerMask.NameToLayer("Default");
         }
 
         /// <summary>World-space run intent; jump edges survive until a physics step.</summary>

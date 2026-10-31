@@ -2,7 +2,9 @@
   "name": "PawArena.UI",
   "rootNamespace": "PawArena.UI",
   "references": [
-    "PawArena.Core"
+    "PawArena.Core",
+    "PawArena.LiveEvents",
+    "Unity.TextMeshPro"
   ],
   "includePlatforms": [],
   "excludePlatforms": [],

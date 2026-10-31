@@ -41,5 +41,10 @@ namespace PawArena.UI.Navigation
         /// Clears history and opens a new root screen.
         /// </summary>
         bool ResetTo(UIScreenId screenId);
+
+        /// <summary>
+        /// Closes every modal screen and clears navigation history.
+        /// </summary>
+        bool CloseAll();
     }
 }

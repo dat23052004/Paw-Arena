@@ -1,0 +1,251 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: PawArena_Skins
+  m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
+  m_GroupName: PawArena_Skins
+  m_GUID: de6ed3fbdffabd748875e2cd32b15705
+  m_SerializeEntries:
+  - m_GUID: 050411edd313a3749a5afd5af0b48a39
+    m_Address: paw-arena/skins/fur_russian_blue/coat
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - skin_material
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 14140cf3030427f43bc8835683fb8c7a
+    m_Address: paw-arena/skins/fur_black_widow/coat
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - skin_material
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 19e2454792cf93042abf401e228c926d
+    m_Address: paw-arena/skins/fur_tiger/coat
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - skin_material
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 24b6291bf4efb1040bb81c34206f0165
+    m_Address: paw-arena/skins/fur_tuxedo/eyes
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - skin_material
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2bb31a1979d4b6c4eadaa5c0c7a38a09
+    m_Address: paw-arena/skins/fur_siamese/eyes
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - skin_material
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2c3297d4efb3eb14e8f137bc0831d21a
+    m_Address: paw-arena/skins/fur_white/coat
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - skin_material
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2ff003139be40be4898e6e300fe3695f
+    m_Address: paw-arena/skins/fur_black_widow/eyes
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - skin_material
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 463c752fabb0c44499bfb912e0c694f7
+    m_Address: paw-arena/skins/fur_ginger/coat
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - skin_material
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 477f22b33cd30bb4a873d396ea91fda1
+    m_Address: paw-arena/skins/fur_skeleton/coat
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - skin_material
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4ca44aced8f7d3f45af3f0e9092f5cd1
+    m_Address: paw-arena/skins/fur_russian_blue/eyes
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - skin_material
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4f50a97372ab0384c819d3a71b26a1be
+    m_Address: paw-arena/skins/fur_mummy/eyes
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - skin_material
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 53377fb89169e8649b1dd4c24531a727
+    m_Address: paw-arena/skins/fur_pumpkin/coat
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - skin_material
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 544bf8be0c46a744dbb96ce6c68daee2
+    m_Address: paw-arena/skins/fur_gold/eyes
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - skin_material
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 54c2e663c088bda42a9c03a637c84a29
+    m_Address: paw-arena/skins/fur_crystal/eyes
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - skin_material
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5d2c7847a271611478229abd62111571
+    m_Address: paw-arena/skins/fur_siamese/coat
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - skin_material
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6842e025554a84941be00d094b927053
+    m_Address: paw-arena/skins/fur_gold/coat
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - skin_material
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 78ec7a366fd32764ca1149d96c5b3867
+    m_Address: paw-arena/skins/fur_frankencat/eyes
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - skin_material
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 798f0ee16db057648987e6db18b46400
+    m_Address: paw-arena/skins/fur_calico/eyes
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - skin_material
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7c624b8c7ba984c4dbba55ec3eccb20a
+    m_Address: paw-arena/skins/fur_black/coat
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - skin_material
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7d0fbf5e9246d744faf4f3efa857e3f4
+    m_Address: paw-arena/skins/fur_tuxedo/coat
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - skin_material
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 857357e8358b58848a5817ac8cff2367
+    m_Address: paw-arena/skins/fur_tiger/eyes
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - skin_material
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9f352a53d54dd1949b7cfa9bd27cec8e
+    m_Address: paw-arena/skins/fur_ninja/eyes
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - skin_material
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a2c08893278b09443816bab480e02791
+    m_Address: paw-arena/skins/fur_pumpkin/eyes
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - skin_material
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a79b0afb71203c14fa490898ec696b6a
+    m_Address: paw-arena/skins/fur_snow_leopard/eyes
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - skin_material
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b557df280ed1da6448761e616662057b
+    m_Address: paw-arena/skins/fur_ginger/eyes
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - skin_material
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b7d109c04bf35354e9507635f5d0b472
+    m_Address: paw-arena/skins/fur_mummy/coat
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - skin_material
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bcd243eeba9b5b6408f6243d30008f76
+    m_Address: paw-arena/skins/fur_skeleton/eyes
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - skin_material
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ce578b43e162bef44bde72cf4afc7c9c
+    m_Address: paw-arena/skins/fur_ninja/coat
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - skin_material
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d133a6a07282fe74db1f1579d5b38752
+    m_Address: paw-arena/skins/fur_crystal/coat
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - skin_material
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d310f0b39f3505b4291ad4dbd164ee98
+    m_Address: paw-arena/skins/fur_hologram/eyes
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - skin_material
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d739f8eedf974d146b7466c992c7ca82
+    m_Address: paw-arena/skins/fur_white/eyes
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - skin_material
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d9a461d3b8ec724459cac3ff0881c55a
+    m_Address: paw-arena/skins/fur_snow_leopard/coat
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - skin_material
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e1cee64cab278a94bbfa5491aa3bc777
+    m_Address: paw-arena/skins/fur_grey/eyes
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - skin_material
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: eb7f288ea7bdc264fb569fbc33cc3ee1
+    m_Address: paw-arena/skins/fur_hologram/coat
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - skin_material
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f283c04437cd3df44ae11a883d97f723
+    m_Address: paw-arena/skins/fur_black/eyes
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - skin_material
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f7b58ece346b2054da2c0fabcfd04a62
+    m_Address: paw-arena/skins/fur_calico/coat
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - skin_material
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f93ff20440f23d74781a16c17d846b39
+    m_Address: paw-arena/skins/fur_grey/coat
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - skin_material
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fee8ff61c70175b489154150a6192e3c
+    m_Address: paw-arena/skins/fur_frankencat/coat
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - skin_material
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: db527da9f93d34a46837f05c1cc0447a, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 2e8db066e40b9074f80ac557ca0bb51f, type: 2}
+    - {fileID: 11400000, guid: dd0239f2390efcb4c9e5c4f9c9671707, type: 2}

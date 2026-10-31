@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44333b1f9771ea24db655f0ebd78a82b, type: 3}
+  m_Name: Emote_Beam_Me_Up
+  m_EditorClassIdentifier: PawArena.Gameplay::PawArena.Gameplay.Inventory.ItemDefinition
+  _itemId: emote_beam
+  _displayName: Beam Me Up
+  _description: Teleport in style.
+  _category: 4
+  _rarity: 3
+  _unlockType: 2
+  _price: 0
+  _icon: {fileID: 21300000, guid: c1a6f86e9686eb14986fc420ba948154, type: 3}
+  _previewPrefab: {fileID: 0}
+  _allowedSlots:
+  - _type: 9
+    _index: 0

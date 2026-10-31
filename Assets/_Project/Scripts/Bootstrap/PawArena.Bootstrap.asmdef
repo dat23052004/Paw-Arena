@@ -5,6 +5,7 @@
     "PawArena.Core",
     "PawArena.Gameplay",
     "PawArena.Infrastructure",
+    "PawArena.LiveEvents",
     "PawArena.UI"
   ],
   "includePlatforms": [],

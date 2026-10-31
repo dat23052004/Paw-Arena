@@ -18,7 +18,6 @@ GameObject:
   - component: {fileID: 4213447620426830470}
   - component: {fileID: 2316646668630143353}
   - component: {fileID: 730376357574125325}
-  - component: {fileID: 7077143426866230325}
   - component: {fileID: 5940016161844321461}
   m_Layer: 0
   m_Name: PF_Player
@@ -139,6 +138,7 @@ MonoBehaviour:
   _animation: {fileID: 797579790032956165}
   _combat: {fileID: 730376357574125325}
   _neutralCameraPitch: 16
+  _controlMode: 0
 --- !u!114 &1394658456846104327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,21 +201,6 @@ MonoBehaviour:
   _animation: {fileID: 797579790032956165}
   _effects: {fileID: 2316646668630143353}
   _selectedAbility: 0
---- !u!114 &7077143426866230325
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7125282969273199178}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5706f7e1d14bfed40b09a2ba057379c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: PawArena.Gameplay::PawArena.Gameplay.Combat.CatCombatHud
-  _actor: {fileID: 4213447620426830470}
-  _combat: {fileID: 730376357574125325}
-  _visible: 1
 --- !u!114 &5940016161844321461
 MonoBehaviour:
   m_ObjectHideFlags: 0

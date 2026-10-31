@@ -1,4 +1,5 @@
 using System;
+using PawArena.Core.Eggs;
 using PawArena.Core.Economy;
 using PawArena.Core.Inventory;
 using PawArena.Core.Settings;
@@ -39,6 +40,16 @@ namespace PawArena.Core.Profiles
         /// Gets the item purchase coordinator.
         /// </summary>
         IInventoryPurchaseService Purchases { get; }
+
+        /// <summary>
+        /// Gets player-scoped egg hatch counters and tier unlocks.
+        /// </summary>
+        IEggProgressService EggProgress { get; }
+
+        /// <summary>
+        /// Gets the player-scoped paid wheel-ticket balance.
+        /// </summary>
+        IWheelTicketService WheelTickets { get; }
 
         /// <summary>
         /// Gets the settings service for the profile.

@@ -1,5 +1,6 @@
 using System;
 using PawArena.Core.Audio;
+using PawArena.Core.Eggs;
 using PawArena.Core.Economy;
 using PawArena.Core.Events;
 using PawArena.Core.Flow;
@@ -10,6 +11,7 @@ using PawArena.Core.Services;
 using PawArena.Core.Settings;
 using PawArena.Core.Time;
 using PawArena.Gameplay.Flow;
+using PawArena.Gameplay.Eggs;
 using PawArena.Gameplay.Inventory;
 using PawArena.Infrastructure.Audio;
 using PawArena.Infrastructure.Persistence;
@@ -29,10 +31,11 @@ namespace PawArena.Bootstrap
         [SerializeField] private AudioService _audioService = null;
         [SerializeField] private UnitySceneService _sceneService = null;
         [SerializeField] private GameFlowController _gameFlow = null;
-        [SerializeField] private UIStackController _uiService = null;
+        [SerializeField] private UIManager _uiService = null;
 
         [Header("Data")]
         [SerializeField] private ItemCatalog _itemCatalog = null;
+        [SerializeField] private EggCatalog _eggCatalog = null;
         [SerializeField] private string _localPlayerId = "local-player";
 
         [Header("Lifetime")]
@@ -137,6 +140,25 @@ namespace PawArena.Bootstrap
                 _itemCatalog,
                 clock);
 
+            var authoredEggCatalog = _eggCatalog != null
+                ? _eggCatalog
+                : Resources.Load<EggCatalog>("EggCatalog");
+            IEggCatalog runtimeEggCatalog = authoredEggCatalog != null
+                ? authoredEggCatalog
+                : SampleEggCatalog.Create();
+            IRandomSource randomSource = new SystemRandomSource();
+            IEggRefundPolicy refundPolicy = EggRefundPolicy.CreateDefault();
+            IEggHatchService eggHatchService = new EggHatchService(
+                runtimeEggCatalog,
+                _itemCatalog,
+                _profileService.Inventory,
+                _profileService.Wallet,
+                _profileService.EggProgress,
+                _profileService,
+                clock,
+                randomSource,
+                refundPolicy);
+
             ServiceRegistry.Register<IClock>(clock);
             ServiceRegistry.Register<IEventBus>(_eventBus);
             ServiceRegistry.Register<IProfileStore>(profileStore);
@@ -145,6 +167,10 @@ namespace PawArena.Bootstrap
             ServiceRegistry.Register<IWalletService>(_profileService.Wallet);
             ServiceRegistry.Register<IInventoryService>(_profileService.Inventory);
             ServiceRegistry.Register<IInventoryPurchaseService>(_profileService.Purchases);
+            ServiceRegistry.Register<IEggCatalog>(runtimeEggCatalog);
+            ServiceRegistry.Register<IEggProgressService>(_profileService.EggProgress);
+            ServiceRegistry.Register<IEggHatchService>(eggHatchService);
+            ServiceRegistry.Register<IWheelTicketService>(_profileService.WheelTickets);
             ServiceRegistry.Register<ISettingsService>(_profileService.Settings);
             ServiceRegistry.Register<IAudioService>(_audioService);
             ServiceRegistry.Register<ISceneService>(_sceneService);
@@ -209,7 +235,7 @@ namespace PawArena.Bootstrap
 
             if (_uiService == null)
             {
-                _uiService = GetComponentInChildren<UIStackController>(true);
+                _uiService = GetComponentInChildren<UIManager>(true);
             }
 
             _localPlayerId = string.IsNullOrWhiteSpace(_localPlayerId)

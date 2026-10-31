@@ -13,6 +13,7 @@ namespace PawArena.Gameplay.Characters
         [SerializeField] private Animator _animator;
         private readonly Dictionary<string, float> _lengths = new();
         private readonly Dictionary<string, bool> _loops = new();
+        private readonly Dictionary<string, int> _stateHashes = new();
         private bool _ready;
         private float _previewTime, _actionRemaining;
         private string _actionClip, _stanceClip;
@@ -34,8 +35,15 @@ namespace PawArena.Gameplay.Characters
         {
             if (_ready || _animator == null || _motor == null || _animator.runtimeAnimatorController == null) { return; }
             foreach (var clip in _animator.runtimeAnimatorController.animationClips)
-            { _lengths[clip.name] = clip.length; _loops[clip.name] = clip.isLooping; }
-            _animator.applyRootMotion = false; _animator.cullingMode = AnimatorCullingMode.AlwaysAnimate; _ready = true;
+            {
+                _lengths[clip.name] = clip.length;
+                _loops[clip.name] = clip.isLooping;
+                _stateHashes[clip.name] = Animator.StringToHash("Base Layer." + clip.name);
+            }
+            _animator.applyRootMotion = false;
+            // Keep the state machine advancing for authoritative action timing, but skip bone writes off-screen.
+            _animator.cullingMode = AnimatorCullingMode.CullUpdateTransforms;
+            _ready = true;
         }
         private void ResetPresentation() { _actionRemaining = 0; _actionClip = _stanceClip = null; CurrentClip = ""; }
 
@@ -60,7 +68,7 @@ namespace PawArena.Gameplay.Characters
             _actionRemaining = duration;
             CurrentClip = clip;
             _animator.speed = 1;
-            _animator.CrossFadeInFixedTime(Animator.StringToHash("Base Layer." + clip), .08f, 0, 0);
+            _animator.CrossFadeInFixedTime(_stateHashes[clip], .08f, 0, 0);
             return true;
         }
 
@@ -108,7 +116,7 @@ namespace PawArena.Gameplay.Characters
                     if (CurrentClip != _actionClip)
                     {
                         CurrentClip = _actionClip;
-                        _animator.CrossFadeInFixedTime(Animator.StringToHash("Base Layer." + CurrentClip), .08f, 0, 0);
+                        _animator.CrossFadeInFixedTime(_stateHashes[CurrentClip], .08f, 0, 0);
                     }
                     _animator.speed = 1;
                     return;
@@ -123,17 +131,17 @@ namespace PawArena.Gameplay.Characters
                 if (CurrentClip != _stanceClip)
                 {
                     CurrentClip = _stanceClip;
-                    _animator.CrossFadeInFixedTime(Animator.StringToHash("Base Layer." + CurrentClip), .08f, 0, 0);
+                    _animator.CrossFadeInFixedTime(_stateHashes[CurrentClip], .08f, 0, 0);
                 }
                 _animator.speed = CurrentClip == "Cat_Carry_Move" ? Mathf.Clamp(speed / _motor.Settings.RunSpeed, .4f, 1.4f) : 1;
                 return;
             }
             var clip = !_motor.Grounded ? "Cat_Jump_Air" : speed > .15f ? "Cat_Run" : "Cat_Idle";
             if (clip != CurrentClip)
-            { CurrentClip = clip; _animator.CrossFadeInFixedTime(Animator.StringToHash("Base Layer." + clip), .1f, 0, 0); }
+            { CurrentClip = clip; _animator.CrossFadeInFixedTime(_stateHashes[clip], .1f, 0, 0); }
             _animator.speed = clip == "Cat_Run" ? Mathf.Clamp(speed / _motor.Settings.RunSpeed, .4f, 1.4f) : 1;
         }
         private void Sample()
-        { _animator.speed = 0; _animator.Play(Animator.StringToHash("Base Layer." + CurrentClip), 0, Mathf.Min(_previewTime, .99999f)); _animator.Update(0); }
+        { _animator.speed = 0; _animator.Play(_stateHashes[CurrentClip], 0, Mathf.Min(_previewTime, .99999f)); _animator.Update(0); }
     }
 }

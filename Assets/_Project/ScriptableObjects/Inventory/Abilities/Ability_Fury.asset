@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b74d78df9c806354983fb1e658d1f6ad, type: 3}
+  m_Name: Ability_Fury
+  m_EditorClassIdentifier: PawArena.Gameplay::PawArena.Gameplay.Inventory.AbilityDefinition
+  _itemId: ability_fury
+  _displayName: Fury
+  _description: Power up for a short burst.
+  _category: 0
+  _rarity: 2
+  _unlockType: 1
+  _price: 5000
+  _icon: {fileID: 21300000, guid: 39ab2863708522c43a386176f7431f10, type: 3}
+  _previewPrefab: {fileID: 0}
+  _allowedSlots:
+  - _type: 0
+    _index: 0
+  _cooldownSeconds: 6
+  _durationSeconds: 4
+  _targetingMode: 0
+  _balanceVersion: 1

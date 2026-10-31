@@ -11,23 +11,45 @@ namespace PawArena.Gameplay.Characters
         [SerializeField, Range(0, 1)] private float _strength = 1;
         [SerializeField, Range(0, 1)] private float _armHang = .92f;
         [SerializeField, Range(0, 20)] private float _runLean = 12;
+        [SerializeField, Min(1), Tooltip("Secondary motion is disabled beyond this visual LOD distance.")]
+        private float _maximumSimulationDistance = 24;
         private readonly Transform[] _bones = new Transform[12];
         private readonly Quaternion[] _basePose = new Quaternion[12];
         private readonly Quaternion[] _torsoReference = new Quaternion[2];
+        private Renderer[] _renderers;
+        private Transform _lodObserver;
         private Transform _leftHand, _rightHand;
         private CatMotionSpring _lean, _arms, _look, _tail;
         private Vector3 _lastVelocity, _lastPosition, _acceleration;
         private float _lastYaw, _time, _lookPitch, _turnRate;
         private float _strafeStability;
-        private bool _ready, _sampled, _physicsSampled, _applied;
+        private bool _ready, _sampled, _physicsSampled, _applied, _runtimeSimulationEnabled = true;
         public Vector3 LeanDegrees => _lean.Value;
         public Vector3 ArmDeflection => _arms.Value;
         public bool IsReady => _ready;
         private void Awake() => Initialize();
-        private void OnEnable() { if (_motor != null) { _motor.Warped += ResetMotion; } }
+        private void OnEnable()
+        {
+            _runtimeSimulationEnabled = true;
+            if (_motor != null) { _motor.Warped += ResetMotion; }
+        }
         private void Update() => RestorePose();
-        private void FixedUpdate() => SamplePhysics(Time.fixedDeltaTime);
-        private void LateUpdate() => Present(Time.deltaTime);
+        private void FixedUpdate()
+        {
+            if (_runtimeSimulationEnabled) { SamplePhysics(Time.fixedDeltaTime); }
+        }
+        private void LateUpdate()
+        {
+            var shouldSimulate = ShouldSimulateRuntimeMotion();
+            if (!shouldSimulate)
+            {
+                if (_runtimeSimulationEnabled) { ResetMotion(); }
+                _runtimeSimulationEnabled = false;
+                return;
+            }
+            _runtimeSimulationEnabled = true;
+            Present(Time.deltaTime);
+        }
         private void OnDisable() { if (_motor != null) { _motor.Warped -= ResetMotion; } RestorePose(); ResetMotion(); }
         public void Initialize()
         {
@@ -44,8 +66,28 @@ namespace PawArena.Gameplay.Characters
             _leftHand = _animator.GetBoneTransform(HumanBodyBones.LeftHand); _rightHand = _animator.GetBoneTransform(HumanBodyBones.RightHand);
             foreach (var bone in _animator.GetComponentsInChildren<Transform>(true))
             { for (var i = 0; i < 5; i++) { if (bone.name == "Tail_0" + (i + 1)) { _bones[i + 7] = bone; } } }
+            _renderers = _animator.GetComponentsInChildren<Renderer>(true);
+            var mainCamera = Camera.main;
+            _lodObserver = mainCamera != null ? mainCamera.transform : null;
             _ready = _bones[0] != null && _bones[2] != null && _bones[3] != null && _bones[4] != null &&
                 _bones[5] != null && _bones[6] != null && _leftHand != null && _rightHand != null;
+        }
+        private bool ShouldSimulateRuntimeMotion()
+        {
+            if (!_ready || _strength <= 0) { return false; }
+            if (_renderers != null && _renderers.Length > 0)
+            {
+                var visible = false;
+                for (var i = 0; i < _renderers.Length; i++)
+                {
+                    if (_renderers[i] != null && _renderers[i].enabled && _renderers[i].isVisible)
+                    { visible = true; break; }
+                }
+                if (!visible) { return false; }
+            }
+            if (_lodObserver == null) { return true; }
+            var maximumDistance = Mathf.Max(1, _maximumSimulationDistance);
+            return (_lodObserver.position - transform.position).sqrMagnitude <= maximumDistance * maximumDistance;
         }
         public void SetLookPitch(float degrees) => _lookPitch = float.IsFinite(degrees) ? Mathf.Clamp(degrees, -30, 30) : 0;
         public void ResetMotion()

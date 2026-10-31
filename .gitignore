@@ -110,12 +110,68 @@ InitTestScene*.unity*
 # Auto-generated cache in Assets folder
 /[Aa]ssets/[Ss]ceneDependencyCache*
 
-# Blender pipeline caches, local backups, and generated delivery archives.
+# Test and coverage output
+/TestResults/
+/CodeCoverage/
+/coverage-results/
+*.coverage
+*.coveragexml
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Local AI/editor assistant state
+/.codex/
+/.agents/
+
+# Paw Arena runtime-only repository policy.
+# These folders are useful for authoring, review, recovery, or local history,
+# but are not required to open Main.unity or run/build the current game.
+/Archive/
+/Blender/
+
+# Unity recovery scenes are local crash/unsaved-scene artifacts.
+/Assets/_Recovery/
+/Assets/_Recovery.meta
+
+# Project and imported-package documentation/source references.
+/Assets/_Project/Documentation/
+/Assets/_Project/Documentation.meta
+/Assets/Plugins/PawArenaUI/Documentation/
+/Assets/Plugins/PawArenaUI/Documentation.meta
+/Assets/Plugins/PawArenaUI/VectorSource/
+/Assets/Plugins/PawArenaUI/VectorSource.meta
+/Assets/_Project/Animations/Characters/Cat/README.md
+/Assets/_Project/Animations/Characters/Cat/README.md.meta
+/Assets/_Project/Prefabs/Characters/Cat/Skins/README.md
+/Assets/_Project/Prefabs/Characters/Cat/Skins/README.md.meta
+/Assets/Plugins/Demigiant/DOTween/readme.txt
+/Assets/Plugins/Demigiant/DOTween/readme.txt.meta
+/Assets/Plugins/Demigiant/DOTween/DOTween.XML
+/Assets/Plugins/Demigiant/DOTween/DOTween.XML.meta
+
+# Development-only scenes and imported UI demo content.
+/Assets/_Project/Scenes/Prototype/
+/Assets/_Project/Scenes/Prototype.meta
+/Assets/_Project/Scenes/UI/PawArenaUIShowcase.unity
+/Assets/_Project/Scenes/UI/PawArenaUIShowcase.unity.meta
+/Assets/Plugins/PawArenaUI/Demo/
+/Assets/Plugins/PawArenaUI/Demo.meta
+
+# Editor automation and tests are intentionally omitted from this
+# runtime-only mirror. Runtime scripts and authored assets remain tracked.
+/Assets/_Project/Scripts/Editor/
+/Assets/_Project/Scripts/Editor.meta
+/Assets/_Project/Scripts/Tests/
+/Assets/_Project/Scripts/Tests.meta
+/Assets/Plugins/PawArenaUI/Editor/
+/Assets/Plugins/PawArenaUI/Editor.meta
+/Assets/Plugins/Demigiant/DOTween/Editor/
+/Assets/Plugins/Demigiant/DOTween/Editor.meta
+
+# Python and Blender transient files (also covered when Blender/ is local).
 __pycache__/
 *.pyc
-/Blender/Backups/
-/Blender/Validation/
-/Blender/Characters/*_Package.zip
-/Blender/Characters/_Cat_Rig_Prepared.blend
-/Blender/Characters/Exports/CatSkins/SurfaceCoordinates.npz
-/Blender/Previews/**/Frames/

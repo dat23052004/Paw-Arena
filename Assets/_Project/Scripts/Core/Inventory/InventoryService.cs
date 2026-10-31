@@ -169,8 +169,11 @@ namespace PawArena.Core.Inventory
                 for (var i = 0; i < snapshot.OwnedItemIds.Count; i++)
                 {
                     var itemId = snapshot.OwnedItemIds[i];
-                    if (_catalog.TryGet(itemId, out _))
+                    if (!string.IsNullOrWhiteSpace(itemId))
                     {
+                        // Preserve retired entitlements so a temporary catalog omission cannot
+                        // erase an item from the next profile save. Unknown items remain
+                        // unequippable until their definition is restored.
                         _ownedItemIds.Add(itemId);
                     }
                 }

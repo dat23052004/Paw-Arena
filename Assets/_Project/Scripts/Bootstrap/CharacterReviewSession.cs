@@ -26,7 +26,11 @@ namespace PawArena.Bootstrap
         }
         private void Update()
         {
-            if (_motor != null && _player.transform.position.y < -8) { _player.ResetPlayer(); }
+            if (_motor != null && (_gameFlow == null || _gameFlow.CurrentState == GameFlowState.Lobby) &&
+                _player.transform.position.y < -8)
+            {
+                _player.ResetPlayer();
+            }
         }
         private void OnDisable()
         {

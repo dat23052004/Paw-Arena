@@ -1,4 +1,5 @@
 using System;
+using PawArena.Core.Eggs;
 using PawArena.Core.Economy;
 using PawArena.Core.Inventory;
 using PawArena.Core.Settings;
@@ -11,12 +12,14 @@ namespace PawArena.Core.Profiles
     [Serializable]
     public sealed class PlayerProfileSnapshot
     {
-        public int Version = 1;
+        public int Version = 3;
         public string PlayerId;
         public long CreatedAtUnixTimestamp;
         public PlayerStatsData Stats = new();
         public WalletSnapshot Wallet = new();
         public InventorySnapshot Inventory = new();
+        public EggProgressSnapshot EggProgress = new();
+        public WheelTicketSnapshot WheelTickets = new();
         public PlayerSettingsData Settings = new();
     }
 }

@@ -8,14 +8,25 @@ namespace PawArena.Gameplay.Combat
     {
         private const int PoolSize = 24;
         private const int HitCapacity = 16;
+        private static readonly int BaseColorId = Shader.PropertyToID("_BaseColor");
 
         [SerializeField] private CatCombatSettings _settings;
         private readonly Effect[] _effects = new Effect[PoolSize];
         private MaterialPropertyBlock _properties;
+        private int _activeEffectCount;
         private bool _initialized;
 
         private void Awake() => Initialize();
-        private void Update() => Step(Time.deltaTime);
+        private void Update()
+        {
+            if (_activeEffectCount <= 0)
+            {
+                enabled = false;
+                return;
+            }
+
+            Step(Time.deltaTime);
+        }
 
         private void OnDestroy()
         {
@@ -25,6 +36,9 @@ namespace PawArena.Gameplay.Combat
                 if (Application.isPlaying) { Destroy(_effects[i].Visual); }
                 else { DestroyImmediate(_effects[i].Visual); }
             }
+
+            _activeEffectCount = 0;
+            _initialized = false;
         }
 
         /// <summary>Prewarms every visual once so ability use does not instantiate or destroy.</summary>
@@ -46,9 +60,10 @@ namespace PawArena.Gameplay.Combat
                 var collider = visual.GetComponent<Collider>();
                 collider.enabled = false;
                 visual.SetActive(false);
-                _effects[i] = new Effect(visual);
+                _effects[i] = new Effect(visual, visual.GetComponent<Renderer>());
             }
             _initialized = true;
+            enabled = false;
         }
 
         /// <summary>Launches a pooled projectile; returns false only when all slots are busy.</summary>
@@ -68,6 +83,12 @@ namespace PawArena.Gameplay.Combat
         public void Step(float delta)
         {
             if (!_initialized || !float.IsFinite(delta) || delta <= 0) { return; }
+            if (_activeEffectCount <= 0)
+            {
+                enabled = false;
+                return;
+            }
+
             var actors = CatCombatant.Active;
             for (var i = 0; i < _effects.Length; i++)
             {
@@ -86,7 +107,7 @@ namespace PawArena.Gameplay.Combat
                     if (effect.Puddle)
                     {
                         if ((centre - effect.Position).sqrMagnitude <= effect.Radius * effect.Radius)
-                        { target.ApplySlip(.35f); }
+                        { target.ApplySlip(effect.Owner, .35f); }
                         continue;
                     }
                     if (WasHit(effect, target.GetEntityId())) { continue; }
@@ -101,6 +122,11 @@ namespace PawArena.Gameplay.Combat
                     Release(effect);
                     break;
                 }
+            }
+
+            if (_activeEffectCount <= 0)
+            {
+                enabled = false;
             }
         }
 
@@ -127,10 +153,11 @@ namespace PawArena.Gameplay.Combat
                 effect.Visual.transform.localScale = puddle
                     ? new Vector3(radius * 2, .08f, radius * 2) : Vector3.one * radius * 2;
                 effect.Visual.SetActive(true);
-                var renderer = effect.Visual.GetComponent<Renderer>();
-                renderer.GetPropertyBlock(_properties);
-                _properties.SetColor("_BaseColor", puddle ? new Color(.35f, .8f, .25f, .75f) : new Color(.2f, .75f, 1, 1));
-                renderer.SetPropertyBlock(_properties);
+                _properties.Clear();
+                _properties.SetColor(BaseColorId, puddle ? new Color(.35f, .8f, .25f, .75f) : new Color(.2f, .75f, 1, 1));
+                effect.Renderer.SetPropertyBlock(_properties);
+                _activeEffectCount++;
+                enabled = true;
                 return true;
             }
             return false;
@@ -147,22 +174,26 @@ namespace PawArena.Gameplay.Combat
             if (effect.HitCount < effect.HitIds.Length) { effect.HitIds[effect.HitCount++] = id; }
         }
 
-        private static void Release(Effect effect)
+        private void Release(Effect effect)
         {
+            if (!effect.Active) { return; }
             effect.Active = false;
             effect.Owner = null;
             effect.Visual.SetActive(false);
+            _activeEffectCount = Mathf.Max(0, _activeEffectCount - 1);
         }
 
         private sealed class Effect
         {
-            public Effect(GameObject visual)
+            public Effect(GameObject visual, Renderer renderer)
             {
                 Visual = visual;
+                Renderer = renderer;
                 HitIds = new EntityId[HitCapacity];
             }
 
             public readonly GameObject Visual;
+            public readonly Renderer Renderer;
             public readonly EntityId[] HitIds;
             public CatCombatant Owner;
             public Vector3 Position;

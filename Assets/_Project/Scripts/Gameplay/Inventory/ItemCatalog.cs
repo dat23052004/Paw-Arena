@@ -40,6 +40,28 @@ namespace PawArena.Gameplay.Inventory
             return !string.IsNullOrWhiteSpace(itemId) && _itemById.TryGetValue(itemId, out item);
         }
 
+        /// <summary>Resolves the Unity presentation asset for a catalog identifier.</summary>
+        public bool TryGetDefinition(string itemId, out ItemDefinition definition)
+        {
+            definition = null;
+            if (string.IsNullOrWhiteSpace(itemId))
+            {
+                return false;
+            }
+
+            for (var i = 0; i < _definitions.Count; i++)
+            {
+                var candidate = _definitions[i];
+                if (candidate != null && string.Equals(candidate.ItemId, itemId, StringComparison.Ordinal))
+                {
+                    definition = candidate;
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
         private void OnEnable() => RebuildCache(false);
 
         private void OnValidate()

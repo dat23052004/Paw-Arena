@@ -67,12 +67,9 @@ namespace PawArena.Gameplay.Combat
         {
             var progress = _playerCombat == null ? .5f : _playerCombat.ActionNormalizedTime;
             var arc = Mathf.Sin(progress * Mathf.PI);
-            var left = _playerCombat == null || _playerCombat.IsLeftPunch;
-            var upper = left ? _leftUpperArm : _rightUpperArm;
-            var lower = left ? _leftLowerArm : _rightLowerArm;
-            RotateWorld(_spine, new Vector3(arc * 8, (left ? -1 : 1) * arc * 12, 0) * _strength);
-            RotateWorld(upper, new Vector3(-arc * 68, (left ? -1 : 1) * arc * 22, 0) * _strength);
-            RotateWorld(lower, new Vector3(0, 0, (left ? 1 : -1) * arc * 32) * _strength);
+            RotateWorld(_spine, new Vector3(arc * 8, -arc * 12, 0) * _strength);
+            RotateWorld(_leftUpperArm, new Vector3(-arc * 68, -arc * 22, 0) * _strength);
+            RotateWorld(_leftLowerArm, new Vector3(0, 0, arc * 32) * _strength);
         }
 
         private void PresentGrab()

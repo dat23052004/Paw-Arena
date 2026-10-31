@@ -1,0 +1,278 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b59c9a05692749a4dabdadf14ecc5273, type: 3}
+  m_Name: MainShopCatalog
+  m_EditorClassIdentifier: PawArena.UI::PawArena.UI.Shop.ShopCatalog
+  _eggs:
+  - _id: halloween-egg
+    _title: Halloween Egg
+    _subtitle: Limited seasonal rewards
+    _artwork: {fileID: 21300000, guid: 217924715b69eb34f825dcd451d3fd6a, type: 3}
+    _limitedTime: 1
+    _endsAtUtc: 
+    _hatchCurrency: 0
+    _hatchPrice: 12000
+    _packCurrency: 2
+    _buyOnePrice: 99
+    _buyThreePrice: 249
+    _buyTenPrice: 699
+    _showTiers: 0
+    _rewards:
+    - _title: Pumpkin Fur
+      _subtitle: Legendary
+      _icon: {fileID: 21300000, guid: 9573a46785c304741ab802c754ad8aa0, type: 3}
+      _chancePercent: 67.5
+      _locked: 0
+    - _title: Black Widow
+      _subtitle: Legendary
+      _icon: {fileID: 21300000, guid: 73e866f091bf139498e44355c0862da9, type: 3}
+      _chancePercent: 30
+      _locked: 0
+    - _title: Fireworks
+      _subtitle: Effect
+      _icon: {fileID: 21300000, guid: 2bc9eeaadc6bb5d4f9a4c85472debdec, type: 3}
+      _chancePercent: 2
+      _locked: 0
+    - _title: Nine Lives
+      _subtitle: Ability
+      _icon: {fileID: 21300000, guid: fdb6065fa62522842b7ae5f41d125fac, type: 3}
+      _chancePercent: 0.5
+      _locked: 0
+  - _id: alien-egg
+    _title: Alien Egg
+    _subtitle: Milestone rewards unlock as you hatch
+    _artwork: {fileID: 21300000, guid: 585b1258dd9ba044db4921d5bab971ff, type: 3}
+    _limitedTime: 0
+    _endsAtUtc: 
+    _hatchCurrency: 0
+    _hatchPrice: 15000
+    _packCurrency: 2
+    _buyOnePrice: 129
+    _buyThreePrice: 329
+    _buyTenPrice: 899
+    _showTiers: 1
+    _rewards:
+    - _title: Beam Me Up
+      _subtitle: Emote
+      _icon: {fileID: 21300000, guid: c1a6f86e9686eb14986fc420ba948154, type: 3}
+      _chancePercent: 55
+      _locked: 0
+    - _title: Crystal Fur
+      _subtitle: Epic
+      _icon: {fileID: 21300000, guid: 585b1258dd9ba044db4921d5bab971ff, type: 3}
+      _chancePercent: 30
+      _locked: 0
+    - _title: Hologram Fur
+      _subtitle: Legendary
+      _icon: {fileID: 21300000, guid: af695fa688491ba40b4223314af6be34, type: 3}
+      _chancePercent: 12
+      _locked: 1
+    - _title: Alien Ability
+      _subtitle: Mythic
+      _icon: {fileID: 21300000, guid: 325f2ef169d00414589ae38d46eb510e, type: 3}
+      _chancePercent: 3
+      _locked: 1
+  - _id: emote-egg
+    _title: Emote Egg
+    _subtitle: Unlock expressive arena emotes
+    _artwork: {fileID: 21300000, guid: f67c377e35c903347a52a3b52744676d, type: 3}
+    _limitedTime: 0
+    _endsAtUtc: 
+    _hatchCurrency: 0
+    _hatchPrice: 7500
+    _packCurrency: 2
+    _buyOnePrice: 79
+    _buyThreePrice: 199
+    _buyTenPrice: 549
+    _showTiers: 0
+    _rewards:
+    - _title: Wave
+      _subtitle: Emote
+      _icon: {fileID: 21300000, guid: f67c377e35c903347a52a3b52744676d, type: 3}
+      _chancePercent: 45
+      _locked: 0
+    - _title: Stretch
+      _subtitle: Emote
+      _icon: {fileID: 21300000, guid: d1fbba053547cfb4792eb5c4ea7a9ace, type: 3}
+      _chancePercent: 35
+      _locked: 0
+    - _title: Beam Me Up
+      _subtitle: Emote
+      _icon: {fileID: 21300000, guid: c1a6f86e9686eb14986fc420ba948154, type: 3}
+      _chancePercent: 15
+      _locked: 0
+    - _title: Star Wand
+      _subtitle: Emote
+      _icon: {fileID: 21300000, guid: ec2347a6fd12b3a438a9c85bf3261945, type: 3}
+      _chancePercent: 5
+      _locked: 0
+  _bundles:
+  - _id: grave-warlock
+    _title: Grave Warlock Bundle
+    _subtitle: Limited Halloween collection
+    _artwork: {fileID: 21300000, guid: 73e866f091bf139498e44355c0862da9, type: 3}
+    _soldOut: 1
+    _specialPack: 0
+    _endsAtUtc: 
+    _currency: 2
+    _originalPrice: 1099
+    _price: 299
+    _discountPercent: 73
+    _rewards:
+    - _title: Featured Item
+      _subtitle: Exclusive
+      _icon: {fileID: 21300000, guid: 73e866f091bf139498e44355c0862da9, type: 3}
+      _chancePercent: 0
+      _locked: 0
+    - _title: Coins
+      _subtitle: Bonus
+      _icon: {fileID: 21300000, guid: 0bf3ad2d218a36a4993598deb8bf1191, type: 3}
+      _chancePercent: 0
+      _locked: 0
+    - _title: Effect
+      _subtitle: Bundle
+      _icon: {fileID: 21300000, guid: af695fa688491ba40b4223314af6be34, type: 3}
+      _chancePercent: 0
+      _locked: 0
+  - _id: oni-ronin
+    _title: Oni Ronin Bundle
+    _subtitle: Exclusive warrior collection
+    _artwork: {fileID: 21300000, guid: 39ab2863708522c43a386176f7431f10, type: 3}
+    _soldOut: 1
+    _specialPack: 0
+    _endsAtUtc: 
+    _currency: 2
+    _originalPrice: 999
+    _price: 299
+    _discountPercent: 70
+    _rewards:
+    - _title: Featured Item
+      _subtitle: Exclusive
+      _icon: {fileID: 21300000, guid: 39ab2863708522c43a386176f7431f10, type: 3}
+      _chancePercent: 0
+      _locked: 0
+    - _title: Coins
+      _subtitle: Bonus
+      _icon: {fileID: 21300000, guid: 0bf3ad2d218a36a4993598deb8bf1191, type: 3}
+      _chancePercent: 0
+      _locked: 0
+    - _title: Effect
+      _subtitle: Bundle
+      _icon: {fileID: 21300000, guid: af695fa688491ba40b4223314af6be34, type: 3}
+      _chancePercent: 0
+      _locked: 0
+  - _id: voltage
+    _title: Voltage Bundle
+    _subtitle: Four electric rewards in one pack
+    _artwork: {fileID: 21300000, guid: 325f2ef169d00414589ae38d46eb510e, type: 3}
+    _soldOut: 0
+    _specialPack: 0
+    _endsAtUtc: 
+    _currency: 2
+    _originalPrice: 2300
+    _price: 299
+    _discountPercent: 87
+    _rewards:
+    - _title: Featured Item
+      _subtitle: Exclusive
+      _icon: {fileID: 21300000, guid: 325f2ef169d00414589ae38d46eb510e, type: 3}
+      _chancePercent: 0
+      _locked: 0
+    - _title: Coins
+      _subtitle: Bonus
+      _icon: {fileID: 21300000, guid: 0bf3ad2d218a36a4993598deb8bf1191, type: 3}
+      _chancePercent: 0
+      _locked: 0
+    - _title: Effect
+      _subtitle: Bundle
+      _icon: {fileID: 21300000, guid: af695fa688491ba40b4223314af6be34, type: 3}
+      _chancePercent: 0
+      _locked: 0
+  - _id: vip
+    _title: VIP
+    _subtitle: "\xD71.25 Coins from every match"
+    _artwork: {fileID: 21300000, guid: 52bef2e5a8f935d4d8eb3733451c838a, type: 3}
+    _soldOut: 0
+    _specialPack: 1
+    _endsAtUtc: 
+    _currency: 2
+    _originalPrice: 199
+    _price: 199
+    _discountPercent: 0
+    _rewards:
+    - _title: Featured Item
+      _subtitle: Exclusive
+      _icon: {fileID: 21300000, guid: 52bef2e5a8f935d4d8eb3733451c838a, type: 3}
+      _chancePercent: 0
+      _locked: 0
+    - _title: Coins
+      _subtitle: Bonus
+      _icon: {fileID: 21300000, guid: 0bf3ad2d218a36a4993598deb8bf1191, type: 3}
+      _chancePercent: 0
+      _locked: 0
+    - _title: Effect
+      _subtitle: Bundle
+      _icon: {fileID: 21300000, guid: af695fa688491ba40b4223314af6be34, type: 3}
+      _chancePercent: 0
+      _locked: 0
+  - _id: double-coins
+    _title: Double Coins
+    _subtitle: "\xD72 Coins from every match"
+    _artwork: {fileID: 21300000, guid: 0bf3ad2d218a36a4993598deb8bf1191, type: 3}
+    _soldOut: 0
+    _specialPack: 1
+    _endsAtUtc: 
+    _currency: 2
+    _originalPrice: 349
+    _price: 349
+    _discountPercent: 0
+    _rewards:
+    - _title: Featured Item
+      _subtitle: Exclusive
+      _icon: {fileID: 21300000, guid: 0bf3ad2d218a36a4993598deb8bf1191, type: 3}
+      _chancePercent: 0
+      _locked: 0
+    - _title: Coins
+      _subtitle: Bonus
+      _icon: {fileID: 21300000, guid: 0bf3ad2d218a36a4993598deb8bf1191, type: 3}
+      _chancePercent: 0
+      _locked: 0
+    - _title: Effect
+      _subtitle: Bundle
+      _icon: {fileID: 21300000, guid: af695fa688491ba40b4223314af6be34, type: 3}
+      _chancePercent: 0
+      _locked: 0
+  _coinPacks:
+  - _id: coins-750
+    _title: 750 Coins
+    _artwork: {fileID: 21300000, guid: d1a1336c125b59a44bfe0062eb3ee502, type: 3}
+    _coinAmount: 750
+    _premiumPrice: 49
+    _bonusPercent: 0
+  - _id: coins-2500
+    _title: 2,500 Coins
+    _artwork: {fileID: 21300000, guid: d1a1336c125b59a44bfe0062eb3ee502, type: 3}
+    _coinAmount: 2500
+    _premiumPrice: 149
+    _bonusPercent: 10
+  - _id: coins-7500
+    _title: 7,500 Coins
+    _artwork: {fileID: 21300000, guid: d1a1336c125b59a44bfe0062eb3ee502, type: 3}
+    _coinAmount: 7500
+    _premiumPrice: 399
+    _bonusPercent: 23
+  - _id: coins-20000
+    _title: 20,000 Coins
+    _artwork: {fileID: 21300000, guid: d1a1336c125b59a44bfe0062eb3ee502, type: 3}
+    _coinAmount: 20000
+    _premiumPrice: 999
+    _bonusPercent: 31

@@ -1,4 +1,5 @@
 using System;
+using PawArena.Core.Eggs;
 using PawArena.Core.Economy;
 using PawArena.Core.Inventory;
 using PawArena.Core.Settings;
@@ -11,8 +12,6 @@ namespace PawArena.Core.Profiles
     /// </summary>
     public sealed class ProfileService : IProfileService
     {
-        private const int CurrentProfileVersion = 1;
-
         private readonly IProfileStore _store;
         private readonly IItemCatalog _catalog;
         private readonly IClock _clock;
@@ -44,6 +43,8 @@ namespace PawArena.Core.Profiles
                 snapshot = CreateDefaultSnapshot(playerId);
             }
 
+            snapshot = PlayerProfileMigrator.Migrate(snapshot);
+
             _createdAtUnixTimestamp = snapshot.CreatedAtUnixTimestamp > 0L
                 ? snapshot.CreatedAtUnixTimestamp
                 : _clock.UtcNow.ToUnixTimeSeconds();
@@ -53,6 +54,8 @@ namespace PawArena.Core.Profiles
             Wallet = new WalletService(_clock, snapshot.Wallet);
             Inventory = new InventoryService(_catalog, snapshot.Inventory);
             Purchases = new InventoryPurchaseService(_catalog, Inventory, Wallet);
+            EggProgress = new EggProgressService(snapshot.EggProgress);
+            WheelTickets = new WheelTicketService(snapshot.WheelTickets);
             Settings = new SettingsService(snapshot.Settings);
             GrantDefaultItems();
         }
@@ -74,6 +77,12 @@ namespace PawArena.Core.Profiles
 
         /// <inheritdoc />
         public IInventoryPurchaseService Purchases { get; }
+
+        /// <inheritdoc />
+        public IEggProgressService EggProgress { get; }
+
+        /// <inheritdoc />
+        public IWheelTicketService WheelTickets { get; }
 
         /// <inheritdoc />
         public ISettingsService Settings { get; }
@@ -118,12 +127,14 @@ namespace PawArena.Core.Profiles
         {
             return new PlayerProfileSnapshot
             {
-                Version = CurrentProfileVersion,
+                Version = PlayerProfileMigrator.CurrentVersion,
                 PlayerId = PlayerId,
                 CreatedAtUnixTimestamp = _createdAtUnixTimestamp,
                 Stats = Stats,
                 Wallet = Wallet.CaptureSnapshot(),
                 Inventory = Inventory.CaptureSnapshot(),
+                EggProgress = EggProgress.CaptureSnapshot(),
+                WheelTickets = WheelTickets.CaptureSnapshot(),
                 Settings = Settings.Current
             };
         }
@@ -132,7 +143,7 @@ namespace PawArena.Core.Profiles
         {
             return new PlayerProfileSnapshot
             {
-                Version = CurrentProfileVersion,
+                Version = PlayerProfileMigrator.CurrentVersion,
                 PlayerId = playerId,
                 CreatedAtUnixTimestamp = _clock.UtcNow.ToUnixTimeSeconds()
             };

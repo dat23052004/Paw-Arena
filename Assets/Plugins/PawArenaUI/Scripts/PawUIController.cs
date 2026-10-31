@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -23,7 +24,7 @@ namespace PawArenaUI
         T Comp<T>(string name) where T : Component
         { var t = Find(name); return t != null ? t.GetComponent<T>() : null; }
         void SetText(string name, string value)
-        { var t = Comp<Text>(name); if (t != null) t.text = value; }
+        { var t = Comp<TMP_Text>(name); if (t != null) t.text = value; }
         void SetActive(string name, bool state)
         { var t = Find(name); if (t != null) t.gameObject.SetActive(state); }
         void Bind(string name, Action action)
@@ -37,14 +38,16 @@ namespace PawArenaUI
             Bind("Nav_Stats", () => Open("Stats"));
             Bind("Nav_Rewards", () => Open("Rewards"));
             Bind("Nav_Updates", () => Open("Updates"));
+            Bind("Nav_Notifications", () => Open("Updates"));
             Bind("Nav_Emotes", () => Open("Emotes"));
-            Bind("Nav_Event", () => Open("Updates"));
+            Bind("Nav_Event", () => Open("Event"));
             Bind("Close_Inventory", CloseAll);
             Bind("Close_Settings", CloseAll);
             Bind("Close_Stats", CloseAll);
             Bind("Close_Rewards", CloseAll);
             Bind("Close_Updates", CloseAll);
             Bind("Close_Emotes", CloseAll);
+            Bind("Close_Event", CloseAll);
             Bind("Btn_OkayUpdates", CloseAll);
             Bind("Btn_ClaimRewards", () => SetText("RewardStatus", "Come back tomorrow for more!"));
             Bind("Btn_MusicToggle", () => { music = !music; SetText("MusicToggleLabel", music ? "On" : "Off"); });
@@ -83,7 +86,7 @@ namespace PawArenaUI
         { SetText("HUD_CoinText", coins.ToString("N0")); }
         private void CloseAll()
         {
-            foreach (string type in new [] {"Inventory","Settings","Stats","Rewards","Updates","Emotes"})
+            foreach (string type in new [] {"Inventory","Settings","Stats","Rewards","Updates","Emotes","Event"})
                 SetActive("Window_" + type, false);
             SetActive("ModalDimmer", false);
             currentModal = "";
@@ -126,7 +129,7 @@ namespace PawArenaUI
                 case "Epic": rarityColor = new Color(.79f,.39f,1f); break;
                 case "Legendary": rarityColor = new Color(1f,.79f,.25f); break;
             }
-            var rarityText = Comp<Text>("Inventory_Rarity");
+            var rarityText = Comp<TMP_Text>("Inventory_Rarity");
             if (rarityText != null) rarityText.color = rarityColor;
             for (int j = 0; j < items[category].Length; j++)
             {
@@ -139,7 +142,7 @@ namespace PawArenaUI
         {
             var data = items[category][itemIndex];
             var btnImage = Comp<Image>("Btn_Equip");
-            var btnLabel = Comp<Text>("EquipButtonLabel");
+            var btnLabel = Comp<TMP_Text>("EquipButtonLabel");
             bool isEquipped = equipped[category] == itemIndex;
             if (btnLabel != null) btnLabel.text = !data.owned ? (data.price.ToString("N0") + " coins - Unlock") : (isEquipped ? "Equipped" : "Equip");
             if (btnImage != null) btnImage.color = !data.owned ? new Color(1f,.85f,.55f) : isEquipped ? new Color(.8f,.89f,1f) : Color.white;

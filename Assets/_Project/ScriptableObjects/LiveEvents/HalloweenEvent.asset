@@ -1,0 +1,546 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b4379838ac55b147bf1bb6589470d23, type: 3}
+  m_Name: HalloweenEvent
+  m_EditorClassIdentifier: PawArena.LiveEvents::PawArena.LiveEvents.LiveEventDefinition
+  _eventId: halloween-2026
+  _displayName: Halloween Event
+  _startsAtUtc: 2026-10-01T00:00:00Z
+  _endsAtUtc: 2026-11-08T00:00:00Z
+  _dailyResetHourUtc: 0
+  _banner: {fileID: 21300000, guid: 6f0393175f8c3d349b6bfc96bdae3c88, type: 3}
+  _currencyIcon: {fileID: 21300000, guid: 7cced8577d3184f4db2618b49a7d246a, type: 3}
+  _primaryColor: {r: 0.23, g: 0.06, b: 0.4, a: 1}
+  _accentColor: {r: 1, g: 0.48, b: 0.08, a: 1}
+  _dailyQuests:
+  - _questId: daily-play-1
+    _title: Play a match
+    _metric: 0
+    _target: 1
+    _candyReward: 20
+  - _questId: daily-play-5
+    _title: Play 5 matches
+    _metric: 0
+    _target: 5
+    _candyReward: 30
+  - _questId: daily-ko-3
+    _title: Knock out 3 cats
+    _metric: 2
+    _target: 3
+    _candyReward: 30
+  - _questId: daily-emote-3
+    _title: Do 3 emotes
+    _metric: 4
+    _target: 3
+    _candyReward: 20
+  - _questId: daily-obby-1
+    _title: Finish the obby
+    _metric: 5
+    _target: 1
+    _candyReward: 30
+  - _questId: daily-ability-10
+    _title: Use an ability 10 times
+    _metric: 3
+    _target: 10
+    _candyReward: 30
+  _hardQuests:
+  - _questId: hard-ko-8
+    _title: Knock out 8 cats
+    _metric: 2
+    _target: 8
+    _candyReward: 150
+  - _questId: hard-play-12
+    _title: Play 12 matches
+    _metric: 0
+    _target: 12
+    _candyReward: 120
+  - _questId: hard-win-2
+    _title: Win 2 matches
+    _metric: 1
+    _target: 2
+    _candyReward: 200
+  - _questId: hard-throw-3
+    _title: Grab and throw out 3 cats
+    _metric: 6
+    _target: 3
+    _candyReward: 130
+  - _questId: hard-obby-2
+    _title: Finish the obby twice
+    _metric: 5
+    _target: 2
+    _candyReward: 100
+  _rewardWeeks:
+  - _weekId: week-1
+    _title: "TU\u1EA6N 1 \u2022 THE ALIENS LAND"
+    _startHourOffset: 0
+    _endHourOffset: 168
+    _backgroundColor: {r: 0.06, g: 0.29, b: 0.17, a: 1}
+    _trackColor: {r: 0.45, g: 0.93, b: 0.12, a: 1}
+  - _weekId: week-2
+    _title: "TU\u1EA6N 2 \u2022 THE GRAVEYARD"
+    _startHourOffset: 168
+    _endHourOffset: 336
+    _backgroundColor: {r: 0.34, g: 0.055, b: 0.15, a: 1}
+    _trackColor: {r: 1, g: 0.32, b: 0.48, a: 1}
+  - _weekId: week-3
+    _title: "TU\u1EA6N 3 \u2022 SOUL HARVEST"
+    _startHourOffset: 336
+    _endHourOffset: 912
+    _backgroundColor: {r: 0.19, g: 0.08, b: 0.36, a: 1}
+    _trackColor: {r: 0.56, g: 0.32, b: 0.95, a: 1}
+  _rewards:
+  - _rewardId: reward-01
+    _weekId: week-1
+    _tier: 0
+    _cardColor: {r: 0.2, g: 0.42, b: 0.78, a: 1}
+    _candyPrice: 20
+    _premiumPrice: 2
+    _unlockHourOffset: 0
+    _title: 50 xu
+    _subtitle: "M\u1ED1c 1"
+    _icon: {fileID: 21300000, guid: 0bf3ad2d218a36a4993598deb8bf1191, type: 3}
+    _grant:
+      _kind: 0
+      _currency: 0
+      _itemId: 
+      _amount: 50
+  - _rewardId: reward-02
+    _weekId: week-1
+    _tier: 1
+    _cardColor: {r: 0.08, g: 0.66, b: 0.86, a: 1}
+    _candyPrice: 40
+    _premiumPrice: 4
+    _unlockHourOffset: 0
+    _title: "20 k\u1EB9o"
+    _subtitle: "M\u1ED1c 2"
+    _icon: {fileID: 21300000, guid: 7cced8577d3184f4db2618b49a7d246a, type: 3}
+    _grant:
+      _kind: 0
+      _currency: 1
+      _itemId: 
+      _amount: 20
+  - _rewardId: reward-03
+    _weekId: week-1
+    _tier: 2
+    _cardColor: {r: 0.36, g: 0.2, b: 0.62, a: 1}
+    _candyPrice: 60
+    _premiumPrice: 5
+    _unlockHourOffset: 0
+    _title: 100 xu
+    _subtitle: "M\u1ED1c 3"
+    _icon: {fileID: 21300000, guid: 0bf3ad2d218a36a4993598deb8bf1191, type: 3}
+    _grant:
+      _kind: 0
+      _currency: 0
+      _itemId: 
+      _amount: 100
+  - _rewardId: reward-04
+    _weekId: week-1
+    _tier: 3
+    _cardColor: {r: 0.67, g: 0.45, b: 0.08, a: 1}
+    _candyPrice: 80
+    _premiumPrice: 7
+    _unlockHourOffset: 0
+    _title: "H\u1ED9p qu\xE0"
+    _subtitle: "M\u1ED1c 4"
+    _icon: {fileID: 21300000, guid: 6c75ac11a6f3f084f83a970cbc0a8494, type: 3}
+    _grant:
+      _kind: 0
+      _currency: 0
+      _itemId: 
+      _amount: 150
+  - _rewardId: reward-05
+    _weekId: week-1
+    _tier: 4
+    _cardColor: {r: 0.55, g: 0.08, b: 0.28, a: 1}
+    _candyPrice: 110
+    _premiumPrice: 10
+    _unlockHourOffset: 0
+    _title: "30 k\u1EB9o"
+    _subtitle: "M\u1ED1c 5"
+    _icon: {fileID: 21300000, guid: 7cced8577d3184f4db2618b49a7d246a, type: 3}
+    _grant:
+      _kind: 0
+      _currency: 1
+      _itemId: 
+      _amount: 30
+  - _rewardId: reward-06
+    _weekId: week-2
+    _tier: 0
+    _cardColor: {r: 0.2, g: 0.42, b: 0.78, a: 1}
+    _candyPrice: 140
+    _premiumPrice: 12
+    _unlockHourOffset: 0
+    _title: Wave Emote
+    _subtitle: "Bi\u1EC3u c\u1EA3m"
+    _icon: {fileID: 21300000, guid: f67c377e35c903347a52a3b52744676d, type: 3}
+    _grant:
+      _kind: 1
+      _currency: 0
+      _itemId: emote_wave
+      _amount: 1
+  - _rewardId: reward-07
+    _weekId: week-2
+    _tier: 1
+    _cardColor: {r: 0.08, g: 0.66, b: 0.86, a: 1}
+    _candyPrice: 180
+    _premiumPrice: 15
+    _unlockHourOffset: 0
+    _title: 250 xu
+    _subtitle: "M\u1ED1c 7"
+    _icon: {fileID: 21300000, guid: 0bf3ad2d218a36a4993598deb8bf1191, type: 3}
+    _grant:
+      _kind: 0
+      _currency: 0
+      _itemId: 
+      _amount: 250
+  - _rewardId: reward-08
+    _weekId: week-2
+    _tier: 2
+    _cardColor: {r: 0.36, g: 0.2, b: 0.62, a: 1}
+    _candyPrice: 230
+    _premiumPrice: 20
+    _unlockHourOffset: 0
+    _title: "45 k\u1EB9o"
+    _subtitle: "M\u1ED1c 8"
+    _icon: {fileID: 21300000, guid: 7cced8577d3184f4db2618b49a7d246a, type: 3}
+    _grant:
+      _kind: 0
+      _currency: 1
+      _itemId: 
+      _amount: 45
+  - _rewardId: reward-09
+    _weekId: week-2
+    _tier: 3
+    _cardColor: {r: 0.67, g: 0.45, b: 0.08, a: 1}
+    _candyPrice: 290
+    _premiumPrice: 25
+    _unlockHourOffset: 0
+    _title: 400 xu
+    _subtitle: "M\u1ED1c 9"
+    _icon: {fileID: 21300000, guid: 0bf3ad2d218a36a4993598deb8bf1191, type: 3}
+    _grant:
+      _kind: 0
+      _currency: 0
+      _itemId: 
+      _amount: 400
+  - _rewardId: reward-10
+    _weekId: week-2
+    _tier: 4
+    _cardColor: {r: 0.55, g: 0.08, b: 0.28, a: 1}
+    _candyPrice: 350
+    _premiumPrice: 30
+    _unlockHourOffset: 0
+    _title: Sparks Effect
+    _subtitle: "Hi\u1EC7u \u1EE9ng"
+    _icon: {fileID: 21300000, guid: af695fa688491ba40b4223314af6be34, type: 3}
+    _grant:
+      _kind: 1
+      _currency: 0
+      _itemId: effect_sparks
+      _amount: 1
+  - _rewardId: reward-11
+    _weekId: week-3
+    _tier: 0
+    _cardColor: {r: 0.2, g: 0.42, b: 0.78, a: 1}
+    _candyPrice: 420
+    _premiumPrice: 35
+    _unlockHourOffset: 0
+    _title: 600 xu
+    _subtitle: "M\u1ED1c 11"
+    _icon: {fileID: 21300000, guid: 0bf3ad2d218a36a4993598deb8bf1191, type: 3}
+    _grant:
+      _kind: 0
+      _currency: 0
+      _itemId: 
+      _amount: 600
+  - _rewardId: reward-12
+    _weekId: week-3
+    _tier: 1
+    _cardColor: {r: 0.08, g: 0.66, b: 0.86, a: 1}
+    _candyPrice: 500
+    _premiumPrice: 42
+    _unlockHourOffset: 0
+    _title: "80 k\u1EB9o"
+    _subtitle: "M\u1ED1c 12"
+    _icon: {fileID: 21300000, guid: 7cced8577d3184f4db2618b49a7d246a, type: 3}
+    _grant:
+      _kind: 0
+      _currency: 1
+      _itemId: 
+      _amount: 80
+  - _rewardId: reward-13
+    _weekId: week-3
+    _tier: 2
+    _cardColor: {r: 0.36, g: 0.2, b: 0.62, a: 1}
+    _candyPrice: 580
+    _premiumPrice: 49
+    _unlockHourOffset: 720
+    _title: 800 xu
+    _subtitle: "M\u1EDF \u1EDF tu\u1EA7n cu\u1ED1i"
+    _icon: {fileID: 21300000, guid: 9031ff3ef73ecd04bbfe4357ab222b87, type: 3}
+    _grant:
+      _kind: 0
+      _currency: 0
+      _itemId: 
+      _amount: 800
+  - _rewardId: reward-14
+    _weekId: week-3
+    _tier: 3
+    _cardColor: {r: 0.67, g: 0.45, b: 0.08, a: 1}
+    _candyPrice: 650
+    _premiumPrice: 55
+    _unlockHourOffset: 720
+    _title: Fireworks
+    _subtitle: "Hi\u1EC7u \u1EE9ng"
+    _icon: {fileID: 21300000, guid: 2bc9eeaadc6bb5d4f9a4c85472debdec, type: 3}
+    _grant:
+      _kind: 1
+      _currency: 0
+      _itemId: effect_fireworks
+      _amount: 1
+  - _rewardId: reward-15
+    _weekId: week-3
+    _tier: 4
+    _cardColor: {r: 0.55, g: 0.08, b: 0.28, a: 1}
+    _candyPrice: 720
+    _premiumPrice: 60
+    _unlockHourOffset: 720
+    _title: "120 k\u1EB9o"
+    _subtitle: "M\u1ED1c \xE1p ch\xF3t"
+    _icon: {fileID: 21300000, guid: 7cced8577d3184f4db2618b49a7d246a, type: 3}
+    _grant:
+      _kind: 0
+      _currency: 1
+      _itemId: 
+      _amount: 120
+  - _rewardId: reward-16
+    _weekId: week-3
+    _tier: 0
+    _cardColor: {r: 0.2, g: 0.42, b: 0.78, a: 1}
+    _candyPrice: 800
+    _premiumPrice: 67
+    _unlockHourOffset: 720
+    _title: Pumpkin Cat
+    _subtitle: "Ph\u1EA7n th\u01B0\u1EDFng l\u1EDBn"
+    _icon: {fileID: 21300000, guid: 9573a46785c304741ab802c754ad8aa0, type: 3}
+    _grant:
+      _kind: 1
+      _currency: 0
+      _itemId: fur_pumpkin
+      _amount: 1
+  _shopPeriods:
+  - _periodId: shop-period-01
+    _endHourOffset: 720
+    _offers:
+    - _offerId: shop-pumpkin
+      _title: Pumpkin Cat
+      _rarity: LEGENDARY SKIN
+      _icon: {fileID: 21300000, guid: 9573a46785c304741ab802c754ad8aa0, type: 3}
+      _itemId: fur_pumpkin
+      _priceCurrency: 0
+      _price: 15000
+    - _offerId: shop-beam
+      _title: Beam Me Up
+      _rarity: LEGENDARY EMOTE
+      _icon: {fileID: 21300000, guid: c1a6f86e9686eb14986fc420ba948154, type: 3}
+      _itemId: emote_beam
+      _priceCurrency: 0
+      _price: 12000
+    - _offerId: shop-fireworks
+      _title: Fireworks
+      _rarity: EPIC EFFECT
+      _icon: {fileID: 21300000, guid: 2bc9eeaadc6bb5d4f9a4c85472debdec, type: 3}
+      _itemId: effect_fireworks
+      _priceCurrency: 0
+      _price: 9000
+    - _offerId: shop-stomp
+      _title: Stomp
+      _rarity: EPIC ABILITY
+      _icon: {fileID: 21300000, guid: 1357385d98691e44789244e73e07cff8, type: 3}
+      _itemId: ability_stomp
+      _priceCurrency: 0
+      _price: 10000
+  - _periodId: shop-period-02
+    _endHourOffset: 912
+    _offers:
+    - _offerId: shop-widow
+      _title: Black Widow
+      _rarity: LEGENDARY SKIN
+      _icon: {fileID: 21300000, guid: 73e866f091bf139498e44355c0862da9, type: 3}
+      _itemId: fur_black_widow
+      _priceCurrency: 0
+      _price: 16000
+    - _offerId: shop-wave
+      _title: Wave
+      _rarity: RARE EMOTE
+      _icon: {fileID: 21300000, guid: f67c377e35c903347a52a3b52744676d, type: 3}
+      _itemId: emote_wave
+      _priceCurrency: 0
+      _price: 7000
+    - _offerId: shop-sparks
+      _title: Sparks
+      _rarity: EPIC EFFECT
+      _icon: {fileID: 21300000, guid: af695fa688491ba40b4223314af6be34, type: 3}
+      _itemId: effect_sparks
+      _priceCurrency: 0
+      _price: 9000
+    - _offerId: shop-pounce
+      _title: Pounce
+      _rarity: EPIC ABILITY
+      _icon: {fileID: 21300000, guid: a37f5d6a28957224f8a14073fecea8f5, type: 3}
+      _itemId: ability_pounce
+      _priceCurrency: 0
+      _price: 11000
+  _shopOffers: []
+  _wheels:
+  - _wheelId: halloween-reaper-wheel
+    _displayName: Reaper Wheel
+    _navigationLabel: Reaper Wheel
+    _startHourOffset: 0
+    _endHourOffset: 912
+    _presentation: {fileID: 11400000, guid: f66e0d9abf7f4e16a5a5d9c8d1e31206, type: 2}
+    _maxFreeSpins: 3
+    _freeSpinRefillMinutes: 15
+    _pityThreshold: 100
+    _packCurrency: 2
+    _buyOneOriginalPrice: 10
+    _buyOnePrice: 5
+    _buyThreePrice: 19
+    _buyTenPrice: 59
+    _dailyDealEnabled: 1
+    _bestValueEnabled: 1
+    _featuredPrizeId: wheel-reaper
+    _prizes:
+    - _prizeId: wheel-25-coins
+      _title: 25 Coins
+      _typeLabel: Coin reward
+      _icon: {fileID: 21300000, guid: 0bf3ad2d218a36a4993598deb8bf1191, type: 3}
+      _weight: 32
+      _displayOrder: 2
+      _grant:
+        _kind: 0
+        _currency: 0
+        _itemId: 
+        _amount: 25
+    - _prizeId: wheel-50-coins
+      _title: 50 Coins
+      _typeLabel: Coin reward
+      _icon: {fileID: 21300000, guid: 0bf3ad2d218a36a4993598deb8bf1191, type: 3}
+      _weight: 28
+      _displayOrder: 4
+      _grant:
+        _kind: 0
+        _currency: 0
+        _itemId: 
+        _amount: 50
+    - _prizeId: wheel-100-coins
+      _title: 100 Coins
+      _typeLabel: Coin reward
+      _icon: {fileID: 21300000, guid: 0bf3ad2d218a36a4993598deb8bf1191, type: 3}
+      _weight: 21
+      _displayOrder: 0
+      _grant:
+        _kind: 0
+        _currency: 0
+        _itemId: 
+        _amount: 100
+    - _prizeId: wheel-250-coins
+      _title: 250 Coins
+      _typeLabel: Coin reward
+      _icon: {fileID: 21300000, guid: 0bf3ad2d218a36a4993598deb8bf1191, type: 3}
+      _weight: 15
+      _displayOrder: 3
+      _grant:
+        _kind: 0
+        _currency: 0
+        _itemId: 
+        _amount: 250
+    - _prizeId: wheel-beam
+      _title: Beam Me Up
+      _typeLabel: Legendary effect
+      _icon: {fileID: 21300000, guid: c1a6f86e9686eb14986fc420ba948154, type: 3}
+      _weight: 3
+      _displayOrder: 5
+      _grant:
+        _kind: 1
+        _currency: 0
+        _itemId: emote_beam
+        _amount: 1
+    - _prizeId: wheel-reaper
+      _title: Reaper's Call
+      _typeLabel: Divine ability
+      _icon: {fileID: 21300000, guid: fdb6065fa62522842b7ae5f41d125fac, type: 3}
+      _weight: 1
+      _displayOrder: 1
+      _grant:
+        _kind: 1
+        _currency: 0
+        _itemId: ability_nine_lives
+        _amount: 1
+  _bundles:
+  - _bundleId: bundle-voltage
+    _title: Voltage Bundle
+    _description: "Skin, k\u1EF9 n\u0103ng, hi\u1EC7u \u1EE9ng v\xE0 xu trong m\u1ED9t
+      g\xF3i gi\u1EDBi h\u1EA1n."
+    _banner: {fileID: 21300000, guid: 73e866f091bf139498e44355c0862da9, type: 3}
+    _presentation: {fileID: 11400000, guid: a77e0d9abf7f4e16a5a5d9c8d1e31207, type: 2}
+    _priceCurrency: 2
+    _originalPrice: 2300
+    _salePrice: 299
+    _startHourOffset: 480
+    _endHourOffset: 912
+    _grants:
+    - _kind: 1
+      _currency: 0
+      _itemId: fur_black_widow
+      _amount: 1
+    - _kind: 1
+      _currency: 0
+      _itemId: ability_stomp
+      _amount: 1
+    - _kind: 1
+      _currency: 0
+      _itemId: effect_sparks
+      _amount: 1
+    - _kind: 0
+      _currency: 0
+      _itemId: 
+      _amount: 500
+  - _bundleId: bundle-reaper
+    _title: Reaper Bundle
+    _description: "B\u1ED9 s\u01B0u t\u1EADp t\xEDm d\xE0nh cho tu\u1EA7n cu\u1ED1i
+      s\u1EF1 ki\u1EC7n."
+    _banner: {fileID: 21300000, guid: 9573a46785c304741ab802c754ad8aa0, type: 3}
+    _presentation: {fileID: 11400000, guid: a77e0d9abf7f4e16a5a5d9c8d1e31207, type: 2}
+    _priceCurrency: 2
+    _originalPrice: 1800
+    _salePrice: 249
+    _startHourOffset: 720
+    _endHourOffset: 912
+    _grants:
+    - _kind: 1
+      _currency: 0
+      _itemId: fur_pumpkin
+      _amount: 1
+    - _kind: 1
+      _currency: 0
+      _itemId: emote_beam
+      _amount: 1
+    - _kind: 1
+      _currency: 0
+      _itemId: effect_fireworks
+      _amount: 1
+    - _kind: 0
+      _currency: 0
+      _itemId: 
+      _amount: 750

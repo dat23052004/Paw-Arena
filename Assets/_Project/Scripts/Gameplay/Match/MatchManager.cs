@@ -7,18 +7,14 @@ using UnityEngine;
 namespace PawArena.Gameplay.Match
 {
     /// <summary>
-    /// Coordinates the offline round lifecycle until an authoritative network service replaces it.
+    /// Presents the authoritative round lifecycle without choosing map, participants, or start time.
     /// </summary>
     public sealed class MatchManager : MonoBehaviour
     {
         [Header("Dependencies")]
         [SerializeField] private GameFlowController _gameFlow = null;
 
-        [Header("Timing")]
-        [SerializeField, Min(0f)] private float _countdownSeconds = 5f;
-
         private MatchStateMachine _stateMachine;
-        private float _countdownRemaining;
         private int _lastReportedCountdownSecond = -1;
 
         /// <summary>
@@ -34,7 +30,7 @@ namespace PawArena.Gameplay.Match
         /// <summary>
         /// Raised when participants should be spawned.
         /// </summary>
-        public event Action SpawnRequested;
+        public event Action<MatchAssignment> SpawnRequested;
 
         /// <summary>
         /// Gets the current round state.
@@ -44,7 +40,12 @@ namespace PawArena.Gameplay.Match
         /// <summary>
         /// Gets the remaining pre-match countdown time.
         /// </summary>
-        public float CountdownRemaining => _countdownRemaining;
+        public float CountdownRemaining => CurrentAssignment == null
+            ? 0f
+            : (float)Math.Max(0d, (CurrentAssignment.StartsAtUtc - DateTimeOffset.UtcNow).TotalSeconds);
+
+        /// <summary>Gets the latest assignment received from the authoritative server.</summary>
+        public MatchAssignment CurrentAssignment { get; private set; }
 
         private void Awake()
         {
@@ -59,17 +60,7 @@ namespace PawArena.Gameplay.Match
                 return;
             }
 
-            _countdownRemaining = Mathf.Max(0f, _countdownRemaining - Time.deltaTime);
             ReportCountdownIfChanged();
-            if (_countdownRemaining > 0f)
-            {
-                return;
-            }
-
-            if (_stateMachine.TryTransitionTo(MatchState.Spawning))
-            {
-                SpawnRequested?.Invoke();
-            }
         }
 
         private void OnDestroy()
@@ -83,8 +74,13 @@ namespace PawArena.Gameplay.Match
         /// <summary>
         /// Attempts to begin the pre-match countdown.
         /// </summary>
-        public bool TryBeginCountdown()
+        public bool TryBeginCountdown(MatchAssignment assignment)
         {
+            if (assignment == null)
+            {
+                return false;
+            }
+
             if (!_stateMachine.CanTransitionTo(MatchState.Countdown))
             {
                 return false;
@@ -95,7 +91,7 @@ namespace PawArena.Gameplay.Match
                 return false;
             }
 
-            _countdownRemaining = _countdownSeconds;
+            CurrentAssignment = assignment;
             _lastReportedCountdownSecond = -1;
             _stateMachine.TryTransitionTo(MatchState.Countdown);
             ReportCountdownIfChanged();
@@ -121,8 +117,28 @@ namespace PawArena.Gameplay.Match
                 }
             }
 
-            _countdownRemaining = 0f;
+            CurrentAssignment = null;
             return _stateMachine.TryTransitionTo(MatchState.Waiting);
+        }
+
+        /// <summary>Accepts the server's start authorization for the current assignment.</summary>
+        public bool TryAuthorizeSpawn(MatchAssignment assignment)
+        {
+            if (assignment == null || CurrentAssignment == null ||
+                !string.Equals(assignment.MatchId, CurrentAssignment.MatchId, StringComparison.Ordinal) ||
+                !_stateMachine.CanTransitionTo(MatchState.Spawning))
+            {
+                return false;
+            }
+
+            CurrentAssignment = assignment;
+            if (!_stateMachine.TryTransitionTo(MatchState.Spawning))
+            {
+                return false;
+            }
+
+            SpawnRequested?.Invoke(assignment);
+            return true;
         }
 
         /// <summary>
@@ -141,6 +157,19 @@ namespace PawArena.Gameplay.Match
             }
 
             return _stateMachine.TryTransitionTo(MatchState.Playing);
+        }
+
+        /// <summary>Moves only the local top-level flow into spectator presentation.</summary>
+        public bool TryBeginSpectating()
+        {
+            if (_stateMachine.CurrentState != MatchState.Playing)
+            {
+                return false;
+            }
+
+            return _gameFlow == null ||
+                   (_gameFlow.CurrentState == GameFlowState.Playing &&
+                    _gameFlow.TryChangeState(GameFlowState.Spectating));
         }
 
         /// <summary>
@@ -184,12 +213,13 @@ namespace PawArena.Gameplay.Match
             }
 
             _stateMachine.TryTransitionTo(MatchState.Resetting);
+            CurrentAssignment = null;
             return _stateMachine.TryTransitionTo(MatchState.Waiting);
         }
 
         private void ReportCountdownIfChanged()
         {
-            var visibleSecond = Mathf.CeilToInt(_countdownRemaining);
+            var visibleSecond = Mathf.CeilToInt(CountdownRemaining);
             if (visibleSecond == _lastReportedCountdownSecond)
             {
                 return;
@@ -204,9 +234,5 @@ namespace PawArena.Gameplay.Match
             StateChanged?.Invoke(previousState, currentState);
         }
 
-        private void OnValidate()
-        {
-            _countdownSeconds = Mathf.Max(0f, _countdownSeconds);
-        }
     }
 }
