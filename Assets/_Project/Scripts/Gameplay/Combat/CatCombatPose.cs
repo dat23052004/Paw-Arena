@@ -1,8 +1,9 @@
+using PawArena.Gameplay.Characters;
 using UnityEngine;
 
 namespace PawArena.Gameplay.Combat
 {
-    /// <summary>Loose procedural presentation for basic combat, leaving authored states to skills only.</summary>
+    /// <summary>Hit reactions and legacy-rig fallback; authored combat arms are never posed twice.</summary>
     [DisallowMultipleComponent, DefaultExecutionOrder(140)]
     public sealed class CatCombatPose : MonoBehaviour
     {
@@ -19,21 +20,23 @@ namespace PawArena.Gameplay.Combat
         private Transform _rightLowerArm;
         private Transform _rightHand;
         private bool _ready;
+        private bool _authoredCombat;
 
         private void Awake() => Initialize();
         private void LateUpdate() => Present();
 
-        /// <summary>Caches the Humanoid bones once.</summary>
+        /// <summary>Caches the cat rig bones once.</summary>
         public void Initialize()
         {
-            if (_ready || _actor == null || _animator == null || !_animator.isHuman) { return; }
-            _spine = _animator.GetBoneTransform(HumanBodyBones.Spine);
-            _leftUpperArm = _animator.GetBoneTransform(HumanBodyBones.LeftUpperArm);
-            _leftLowerArm = _animator.GetBoneTransform(HumanBodyBones.LeftLowerArm);
-            _leftHand = _animator.GetBoneTransform(HumanBodyBones.LeftHand);
-            _rightUpperArm = _animator.GetBoneTransform(HumanBodyBones.RightUpperArm);
-            _rightLowerArm = _animator.GetBoneTransform(HumanBodyBones.RightLowerArm);
-            _rightHand = _animator.GetBoneTransform(HumanBodyBones.RightHand);
+            if (_ready || _actor == null || _animator == null) { return; }
+            _spine = CatRigBones.Find(_animator, HumanBodyBones.Spine);
+            _leftUpperArm = CatRigBones.Find(_animator, HumanBodyBones.LeftUpperArm);
+            _leftLowerArm = CatRigBones.Find(_animator, HumanBodyBones.LeftLowerArm);
+            _leftHand = CatRigBones.Find(_animator, HumanBodyBones.LeftHand);
+            _rightUpperArm = CatRigBones.Find(_animator, HumanBodyBones.RightUpperArm);
+            _rightLowerArm = CatRigBones.Find(_animator, HumanBodyBones.RightLowerArm);
+            _rightHand = CatRigBones.Find(_animator, HumanBodyBones.RightHand);
+            _authoredCombat = _animator.HasState(0, Animator.StringToHash("Base Layer.Cat_Punch"));
             _ready = _spine != null && _leftUpperArm != null && _leftLowerArm != null && _leftHand != null &&
                 _rightUpperArm != null && _rightLowerArm != null && _rightHand != null;
         }
@@ -45,14 +48,14 @@ namespace PawArena.Gameplay.Combat
             switch (_actor.Phase)
             {
                 case CatCombatPhase.Punch:
-                    PresentPunch();
+                    if (!_authoredCombat) { PresentPunch(); }
                     break;
                 case CatCombatPhase.Grab:
                 case CatCombatPhase.Holding:
                 case CatCombatPhase.Lifting:
                 case CatCombatPhase.Carrying:
                 case CatCombatPhase.Throwing:
-                    PresentGrab();
+                    if (!_authoredCombat) { PresentGrab(); }
                     break;
                 case CatCombatPhase.HitStun:
                     RotateWorld(_spine, new Vector3(-12, 0, 14) * _strength);

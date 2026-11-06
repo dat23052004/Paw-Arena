@@ -56,7 +56,10 @@ namespace PawArena.Bootstrap
             _session?.Dispose();
             if (_grantAllSkinsForTesting)
             {
-                foreach (var skin in _skins.Skins) { profile.Inventory.TryGrant(skin.ItemId); }
+                foreach (var skin in _skins.Skins)
+                {
+                    if (!profile.Inventory.IsOwned(skin.ItemId)) { profile.Inventory.TryGrant(skin.ItemId); }
+                }
             }
             if (_gear != null && _grantAllGearForTesting)
             {

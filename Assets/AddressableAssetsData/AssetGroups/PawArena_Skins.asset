@@ -159,6 +159,11 @@ MonoBehaviour:
     m_SerializedLabels:
     - skin_material
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ab8eb4ecacce9004c8aa78c2451e827b
+    m_Address: cat/skins/geode/coat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b557df280ed1da6448761e616662057b
     m_Address: paw-arena/skins/fur_ginger/eyes
     m_ReadOnly: 0

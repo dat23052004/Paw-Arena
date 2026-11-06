@@ -11,6 +11,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b268866e8ea89c9478b9668c9f92bc37, type: 3}
   m_Name: Skin_Black
+  _unlockForTesting: 0
   m_EditorClassIdentifier: PawArena.Gameplay::PawArena.Gameplay.Inventory.CatSkinDefinition
   _itemId: fur_black
   _displayName: Black
@@ -24,7 +25,7 @@ MonoBehaviour:
   _allowedSlots:
   - _type: 1
     _index: 0
-  _compatibleMesh: {fileID: 1924362587922941630, guid: a2662c9044d8f224eab022f79790c32c, type: 3}
+  _compatibleMesh: {fileID: -4818945162956550824, guid: 2a27e938618e9514d8d0f5bdd9871e66, type: 3}
   _coatReference:
     m_AssetGUID: 7c624b8c7ba984c4dbba55ec3eccb20a
     m_SubObjectName: 
@@ -38,5 +39,6 @@ MonoBehaviour:
     m_SubObjectGUID: 
     m_EditorAssetChanged: 0
   _thumbnail: {fileID: 2800000, guid: 89bdfe84774c9e54099ea2b8e50d4abe, type: 3}
+  _wearDefaultOutfit: 1
   _legacyCoat: {fileID: 0}
   _legacyEyes: {fileID: 0}

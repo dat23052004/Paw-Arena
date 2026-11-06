@@ -10,14 +10,15 @@ namespace PawArena.Gameplay.Combat
     public sealed class CatPlayerCombat : MonoBehaviour
     {
         private const int TargetCapacity = 16;
-        private const string GrabIdleClip = "Cat_Grab_Hold";
-        private const string GrabMoveClip = "Cat_Carry_Move";
+        private const string GrabIdleClip = "Cat_Grab";
+        private const string LiftClip = "Cat_Lift";
 
         [SerializeField] private CatCombatSettings _settings;
         [SerializeField] private CatCombatant _actor;
         [SerializeField] private CatAnimationController _animation;
         [SerializeField] private CatCombatEffects _effects;
         [SerializeField] private CatCombatAbility _selectedAbility = CatCombatAbility.Dash;
+        [SerializeField] private bool _abilitiesEnabled;
 
         private readonly float[] _cooldowns = new float[11];
         private readonly EntityId[] _hitIds = new EntityId[TargetCapacity];
@@ -105,11 +106,12 @@ namespace PawArena.Gameplay.Combat
         public void RequestLift() => _liftRequested = true;
 
         /// <summary>Queues the selected ability without spending cooldown until validation succeeds.</summary>
-        public void RequestAbility() => _abilityRequested = true;
+        public void RequestAbility() => _abilityRequested = _abilitiesEnabled;
 
         /// <summary>Cycles the retained ability roster in either direction.</summary>
         public void CycleAbility(int direction)
         {
+            if (!_abilitiesEnabled) { return; }
             var count = Enum.GetValues(typeof(CatCombatAbility)).Length;
             var index = ((int)_selectedAbility + (direction < 0 ? -1 : 1) + count) % count;
             _selectedAbility = (CatCombatAbility)index;
@@ -192,11 +194,17 @@ namespace PawArena.Gameplay.Combat
             }
             if (_actionElapsed < _settings.PunchSeconds) { return; }
             if (_queuedPunch) { BeginPunch(); }
-            else { _actor.SetPhase(CatCombatPhase.Free); }
+            else
+            {
+                _animation.ClearAction();
+                if (_grabHeld) { BeginAction(CatCombatPhase.Grab); }
+                else { _actor.SetPhase(CatCombatPhase.Free); }
+            }
         }
 
         private void TickGrab()
         {
+            if (_attackRequested) { BeginPunch(); return; }
             if (!_grabHeld) { _actor.SetPhase(CatCombatPhase.Free); return; }
             if (_actionElapsed < _settings.GrabWindupSeconds) { return; }
             var target = FindTarget(_settings.GrabRange, 110);
@@ -249,10 +257,12 @@ namespace PawArena.Gameplay.Combat
         {
             _queuedPunch = false;
             BeginAction(CatCombatPhase.Punch);
+            _animation.PlayAction("Cat_Punch", _settings.PunchSeconds, false);
         }
 
         private bool TryActivateAbility()
         {
+            if (!_abilitiesEnabled) { return false; }
             var ability = _selectedAbility;
             if (_cooldowns[(int)ability] > 0) { return false; }
             var target = default(CatCombatant);
@@ -444,12 +454,17 @@ namespace PawArena.Gameplay.Combat
         {
             var grabPhase = _actor.Phase is CatCombatPhase.Grab or CatCombatPhase.Holding or
                 CatCombatPhase.Lifting or CatCombatPhase.Carrying or CatCombatPhase.Throwing;
-            if (!grabPhase || !_actor.Motor.Grounded)
+            // Preserve the held stance beneath Punch rather than replaying Grab's entry afterwards.
+            grabPhase |= _actor.Phase == CatCombatPhase.Punch && _grabHeld;
+            if (_actor.Phase is CatCombatPhase.HitStun or CatCombatPhase.KnockedOut or CatCombatPhase.Held or CatCombatPhase.Carried)
+            { _animation.ClearAction(); }
+            if (!grabPhase)
             {
                 _animation.ClearStance();
                 return;
             }
-            _animation.SetStance(_actor.Motor.PlanarSpeed > .15f ? GrabMoveClip : GrabIdleClip);
+            _animation.SetStance(_actor.Phase is CatCombatPhase.Lifting or CatCombatPhase.Carrying or CatCombatPhase.Throwing
+                ? LiftClip : GrabIdleClip);
         }
 
         private void UpdateAnchorVisual(float delta)

@@ -53,17 +53,18 @@ namespace PawArena.Gameplay.Characters
         private void OnDisable() { if (_motor != null) { _motor.Warped -= ResetMotion; } RestorePose(); ResetMotion(); }
         public void Initialize()
         {
-            if (_ready || _motor == null || _animator == null || !_animator.isHuman) { return; }
-            _bones[0] = _animator.GetBoneTransform(HumanBodyBones.Spine);
-            _bones[1] = _animator.GetBoneTransform(HumanBodyBones.Chest);
+            if (_ready || _motor == null || _animator == null) { return; }
+            _bones[0] = CatRigBones.Find(_animator, HumanBodyBones.Spine);
+            _bones[1] = CatRigBones.Find(_animator, HumanBodyBones.Chest);
             for (var i = 0; i < 2; i++)
             { if (_bones[i] != null) { _torsoReference[i] = Quaternion.Inverse(transform.rotation) * _bones[i].rotation; } }
-            _bones[2] = _animator.GetBoneTransform(HumanBodyBones.Head);
-            _bones[3] = _animator.GetBoneTransform(HumanBodyBones.LeftUpperArm);
-            _bones[4] = _animator.GetBoneTransform(HumanBodyBones.LeftLowerArm);
-            _bones[5] = _animator.GetBoneTransform(HumanBodyBones.RightUpperArm);
-            _bones[6] = _animator.GetBoneTransform(HumanBodyBones.RightLowerArm);
-            _leftHand = _animator.GetBoneTransform(HumanBodyBones.LeftHand); _rightHand = _animator.GetBoneTransform(HumanBodyBones.RightHand);
+            _bones[2] = CatRigBones.Find(_animator, HumanBodyBones.Head);
+            _bones[3] = CatRigBones.Find(_animator, HumanBodyBones.LeftUpperArm);
+            _bones[4] = CatRigBones.Find(_animator, HumanBodyBones.LeftLowerArm);
+            _bones[5] = CatRigBones.Find(_animator, HumanBodyBones.RightUpperArm);
+            _bones[6] = CatRigBones.Find(_animator, HumanBodyBones.RightLowerArm);
+            _leftHand = CatRigBones.Find(_animator, HumanBodyBones.LeftHand);
+            _rightHand = CatRigBones.Find(_animator, HumanBodyBones.RightHand);
             foreach (var bone in _animator.GetComponentsInChildren<Transform>(true))
             { for (var i = 0; i < 5; i++) { if (bone.name == "Tail_0" + (i + 1)) { _bones[i + 7] = bone; } } }
             _renderers = _animator.GetComponentsInChildren<Renderer>(true);

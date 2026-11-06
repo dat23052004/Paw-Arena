@@ -11,6 +11,8 @@ namespace PawArena.Core.Inventory
         private readonly IItemCatalog _catalog;
         private readonly HashSet<string> _ownedItemIds = new(StringComparer.Ordinal);
         private readonly Dictionary<EquipmentSlotId, string> _equipment = new();
+        private readonly HashSet<string> _previewItemIds = new(StringComparer.Ordinal);
+        private readonly Dictionary<EquipmentSlotId, string> _beforePreviewEquipment = new();
 
         /// <summary>
         /// Creates an inventory from an optional persisted snapshot.
@@ -19,6 +21,15 @@ namespace PawArena.Core.Inventory
         {
             _catalog = catalog ?? throw new ArgumentNullException(nameof(catalog));
             RestoreSnapshot(snapshot);
+#if UNITY_EDITOR || DEVELOPMENT_BUILD
+            foreach (var item in _catalog.Items)
+            {
+                if (item.Category == ItemCategory.Fur && item.DevelopmentPreview && _ownedItemIds.Add(item.ItemId))
+                {
+                    _previewItemIds.Add(item.ItemId);
+                }
+            }
+#endif
         }
 
         /// <inheritdoc />
@@ -66,7 +77,8 @@ namespace PawArena.Core.Inventory
                 return InventoryOperationResult.UnknownItem;
             }
 
-            if (!_ownedItemIds.Add(itemId))
+            var wasPreview = _previewItemIds.Remove(itemId);
+            if (!_ownedItemIds.Add(itemId) && !wasPreview)
             {
                 return InventoryOperationResult.AlreadyOwned;
             }
@@ -92,6 +104,16 @@ namespace PawArena.Core.Inventory
             {
                 return InventoryOperationResult.InvalidSlot;
             }
+
+            if (_previewItemIds.Contains(itemId))
+            {
+                if (!_beforePreviewEquipment.ContainsKey(slot))
+                {
+                    _equipment.TryGetValue(slot, out var original);
+                    _beforePreviewEquipment.Add(slot, original);
+                }
+            }
+            else { _beforePreviewEquipment.Remove(slot); }
 
             if (_equipment.TryGetValue(slot, out var previousItemId))
             {
@@ -121,6 +143,7 @@ namespace PawArena.Core.Inventory
             }
 
             _equipment.Remove(slot);
+            _beforePreviewEquipment.Remove(slot);
             ItemUnequipped?.Invoke(slot, itemId);
             return InventoryOperationResult.Success;
         }
@@ -137,18 +160,26 @@ namespace PawArena.Core.Inventory
             var snapshot = new InventorySnapshot();
             foreach (var itemId in _ownedItemIds)
             {
-                snapshot.OwnedItemIds.Add(itemId);
+                if (!_previewItemIds.Contains(itemId)) { snapshot.OwnedItemIds.Add(itemId); }
             }
 
             snapshot.OwnedItemIds.Sort(StringComparer.Ordinal);
 
             foreach (var entry in _equipment)
             {
+                var savedItemId = entry.Value;
+                if (_previewItemIds.Contains(savedItemId))
+                {
+                    if (!_beforePreviewEquipment.TryGetValue(entry.Key, out savedItemId) || string.IsNullOrEmpty(savedItemId))
+                    {
+                        continue;
+                    }
+                }
                 snapshot.Equipment.Add(new EquipmentEntryData
                 {
                     SlotType = entry.Key.Type,
                     SlotIndex = entry.Key.Index,
-                    ItemId = entry.Value
+                    ItemId = savedItemId
                 });
             }
 

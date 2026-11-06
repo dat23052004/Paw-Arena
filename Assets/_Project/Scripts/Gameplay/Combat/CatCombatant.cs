@@ -18,6 +18,7 @@ namespace PawArena.Gameplay.Combat
 
         private Rigidbody _body;
         private CapsuleCollider _capsule;
+        private CatActiveRagdoll _activeRagdoll;
         private Vector3 _spawnPosition;
         private Quaternion _spawnRotation;
         private float _phaseRemaining;
@@ -71,12 +72,16 @@ namespace PawArena.Gameplay.Combat
 
         private void Update() => Step(Time.deltaTime);
 
+        private float _gripHeight = .15f;
+
         private void FixedUpdate()
         {
             if (Held == null || Held._body == null) { return; }
             var carrying = Phase is CatCombatPhase.Lifting or CatCombatPhase.Carrying or CatCombatPhase.Throwing;
             var height = carrying ? _settings.CarryHeight : .15f;
-            var target = _body.position + transform.forward * _settings.GripDistance + Vector3.up * height;
+            _gripHeight = Mathf.MoveTowards(_gripHeight, height,
+                Mathf.Abs(_settings.CarryHeight - .15f) / Mathf.Max(.01f, _settings.LiftSeconds) * Time.fixedDeltaTime);
+            var target = _body.position + transform.forward * _settings.GripDistance + Vector3.up * _gripHeight;
             Held._body.MovePosition(target);
             Held._body.MoveRotation(_body.rotation);
         }
@@ -103,6 +108,7 @@ namespace PawArena.Gameplay.Combat
             _motor.Initialize();
             _body = GetComponent<Rigidbody>();
             _capsule = GetComponent<CapsuleCollider>();
+            _activeRagdoll = GetComponent<CatActiveRagdoll>();
             Health = _settings.MaxHealth;
             _spawnPosition = transform.position;
             _spawnRotation = transform.rotation;
@@ -169,7 +175,9 @@ namespace PawArena.Gameplay.Combat
             Health = Mathf.Max(0, Health - Mathf.Max(0, damage));
             _motor.SetMovementControl(true);
             _motor.SetSuspended(false);
-            if (!_body.isKinematic) { _body.AddForce(impulse * KnockbackMultiplier, ForceMode.Impulse); }
+            var appliedImpulse = impulse * KnockbackMultiplier;
+            if (!_body.isKinematic) { _body.AddForce(appliedImpulse, ForceMode.Impulse); }
+            _activeRagdoll?.ApplyImpulse(appliedImpulse, _body.worldCenterOfMass + Vector3.up * .55f);
             _hitImmunity = _settings.HitImmunitySeconds;
             if (Health <= 0)
             {
@@ -189,6 +197,7 @@ namespace PawArena.Gameplay.Combat
             if (!_initialized || target == null || target == this || Held != null || Holder != null ||
                 target.Holder != null || target.Held != null || target.IsKnockedOut) { return false; }
             Held = target;
+            _gripHeight = .15f;
             target.Holder = this;
             target.RecordAttacker(this);
             SetPhase(CatCombatPhase.Holding);
@@ -226,7 +235,11 @@ namespace PawArena.Gameplay.Combat
             target._motor.SetSuspended(false);
             target.SetPhase(impulse.sqrMagnitude > .01f ? CatCombatPhase.HitStun : CatCombatPhase.Free,
                 impulse.sqrMagnitude > .01f ? _settings.HitStunSeconds : 0);
-            if (!target._body.isKinematic && impulse.sqrMagnitude > 0) { target._body.AddForce(impulse, ForceMode.Impulse); }
+            if (impulse.sqrMagnitude > 0)
+            {
+                if (!target._body.isKinematic) { target._body.AddForce(impulse, ForceMode.Impulse); }
+                target._activeRagdoll?.ApplyImpulse(impulse, target._body.worldCenterOfMass + Vector3.up * .55f);
+            }
             if (Phase is CatCombatPhase.Holding or CatCombatPhase.Lifting or CatCombatPhase.Carrying or CatCombatPhase.Throwing)
             { SetPhase(CatCombatPhase.Free); }
             target.Changed?.Invoke(target);

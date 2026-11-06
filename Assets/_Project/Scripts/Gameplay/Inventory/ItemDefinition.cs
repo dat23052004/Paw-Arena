@@ -94,8 +94,12 @@ namespace PawArena.Gameplay.Inventory
                 _rarity,
                 _unlockType,
                 _price,
-                slots);
+                slots,
+                DevelopmentPreview);
         }
+
+        /// <summary>Optional development-session access, independent of acquisition rules.</summary>
+        protected virtual bool DevelopmentPreview => false;
 
         protected virtual void OnValidate()
         {

@@ -32,4 +32,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fba0a4e8bf200fd4cb24ba2be66f660c, type: 2}
   - {fileID: 11400000, guid: 603fb41041765a744aa311bff09d2ff5, type: 2}
   - {fileID: 11400000, guid: 2e4cd8a2e3d0f0f46830006ccde8472b, type: 2}
+  - {fileID: 11400000, guid: 09d69299ea08cc54a817e7095d709f1f, type: 2}
   _defaultSkin: {fileID: 11400000, guid: abd7fd1535750db4793c75c911ef85fa, type: 2}

@@ -138,7 +138,10 @@ Desktop.ini
 /Assets/_Recovery.meta
 
 # Project and imported-package documentation/source references.
-/Assets/_Project/Documentation/
+# Keep the active-ragdoll tuning guide with the feature; ignore other local notes.
+/Assets/_Project/Documentation/*
+!/Assets/_Project/Documentation/ActiveRagdollTuning.md
+!/Assets/_Project/Documentation/ActiveRagdollTuning.md.meta
 /Assets/_Project/Documentation.meta
 /Assets/Plugins/PawArenaUI/Documentation/
 /Assets/Plugins/PawArenaUI/Documentation.meta

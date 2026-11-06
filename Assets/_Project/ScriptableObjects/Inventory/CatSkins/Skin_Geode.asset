@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b268866e8ea89c9478b9668c9f92bc37, type: 3}
+  m_Name: Skin_Geode
+  _unlockForTesting: 1
+  m_EditorClassIdentifier: PawArena.Gameplay::PawArena.Gameplay.Inventory.CatSkinDefinition
+  _itemId: fur_geode
+  _displayName: Geode
+  _description: Legendary obsidian fur with amethyst and emerald crystal formations.
+  _category: 1
+  _rarity: 3
+  _unlockType: 5
+  _price: 0
+  _icon: {fileID: 0}
+  _previewPrefab: {fileID: 0}
+  _allowedSlots:
+  - _type: 1
+    _index: 0
+  _compatibleMesh: {fileID: -4818945162956550824, guid: 2a27e938618e9514d8d0f5bdd9871e66, type: 3}
+  _coatReference:
+    m_AssetGUID: ab8eb4ecacce9004c8aa78c2451e827b
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 0
+  _eyesReference:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 0
+  _thumbnail: {fileID: 2800000, guid: e9d50c9aa53e92b4ba85a4c1ad425cde, type: 3}
+  _wearDefaultOutfit: 0
+  _detailMesh: {fileID: 4300000, guid: 29ddcc0dfb735dc4991d35fd795dcd93, type: 2}
+  _detailMaterial: {fileID: 2100000, guid: bfc6e7da5b97b394c93916bbd1aa70cb, type: 2}
+  _detailBoneNames:
+  - Root
+  - Hips
+  - Spine
+  - Chest
+  - Head
+  - LeftUpperArm
+  - LeftLowerArm
+  - LeftHand
+  - RightUpperArm
+  - RightLowerArm
+  - RightHand
+  - LeftUpperLeg
+  - LeftLowerLeg
+  - LeftFoot
+  - RightUpperLeg
+  - RightLowerLeg
+  - RightFoot
+  - Tail_01
+  - Tail_02
+  - Tail_03
+  _legacyCoat: {fileID: 0}
+  _legacyEyes: {fileID: 0}

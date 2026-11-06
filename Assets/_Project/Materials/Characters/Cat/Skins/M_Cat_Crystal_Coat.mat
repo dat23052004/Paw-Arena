@@ -107,7 +107,7 @@ Material:
     - _BumpScale: 1
     - _ClearCoat: 1
     - _ClearCoatMask: 0.65
-    - _ClearCoatSmoothness: 0.97
+    - _ClearCoatSmoothness: 0.77
     - _Cull: 2
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1

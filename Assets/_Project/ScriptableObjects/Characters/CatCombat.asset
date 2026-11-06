@@ -17,9 +17,9 @@ MonoBehaviour:
   _knockoutSeconds: 2.5
   _hitImmunitySeconds: 0.15
   _ringOutY: -3
-  _punchSeconds: 0.48
-  _punchContactStart: 0.14
-  _punchContactEnd: 0.24
+  _punchSeconds: 0.8333333
+  _punchContactStart: 0.33333334
+  _punchContactEnd: 0.36666667
   _punchRange: 1.55
   _punchAngle: 105
   _punchDamage: 24

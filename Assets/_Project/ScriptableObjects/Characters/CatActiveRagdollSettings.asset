@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8efc3812e31c4f08b6fc204d44ad4f5a, type: 3}
+  m_Name: CatActiveRagdollSettings
+  m_EditorClassIdentifier: PawArena.Gameplay::PawArena.Gameplay.Characters.CatActiveRagdollSettings
+  _angularSpring: 180
+  _angularDamping: 28
+  _maximumAngularAcceleration: 520
+  _handAngularLimit: 12
+  _handSpring: 160
+  _handDamping: 24
+  _handMass: 0.12
+  _hitStrength: 0.45
+  _heldStrength: 0.3
+  _knockedOutStrength: 0.025
+  _airborneStrength: 0.92
+  _bodyPositionSpring: 220
+  _bodyPositionDamping: 32
+  _maximumBodyAcceleration: 320
+  _pelvisPositionSpring: 300
+  _pelvisPositionDamping: 38
+  _maximumPelvisAcceleration: 360
+  _pelvisLinearLimit: 0.08
+  _bodyMass: 0.38
+  _linearDamping: 0.6
+  _bodyAngularDamping: 2
+  _defaultJointLimit: 28
+  _colliderRadiusScale: 0.19
+  _impulseMultiplier: 0.12
+  _maximumSimulationDistance: 28

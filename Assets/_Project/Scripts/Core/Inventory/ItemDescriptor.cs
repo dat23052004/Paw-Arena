@@ -20,7 +20,8 @@ namespace PawArena.Core.Inventory
             ItemRarity rarity,
             UnlockType unlockType,
             long price,
-            IReadOnlyList<EquipmentSlotId> allowedSlots)
+            IReadOnlyList<EquipmentSlotId> allowedSlots,
+            bool developmentPreview = false)
         {
             if (string.IsNullOrWhiteSpace(itemId))
             {
@@ -38,6 +39,7 @@ namespace PawArena.Core.Inventory
             Rarity = rarity;
             UnlockType = unlockType;
             Price = price;
+            DevelopmentPreview = developmentPreview;
 
             if (allowedSlots == null || allowedSlots.Count == 0)
             {
@@ -81,6 +83,9 @@ namespace PawArena.Core.Inventory
         /// Gets the catalog price for coin-purchasable items.
         /// </summary>
         public long Price { get; }
+
+        /// <summary>Allows a temporary, unsaved entitlement in development sessions only.</summary>
+        public bool DevelopmentPreview { get; }
 
         /// <summary>
         /// Gets the slots this item may occupy.
