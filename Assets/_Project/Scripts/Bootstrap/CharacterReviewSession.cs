@@ -1,5 +1,6 @@
-using PawArena.Gameplay.Characters;
 using PawArena.Core.Flow;
+using PawArena.Gameplay.Cameras;
+using PawArena.Gameplay.Characters;
 using PawArena.Gameplay.Flow;
 using PawArena.Gameplay.Player;
 using UnityEngine;
@@ -10,7 +11,7 @@ namespace PawArena.Bootstrap
     public sealed class CharacterReviewSession : MonoBehaviour
     {
         [SerializeField] private CatPlayerController _player;
-        [SerializeField] private CharacterReviewCamera _camera;
+        [SerializeField] private CinemachineCameraDirector _cameraDirector;
         [SerializeField] private GameFlowController _gameFlow;
         private CatLocomotion _motor;
         private void OnEnable()
@@ -21,7 +22,8 @@ namespace PawArena.Bootstrap
         private void Start()
         {
             _motor = _player.GetComponent<CatLocomotion>();
-            _player.BindCamera(_camera.GetComponent<Camera>()); _camera.Follow(_player.transform);
+            _cameraDirector.SetDefaultTarget(_player.transform);
+            _player.BindCamera(_cameraDirector.OutputCamera, _cameraDirector.HeadingProvider);
             ApplyControlMode(_gameFlow == null ? GameFlowState.Lobby : _gameFlow.CurrentState);
         }
         private void Update()

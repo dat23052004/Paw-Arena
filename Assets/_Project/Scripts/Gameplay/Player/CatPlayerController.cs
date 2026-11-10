@@ -1,4 +1,5 @@
 using System;
+using PawArena.Gameplay.Cameras;
 using PawArena.Gameplay.Characters;
 using PawArena.Gameplay.Combat;
 using UnityEngine;
@@ -16,7 +17,7 @@ namespace PawArena.Gameplay.Player
         [SerializeField, Tooltip("Camera pitch at which the cat stands upright.")] private float _neutralCameraPitch = 16;
         [SerializeField] private CatPlayerControlMode _controlMode = CatPlayerControlMode.Lobby;
         private Camera _camera;
-        private CharacterReviewCamera _orbit;
+        private ICameraHeadingProvider _cameraHeading;
         private CatSecondaryMotion _motion;
         private Vector3 _home;
         private Quaternion _homeRotation;
@@ -39,7 +40,7 @@ namespace PawArena.Gameplay.Player
             }
         }
         private void Start()
-        { BindCamera(_camera == null ? Camera.main : _camera); _motion = GetComponent<CatSecondaryMotion>(); _combat ??= GetComponent<CatPlayerCombat>(); SetHome(transform.position, transform.rotation); }
+        { BindCamera(_camera == null ? Camera.main : _camera, _cameraHeading); _motion = GetComponent<CatSecondaryMotion>(); _combat ??= GetComponent<CatPlayerCombat>(); SetHome(transform.position, transform.rotation); }
         private void OnDisable() { _motor?.ClearInput(); _combat?.ClearInput(); _motion?.SetLookPitch(0); }
         private void OnApplicationFocus(bool focused) { _focused = focused; if (!focused) { _motor.ClearInput(); _combat?.ClearInput(); _motion?.SetLookPitch(0); } }
         private void Update()
@@ -96,11 +97,10 @@ namespace PawArena.Gameplay.Player
             var pitch = -Mathf.Asin(Mathf.Clamp(forward.y, -1, 1)) * Mathf.Rad2Deg;
             _motion.SetLookPitch(pitch - _neutralCameraPitch);
         }
-        public void BindCamera(Camera camera)
+        public void BindCamera(Camera camera, ICameraHeadingProvider cameraHeading = null)
         {
             _camera = camera;
-            _orbit = camera == null ? null : camera.GetComponent<CharacterReviewCamera>();
-            _orbit?.SetPartyMatchMode(_controlMode == CatPlayerControlMode.PartyMatch);
+            _cameraHeading = cameraHeading;
         }
         /// <summary>Switches between RMB Lobby orbit and continuous Party Match mouse-look.</summary>
         public void SetControlMode(CatPlayerControlMode mode)
@@ -108,7 +108,6 @@ namespace PawArena.Gameplay.Player
             if (_controlMode == mode) { return; }
             _controlMode = mode;
             _motor.ClearInput();
-            _orbit?.SetPartyMatchMode(mode == CatPlayerControlMode.PartyMatch);
         }
 
         /// <summary>Enables or disables local device input without disabling presentation components.</summary>
@@ -136,7 +135,7 @@ namespace PawArena.Gameplay.Player
         }
         public void SetHome(Vector3 position, Quaternion rotation) { _home = position; _homeRotation = rotation; }
         public void PreviewClip(int index)
-        { if (index < 0 || index >= CatAnimationController.PreviewClipCount) { return; } _motor.SetSuspended(true); _motor.Warp(_home, _homeRotation); _orbit?.AlignBehindTarget(); _animation.Preview(index); }
+        { if (index < 0 || index >= CatAnimationController.PreviewClipCount) { return; } _motor.SetSuspended(true); _motor.Warp(_home, _homeRotation); _cameraHeading?.AlignBehindTarget(); _animation.Preview(index); }
         public void ResumeMovement() { _animation.ResumeMovement(); _motor.SetSuspended(false); }
         public void TogglePause() => _animation.TogglePause();
         public void RestartClip() => _animation.RestartClip();
@@ -147,11 +146,11 @@ namespace PawArena.Gameplay.Player
             var combatant = GetComponent<CatCombatant>();
             if (combatant != null) { combatant.SetSpawn(_home, _homeRotation); combatant.Respawn(); }
             else { _motor.Warp(_home, _homeRotation); }
-            _orbit?.AlignBehindTarget();
+            _cameraHeading?.AlignBehindTarget();
         }
         private void SubmitFacing(Vector3 fallbackForward)
         {
-            if (_orbit != null) { _motor.SubmitFacing(_orbit.PlanarForward, _orbit.PlanarTurnSpeed); }
+            if (_cameraHeading != null) { _motor.SubmitFacing(_cameraHeading.PlanarForward, _cameraHeading.PlanarTurnSpeed); }
             else { _motor.SubmitFacing(fallbackForward); }
         }
         private static void SetActorLayerRecursively(
