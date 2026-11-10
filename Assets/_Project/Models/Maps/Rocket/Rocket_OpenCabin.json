@@ -1,0 +1,41 @@
+{
+  "removed_names": [
+    "Cabin_DoorSeal_0",
+    "Cabin_DoorSeal_1",
+    "Cabin_DoorSeal_2",
+    "Cabin_DoorSeal_3",
+    "Cabin_DoorSeal_4",
+    "Cabin_DoorSeal_5",
+    "Cabin_SideWindow_-1",
+    "Cabin_SideWindow_1",
+    "Cabin_PillarFront_-1",
+    "Cabin_PillarFront_1",
+    "Cabin_Sill_-1",
+    "Cabin_Sill_1"
+  ],
+  "removed_this_run": [
+    "Cabin_DoorSeal_0",
+    "Cabin_DoorSeal_1",
+    "Cabin_DoorSeal_2",
+    "Cabin_DoorSeal_3",
+    "Cabin_DoorSeal_4",
+    "Cabin_DoorSeal_5",
+    "Cabin_SideWindow_-1",
+    "Cabin_SideWindow_1",
+    "Cabin_PillarFront_-1",
+    "Cabin_PillarFront_1",
+    "Cabin_Sill_-1",
+    "Cabin_Sill_1"
+  ],
+  "added_names": [
+    "Cabin_RoofUnderside"
+  ],
+  "open_sides": [
+    "front",
+    "left",
+    "right"
+  ],
+  "floor_height": 13.6,
+  "seats": 3,
+  "backup": "E:\\Unity_\\Paw Arena\\Blender\\Map\\Rocket\\Backups\\BeforeOpenCabin_20261110_012929"
+}

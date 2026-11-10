@@ -1,0 +1,116 @@
+{
+  "materials": [
+    {
+      "name": "M_Rocket_Arrow",
+      "hexColor": "FFE72B",
+      "metallic": 0.0,
+      "smoothness": 0.5999999940395355,
+      "emission": 2.5
+    },
+    {
+      "name": "M_Rocket_BaseSide",
+      "hexColor": "222936",
+      "metallic": 0.0,
+      "smoothness": 0.13999998569488525,
+      "emission": 0.0
+    },
+    {
+      "name": "M_Rocket_Beacon",
+      "hexColor": "EB4408",
+      "metallic": 0.0,
+      "smoothness": 0.6500000059604645,
+      "emission": 0.25
+    },
+    {
+      "name": "M_Rocket_Black",
+      "hexColor": "181C19",
+      "metallic": 0.0,
+      "smoothness": 0.5,
+      "emission": 0.0
+    },
+    {
+      "name": "M_Rocket_Cabin",
+      "hexColor": "809BA6",
+      "metallic": 0.0,
+      "smoothness": 0.25,
+      "emission": 0.0
+    },
+    {
+      "name": "M_Rocket_Grass",
+      "hexColor": "658F24",
+      "metallic": 0.0,
+      "smoothness": 0.10000002384185791,
+      "emission": 0.0
+    },
+    {
+      "name": "M_Rocket_Orange",
+      "hexColor": "E78004",
+      "metallic": 0.0,
+      "smoothness": 0.32999998331069946,
+      "emission": 0.0
+    },
+    {
+      "name": "M_Rocket_OrangeBand",
+      "hexColor": "F69B03",
+      "metallic": 0.0,
+      "smoothness": 0.36000001430511475,
+      "emission": 0.0
+    },
+    {
+      "name": "M_Rocket_Pad",
+      "hexColor": "292C2B",
+      "metallic": 0.0,
+      "smoothness": 0.10000002384185791,
+      "emission": 0.0
+    },
+    {
+      "name": "M_Rocket_Seat",
+      "hexColor": "D3E1E3",
+      "metallic": 0.0,
+      "smoothness": 0.30000001192092896,
+      "emission": 0.0
+    },
+    {
+      "name": "M_Rocket_SeatPad",
+      "hexColor": "A5BAC2",
+      "metallic": 0.0,
+      "smoothness": 0.19999998807907104,
+      "emission": 0.0
+    },
+    {
+      "name": "M_Rocket_Steel",
+      "hexColor": "243B49",
+      "metallic": 0.11999999731779099,
+      "smoothness": 0.3799999952316284,
+      "emission": 0.0
+    },
+    {
+      "name": "M_Rocket_SteelEdge",
+      "hexColor": "77939E",
+      "metallic": 0.10000000149011612,
+      "smoothness": 0.44999998807907104,
+      "emission": 0.0
+    },
+    {
+      "name": "M_Rocket_Walkway",
+      "hexColor": "C4B17C",
+      "metallic": 0.0,
+      "smoothness": 0.19999998807907104,
+      "emission": 0.0
+    },
+    {
+      "name": "M_Rocket_White",
+      "hexColor": "E6E5D3",
+      "metallic": 0.0,
+      "smoothness": 0.4599999785423279,
+      "emission": 0.0
+    },
+    {
+      "name": "M_Rocket_Window",
+      "hexColor": "63BAD2",
+      "metallic": 0.10000000149011612,
+      "smoothness": 0.7699999958276749,
+      "emission": 0.0
+    }
+  ]
+}
