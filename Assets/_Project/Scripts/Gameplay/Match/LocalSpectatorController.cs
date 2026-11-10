@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using PawArena.Gameplay.Characters;
+using PawArena.Gameplay.Cameras;
 using PawArena.Gameplay.Player;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -11,7 +11,7 @@ namespace PawArena.Gameplay.Match
     [DisallowMultipleComponent]
     public sealed class LocalSpectatorController : MonoBehaviour
     {
-        [SerializeField] private CharacterReviewCamera _camera = null;
+        [SerializeField] private CinemachineCameraDirector _camera = null;
         [SerializeField] private CatPlayerController _player = null;
 
         private IReadOnlyList<LocalMatchActor> _actors;
@@ -62,7 +62,6 @@ namespace PawArena.Gameplay.Match
             _actors = actors;
             IsSpectating = true;
             _player.SetInputEnabled(false);
-            _camera.SetPartyMatchMode(false);
             _targetIndex = -1;
             return CycleTarget(1);
         }
@@ -109,7 +108,6 @@ namespace PawArena.Gameplay.Match
 
             IsSpectating = true;
             _player.SetInputEnabled(false);
-            _camera.SetPartyMatchMode(false);
             if (CycleTarget(direction > 0 ? 1 : -1))
             {
                 return true;
@@ -185,7 +183,7 @@ namespace PawArena.Gameplay.Match
 
             _targetIndex = index;
             CurrentTargetId = actor.PlayerId;
-            _camera.Follow(actor.Transform);
+            _camera.SetSpectatorTarget(actor.Transform);
             TargetChanged?.Invoke(actor.PlayerId);
             return true;
         }
@@ -204,8 +202,7 @@ namespace PawArena.Gameplay.Match
                 return;
             }
 
-            _camera.Follow(_player.transform);
-            _camera.SetPartyMatchMode(false);
+            _camera.RestoreDefaultTarget();
             _camera.AlignBehindTarget();
             _player.SetInputEnabled(true);
         }

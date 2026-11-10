@@ -3,6 +3,7 @@
   "rootNamespace": "PawArena.Gameplay",
   "references": [
     "PawArena.Core",
+    "Unity.Cinemachine",
     "Unity.InputSystem",
     "Unity.Addressables",
     "Unity.ResourceManager"
