@@ -1,0 +1,256 @@
+{
+  "materials": [
+    {
+      "name": "M_Pirate_band",
+      "linearColor": [
+        0.02955683507025242,
+        0.0382043719291687,
+        0.026241222396492958,
+        1.0
+      ],
+      "wood": false,
+      "metallic": 0.3499999940395355,
+      "smoothness": 0.44999998807907104
+    },
+    {
+      "name": "M_Pirate_black",
+      "linearColor": [
+        0.00802319310605526,
+        0.009134058840572834,
+        0.009134058840572834,
+        1.0
+      ],
+      "wood": false,
+      "metallic": 0.0,
+      "smoothness": 0.12999999523162842
+    },
+    {
+      "name": "M_Pirate_blue",
+      "linearColor": [
+        0.017641954123973846,
+        0.09305896610021591,
+        0.4507857859134674,
+        1.0
+      ],
+      "wood": false,
+      "metallic": 0.0,
+      "smoothness": 0.44999998807907104
+    },
+    {
+      "name": "M_Pirate_bridge",
+      "linearColor": [
+        0.25015828013420105,
+        0.09305896610021591,
+        0.026241222396492958,
+        1.0
+      ],
+      "wood": false,
+      "metallic": 0.0,
+      "smoothness": 0.17000001668930054
+    },
+    {
+      "name": "M_Pirate_carriage",
+      "linearColor": [
+        0.19120168685913086,
+        0.06301001459360123,
+        0.014443843625485897,
+        1.0
+      ],
+      "wood": false,
+      "metallic": 0.0,
+      "smoothness": 0.19999998807907104
+    },
+    {
+      "name": "M_Pirate_crate",
+      "linearColor": [
+        0.35640013217926025,
+        0.2541520893573761,
+        0.12213877588510513,
+        1.0
+      ],
+      "wood": false,
+      "metallic": 0.0,
+      "smoothness": 0.1499999761581421
+    },
+    {
+      "name": "M_Pirate_crate_frame",
+      "linearColor": [
+        0.07818742096424103,
+        0.0666259378194809,
+        0.0423114113509655,
+        1.0
+      ],
+      "wood": false,
+      "metallic": 0.0,
+      "smoothness": 0.1499999761581421
+    },
+    {
+      "name": "M_Pirate_DeckWood_01",
+      "linearColor": [
+        0.8799999952316284,
+        0.8799999952316284,
+        0.8799999952316284,
+        1.0
+      ],
+      "wood": true,
+      "metallic": 0.0,
+      "smoothness": 0.19999998807907104
+    },
+    {
+      "name": "M_Pirate_DeckWood_02",
+      "linearColor": [
+        0.949999988079071,
+        0.949999988079071,
+        0.949999988079071,
+        1.0
+      ],
+      "wood": true,
+      "metallic": 0.0,
+      "smoothness": 0.19999998807907104
+    },
+    {
+      "name": "M_Pirate_DeckWood_03",
+      "linearColor": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "wood": true,
+      "metallic": 0.0,
+      "smoothness": 0.19999998807907104
+    },
+    {
+      "name": "M_Pirate_DeckWood_04",
+      "linearColor": [
+        1.059999942779541,
+        1.059999942779541,
+        1.059999942779541,
+        1.0
+      ],
+      "wood": true,
+      "metallic": 0.0,
+      "smoothness": 0.19999998807907104
+    },
+    {
+      "name": "M_Pirate_DeckWood_05",
+      "linearColor": [
+        1.1200000047683716,
+        1.1200000047683716,
+        1.1200000047683716,
+        1.0
+      ],
+      "wood": true,
+      "metallic": 0.0,
+      "smoothness": 0.19999998807907104
+    },
+    {
+      "name": "M_Pirate_FractureEndgrain",
+      "linearColor": [
+        0.6499999761581421,
+        0.4399999976158142,
+        0.23999999463558197,
+        1.0
+      ],
+      "wood": true,
+      "metallic": 0.0,
+      "smoothness": 0.19999998807907104
+    },
+    {
+      "name": "M_Pirate_HoldWood",
+      "linearColor": [
+        0.41999998688697815,
+        0.3499999940395355,
+        0.27000001072883606,
+        1.0
+      ],
+      "wood": true,
+      "metallic": 0.0,
+      "smoothness": 0.19999998807907104
+    },
+    {
+      "name": "M_Pirate_hull",
+      "linearColor": [
+        0.021219009533524513,
+        0.019382361322641373,
+        0.016807375475764275,
+        1.0
+      ],
+      "wood": false,
+      "metallic": 0.0,
+      "smoothness": 0.13999998569488525
+    },
+    {
+      "name": "M_Pirate_mast",
+      "linearColor": [
+        0.12213877588510513,
+        0.05612849071621895,
+        0.01599629409611225,
+        1.0
+      ],
+      "wood": false,
+      "metallic": 0.0,
+      "smoothness": 0.1499999761581421
+    },
+    {
+      "name": "M_Pirate_metal",
+      "linearColor": [
+        0.05612849071621895,
+        0.07036009430885315,
+        0.04666508734226227,
+        1.0
+      ],
+      "wood": false,
+      "metallic": 0.44999998807907104,
+      "smoothness": 0.5
+    },
+    {
+      "name": "M_Pirate_red",
+      "linearColor": [
+        0.6653872728347778,
+        0.024157632142305374,
+        0.014443843625485897,
+        1.0
+      ],
+      "wood": false,
+      "metallic": 0.0,
+      "smoothness": 0.44999998807907104
+    },
+    {
+      "name": "M_Pirate_stern",
+      "linearColor": [
+        0.5088813304901123,
+        0.2462013214826584,
+        0.061246052384376526,
+        1.0
+      ],
+      "wood": false,
+      "metallic": 0.0,
+      "smoothness": 0.19999998807907104
+    },
+    {
+      "name": "M_Pirate_stern_band",
+      "linearColor": [
+        0.637596845626831,
+        0.3324515223503113,
+        0.09530746936798096,
+        1.0
+      ],
+      "wood": false,
+      "metallic": 0.0,
+      "smoothness": 0.18000000715255737
+    },
+    {
+      "name": "M_Pirate_Water_Preview",
+      "linearColor": [
+        0.03433980792760849,
+        0.2622506618499756,
+        0.38132601976394653,
+        1.0
+      ],
+      "wood": false,
+      "metallic": 0.11999999731779099,
+      "smoothness": 0.7800000011920929
+    }
+  ]
+}

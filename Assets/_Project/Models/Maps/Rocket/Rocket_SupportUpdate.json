@@ -1,0 +1,18 @@
+{
+  "rear_cradles": 3,
+  "hinge_pivots": [
+    "Rear_Hinge_1_L",
+    "Rear_Hinge_1_R",
+    "Rear_Hinge_2_L",
+    "Rear_Hinge_2_R",
+    "Rear_Hinge_3_L",
+    "Rear_Hinge_3_R"
+  ],
+  "booster_links": 4,
+  "booster_launch_seats": 2,
+  "cabin_connected": true,
+  "new_objects": 87,
+  "runtime_joints": false,
+  "note": "Visual connected construction, not engineering validation. Release animations/gameplay not installed.",
+  "backup": "E:\\Unity_\\Paw Arena\\Blender\\Map\\Rocket\\Backups\\BeforeSupports_20261110_002501"
+}

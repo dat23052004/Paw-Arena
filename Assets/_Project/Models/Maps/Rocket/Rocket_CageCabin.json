@@ -1,0 +1,62 @@
+{
+  "removed_names": [
+    "Boarding_Beacon_-3.2",
+    "Boarding_Beacon_0.4",
+    "Boarding_Beacon_4",
+    "Boarding_Deck",
+    "Boarding_OuterRail",
+    "Boarding_Post_-3.2",
+    "Boarding_Post_0.4",
+    "Boarding_Post_4",
+    "Boarding_SupportBrace_-5.7",
+    "Boarding_SupportBrace_-6.85",
+    "Boarding_UnderBeam_-5.7",
+    "Boarding_UnderBeam_-6.85",
+    "Gantry_Long_4_-3"
+  ],
+  "added_names": [
+    "Cabin_Cage_Front",
+    "Cabin_CageTrim_Front",
+    "Cabin_Cage_Entry",
+    "Cabin_CageTrim_Entry",
+    "Cabin_Cage_Right",
+    "Cabin_CageTrim_Right",
+    "Boarding_StraightDeck",
+    "Boarding_ApproachLanding",
+    "Boarding_StraightRail_-5.15",
+    "Boarding_CagePost_-3.3_-5.15",
+    "Boarding_CageBeacon_-3.3_-5.15",
+    "Boarding_CagePost_0.05_-5.15",
+    "Boarding_CageBeacon_0.05_-5.15",
+    "Boarding_StraightUnderBeam_-5.15",
+    "Boarding_StraightBrace_-5.15",
+    "Boarding_StraightRail_-1.95",
+    "Boarding_CagePost_-3.3_-1.95",
+    "Boarding_CageBeacon_-3.3_-1.95",
+    "Boarding_CagePost_0.05_-1.95",
+    "Boarding_CageBeacon_0.05_-1.95",
+    "Boarding_StraightUnderBeam_-1.95",
+    "Boarding_StraightBrace_-1.95",
+    "Boarding_ApproachRail_-7",
+    "Boarding_ApproachRail_-1.8",
+    "Boarding_ApproachSupport_-5.8",
+    "Boarding_ApproachSupport_-2.1",
+    "Gantry_TopEntryEdge_A",
+    "Gantry_TopEntryEdge_B"
+  ],
+  "changed_names": [
+    "Seat_01",
+    "Seat_02",
+    "Seat_03",
+    "BoardingThreshold"
+  ],
+  "prefab_groups": [
+    "Rocket_Assembly",
+    "Boarding_Gangway",
+    "Access_Gantry"
+  ],
+  "bridge_width": 3.2,
+  "entry_direction_blender": "+X",
+  "floor_height": 13.6,
+  "backup": "E:\\Unity_\\Paw Arena\\Blender\\Map\\Rocket\\Backups\\BeforeCageCabin_20261110_013738"
+}
