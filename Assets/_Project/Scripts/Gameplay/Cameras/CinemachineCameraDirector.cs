@@ -9,6 +9,9 @@ namespace PawArena.Gameplay.Cameras
     [DisallowMultipleComponent, DefaultExecutionOrder(-100)]
     public sealed class CinemachineCameraDirector : MonoBehaviour
     {
+        [Header("Configuration")]
+        [SerializeField] private CameraSystemConfig _config;
+
         [Header("Scene services")]
         [SerializeField] private Camera _outputCamera;
         [SerializeField] private CameraAimController _aim;
@@ -25,7 +28,6 @@ namespace PawArena.Gameplay.Cameras
         [SerializeField] private CinemachineThirdPersonFollow _matchFollow;
         [SerializeField] private CinemachineThirdPersonFollow _spectatorFollow;
         [SerializeField] private CinemachineOrbitalFollow _resultsOrbit;
-        [SerializeField, Min(0)] private float _resultsOrbitSpeed = 10;
 
         private Transform _defaultTarget;
         private Transform _spectatorTarget;
@@ -37,13 +39,16 @@ namespace PawArena.Gameplay.Cameras
 
         private void Awake()
         {
-            if (_outputCamera == null || _aim == null || _lobbyCamera == null ||
+            if (_config == null || _outputCamera == null || _aim == null || _lobbyCamera == null ||
                 _matchCamera == null || _spectatorCamera == null ||
                 _resultsCamera == null)
             {
                 Debug.LogError($"{nameof(CinemachineCameraDirector)} has incomplete scene references.", this);
                 enabled = false;
+                return;
             }
+
+            _aim.ApplySystemConfig(_config);
         }
 
         private void OnEnable()
@@ -76,7 +81,9 @@ namespace PawArena.Gameplay.Cameras
             else if (_activeCamera == _resultsCamera && _resultsOrbit != null)
             {
                 var axis = _resultsOrbit.HorizontalAxis;
-                axis.Value = Mathf.Repeat(axis.Value + _resultsOrbitSpeed * Time.unscaledDeltaTime + 180, 360) - 180;
+                axis.Value = Mathf.Repeat(
+                    axis.Value + _config.ResultsOrbitSpeed * Time.unscaledDeltaTime + 180,
+                    360) - 180;
                 _resultsOrbit.HorizontalAxis = axis;
             }
         }
@@ -141,22 +148,22 @@ namespace PawArena.Gameplay.Cameras
             switch (state)
             {
                 case GameFlowState.PreMatch:
-                    _aim.Configure(CameraInputMode.Lobby, 1.5f, -20, 80, 7.3f, 1.5f, 20);
+                    _aim.ApplyPreset(_config.PreMatch);
                     Activate(_lobbyCamera);
                     break;
                 case GameFlowState.Playing:
                     _spectatorTarget = null;
                     FollowAimTarget(_defaultTarget);
-                    _aim.Configure(CameraInputMode.Match, 1.5f, -20, 80, 7.3f, 3.5f, 15);
+                    _aim.ApplyPreset(_config.Match);
                     Activate(_matchCamera);
                     break;
                 case GameFlowState.Spectating:
                     FollowAimTarget(_spectatorTarget != null ? _spectatorTarget : _defaultTarget);
-                    _aim.Configure(CameraInputMode.Spectator, 25, -20, 80, 14, 7, 20);
+                    _aim.ApplyPreset(_config.Spectator);
                     Activate(_spectatorCamera);
                     break;
                 case GameFlowState.Results:
-                    _aim.Configure(CameraInputMode.Disabled, 14, -10, 45, 4.25f, 4.25f, 4.25f);
+                    _aim.ApplyPreset(_config.Results);
                     SetResultsTarget(_spectatorTarget != null ? _spectatorTarget : _defaultTarget);
                     Activate(_resultsCamera);
                     break;
@@ -165,7 +172,7 @@ namespace PawArena.Gameplay.Cameras
                 default:
                     _spectatorTarget = null;
                     FollowAimTarget(_defaultTarget);
-                    _aim.Configure(CameraInputMode.Lobby, 1.5f, -20, 80, 7.3f, 3.5f, 20);
+                    _aim.ApplyPreset(_config.Lobby);
                     Activate(_lobbyCamera);
                     break;
             }

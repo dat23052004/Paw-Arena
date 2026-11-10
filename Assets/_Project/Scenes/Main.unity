@@ -2996,6 +2996,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 460ca09f3a78ea944bf2e636381f5abb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: PawArena.Gameplay::PawArena.Gameplay.Cameras.CinemachineCameraDirector
+  _config: {fileID: 11400000, guid: 1d8c1a7ea1e44cebab2cec85d0d0e032, type: 2}
   _outputCamera: {fileID: 463797757}
   _aim: {fileID: 1461123363}
   _gameFlow: {fileID: 2023769977}
@@ -3007,7 +3008,6 @@ MonoBehaviour:
   _matchFollow: {fileID: 1715673095}
   _spectatorFollow: {fileID: 2051231571}
   _resultsOrbit: {fileID: 1880251661}
-  _resultsOrbitSpeed: 10
 --- !u!114 &1461123363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3021,17 +3021,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: PawArena.Gameplay::PawArena.Gameplay.Cameras.CameraAimController
   _pivot: {fileID: 1692724705}
-  _followHeight: 1.05
-  _lookSensitivity: 0.18
-  _zoomSensitivity: 1
-  _spectatorYawLimit: 180
-  _inputMode: 1
-  _pitch: 16
-  _distance: 4.5
-  _minimumPitch: -20
-  _maximumPitch: 80
-  _minimumDistance: 1.5
-  _maximumDistance: 20
 --- !u!4 &1461123364
 Transform:
   m_ObjectHideFlags: 0

@@ -8,18 +8,18 @@ namespace PawArena.Gameplay.Cameras
     public sealed class CameraAimController : MonoBehaviour, ICameraHeadingProvider
     {
         [SerializeField] private Transform _pivot;
-        [SerializeField, Min(0)] private float _followHeight = 1.05f;
-        [SerializeField, Min(0)] private float _lookSensitivity = 1f;
-        [SerializeField, Min(0)] private float _zoomSensitivity = 1f;
-        [SerializeField] private CameraInputMode _inputMode = CameraInputMode.Lobby;
-        [SerializeField] private float _pitch = 16;
-        [SerializeField] private float _distance = 4.5f;
-        [SerializeField] private float _minimumPitch = -20;
-        [SerializeField] private float _maximumPitch = 80;
-        [SerializeField] private float _minimumDistance = 1.5f;
-        [SerializeField] private float _maximumDistance = 20;
 
         private Transform _target;
+        private float _followHeight = 1.05f;
+        private float _lookSensitivity = 1;
+        private float _zoomSensitivity = 1;
+        private CameraInputMode _inputMode = CameraInputMode.Disabled;
+        private float _pitch = 16;
+        private float _distance = 4.5f;
+        private float _minimumPitch = -20;
+        private float _maximumPitch = 80;
+        private float _minimumDistance = 1.5f;
+        private float _maximumDistance = 20;
         private float _yaw;
         private float _planarTurnSpeed;
         private bool _focused = true;
@@ -46,14 +46,6 @@ namespace PawArena.Gameplay.Cameras
 
             ValidateLimits();
             PresentPivot();
-        }
-
-        private void OnValidate()
-        {
-            _followHeight = float.IsFinite(_followHeight) ? Mathf.Max(0, _followHeight) : 1f;
-            _lookSensitivity = float.IsFinite(_lookSensitivity) ? Mathf.Max(0, _lookSensitivity) : 1f;
-            _zoomSensitivity = float.IsFinite(_zoomSensitivity) ? Mathf.Max(0, _zoomSensitivity) : 1f;
-            ValidateLimits();
         }
 
         private void OnDisable() => ReleaseCursor();
@@ -136,23 +128,32 @@ namespace PawArena.Gameplay.Cameras
             PresentPivot();
         }
 
-        /// <summary>Applies a view-specific input and zoom profile.</summary>
-        public void Configure(
-            CameraInputMode inputMode,
-            float defaultPitch,
-            float minimumPitch,
-            float maximumPitch,
-            float defaultDistance,
-            float minimumDistance,
-            float maximumDistance)
+        /// <summary>Copies shared tuning from the immutable camera configuration asset.</summary>
+        public void ApplySystemConfig(CameraSystemConfig config)
         {
-            _inputMode = inputMode;
-            _minimumPitch = Mathf.Clamp(minimumPitch, -80, 80);
-            _maximumPitch = Mathf.Clamp(maximumPitch, _minimumPitch, 80);
-            _minimumDistance = Mathf.Max(.5f, minimumDistance);
-            _maximumDistance = Mathf.Max(_minimumDistance, maximumDistance);
-            _pitch = Mathf.Clamp(defaultPitch, _minimumPitch, _maximumPitch);
-            _distance = Mathf.Clamp(defaultDistance, _minimumDistance, _maximumDistance);
+            if (config == null)
+            {
+                Debug.LogError($"{nameof(CameraAimController)} requires a camera system config.", this);
+                return;
+            }
+
+            _followHeight = config.FollowHeight;
+            _lookSensitivity = config.LookSensitivity;
+            _zoomSensitivity = config.ZoomSensitivity;
+            PresentPivot();
+        }
+
+        /// <summary>Copies one view preset into runtime camera state.</summary>
+        public void ApplyPreset(CameraAimPreset preset)
+        {
+            preset.Validate();
+            _inputMode = preset.InputMode;
+            _minimumPitch = preset.MinimumPitch;
+            _maximumPitch = preset.MaximumPitch;
+            _minimumDistance = preset.MinimumDistance;
+            _maximumDistance = preset.MaximumDistance;
+            _pitch = preset.DefaultPitch;
+            _distance = preset.DefaultDistance;
             ReleaseCursor();
 
             if (_inputMode == CameraInputMode.Match)

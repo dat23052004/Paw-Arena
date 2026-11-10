@@ -11,12 +11,16 @@ namespace PawArena.Editor
     /// <summary>Creates the standard four-view Cinemachine rig for scene authoring tools.</summary>
     internal static class CinemachineMainCameraFactory
     {
+        private const string CameraConfigFolder = "Assets/_Project/Settings/Cameras";
+        private const string CameraConfigPath = CameraConfigFolder + "/CameraSystemConfig.asset";
+
         public static CinemachineCameraDirector Create(
             Scene scene,
             Camera output,
             Transform player,
             GameFlowController gameFlow)
         {
+            var config = LoadOrCreateConfig();
             var brain = output.GetComponent<CinemachineBrain>();
             if (brain == null)
             {
@@ -36,7 +40,8 @@ namespace PawArena.Editor
             var aim = root.AddComponent<CameraAimController>();
             Assign(aim, "_pivot", pivot);
             aim.Follow(player);
-            aim.Configure(CameraInputMode.Lobby, 16, -10, 45, 4.5f, 3.5f, 6);
+            aim.ApplySystemConfig(config);
+            aim.ApplyPreset(config.Lobby);
 
             var lobby = CreateThirdPerson(
                 root.transform, "CM_LobbyFollow", pivot, 45, 4.5f,
@@ -64,6 +69,7 @@ namespace PawArena.Editor
             composer.Damping = new Vector2(.35f, .35f);
 
             var director = root.AddComponent<CinemachineCameraDirector>();
+            Assign(director, "_config", config);
             Assign(director, "_outputCamera", output);
             Assign(director, "_aim", aim);
             Assign(director, "_gameFlow", gameFlow);
@@ -81,6 +87,25 @@ namespace PawArena.Editor
             spectator.GameObject.SetActive(false);
             results.GameObject.SetActive(false);
             return director;
+        }
+
+        private static CameraSystemConfig LoadOrCreateConfig()
+        {
+            var config = AssetDatabase.LoadAssetAtPath<CameraSystemConfig>(CameraConfigPath);
+            if (config != null)
+            {
+                return config;
+            }
+
+            if (!AssetDatabase.IsValidFolder(CameraConfigFolder))
+            {
+                AssetDatabase.CreateFolder("Assets/_Project/Settings", "Cameras");
+            }
+
+            config = ScriptableObject.CreateInstance<CameraSystemConfig>();
+            AssetDatabase.CreateAsset(config, CameraConfigPath);
+            AssetDatabase.SaveAssets();
+            return config;
         }
 
         private static CameraSetup CreateThirdPerson(

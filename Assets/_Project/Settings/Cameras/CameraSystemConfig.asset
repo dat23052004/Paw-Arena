@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bdbf2e9601e411393b2eb4db4639f36, type: 3}
+  m_Name: CameraSystemConfig
+  m_EditorClassIdentifier: PawArena.Gameplay::PawArena.Gameplay.Cameras.CameraSystemConfig
+  _followHeight: 1.05
+  _lookSensitivity: 1
+  _zoomSensitivity: 1
+  _resultsOrbitSpeed: 10
+  _lobby:
+    _inputMode: 1
+    _defaultPitch: 1.5
+    _minimumPitch: -20
+    _maximumPitch: 80
+    _defaultDistance: 7.3
+    _minimumDistance: 3.5
+    _maximumDistance: 20
+  _preMatch:
+    _inputMode: 1
+    _defaultPitch: 1.5
+    _minimumPitch: -20
+    _maximumPitch: 80
+    _defaultDistance: 7.3
+    _minimumDistance: 1.5
+    _maximumDistance: 20
+  _match:
+    _inputMode: 2
+    _defaultPitch: 1.5
+    _minimumPitch: -20
+    _maximumPitch: 80
+    _defaultDistance: 7.3
+    _minimumDistance: 3.5
+    _maximumDistance: 15
+  _spectator:
+    _inputMode: 3
+    _defaultPitch: 25
+    _minimumPitch: -20
+    _maximumPitch: 80
+    _defaultDistance: 13
+    _minimumDistance: 7
+    _maximumDistance: 13
+  _results:
+    _inputMode: 0
+    _defaultPitch: 14
+    _minimumPitch: -10
+    _maximumPitch: 45
+    _defaultDistance: 4.25
+    _minimumDistance: 4.25
+    _maximumDistance: 4.25
